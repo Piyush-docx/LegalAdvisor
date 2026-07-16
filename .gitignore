@@ -1,0 +1,15 @@
+
+.env
+/agent-skills
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# local editor/agent settings
+.claude/settings.local.json
+.DS_Store
+
+# debug dumps from API experiments
+scripts/last_search_*.json

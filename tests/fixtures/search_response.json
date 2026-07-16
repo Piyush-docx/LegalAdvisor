@@ -1,0 +1,475 @@
+{
+  "categories": [
+    [
+      "Filter by AI Tags",
+      [
+        {
+          "value": "duration-of-certain-leases-in-absence-of-written-contract",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:duration-of-certain-leases-in-absence-of-written-contract"
+        },
+        {
+          "value": "transfer-of-property",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:transfer-of-property"
+        },
+        {
+          "value": "delhi-rent-law",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:delhi-rent-law"
+        },
+        {
+          "value": "equality-before-law",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:equality-before-law"
+        },
+        {
+          "value": "companies-law",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:companies-law"
+        },
+        {
+          "value": "law-governing-evidence",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:law-governing-evidence"
+        },
+        {
+          "value": "power-to-appoint-new-or-sole-arbitrator",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:power-to-appoint-new-or-sole-arbitrator"
+        },
+        {
+          "value": "appeal-high-court < writ-petition-high-court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:appeal-high-court < writ-petition-high-court"
+        },
+        {
+          "value": "determination-of-lease",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:determination-of-lease"
+        },
+        {
+          "value": "income-tax",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+tag:income-tax"
+        }
+      ]
+    ],
+    [
+      "Related Queries",
+      [
+        {
+          "value": "\"security deposit\"",
+          "formInput": "%22security%20deposit%22"
+        },
+        {
+          "value": "security deposit",
+          "formInput": "security%20deposit"
+        },
+        {
+          "value": "monthly rent ",
+          "formInput": "monthly%20rent%20"
+        },
+        {
+          "value": "ARREARS OF RENT",
+          "formInput": "ARREARS%20OF%20RENT"
+        },
+        {
+          "value": "lease deed",
+          "formInput": "lease%20deed"
+        },
+        {
+          "value": "mesns profits",
+          "formInput": "mesns%20profits"
+        },
+        {
+          "value": "vacant possession",
+          "formInput": "vacant%20possession"
+        },
+        {
+          "value": "rent control act",
+          "formInput": "rent%20control%20act"
+        },
+        {
+          "value": "lease agreement",
+          "formInput": "lease%20agreement"
+        },
+        {
+          "value": "no rent agreement",
+          "formInput": "no%20rent%20agreement"
+        }
+      ]
+    ],
+    [
+      "Document Types",
+      [
+        {
+          "value": "All",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord",
+          "selected": true
+        },
+        {
+          "value": "Laws",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:laws"
+        },
+        {
+          "value": "Judgments",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:judgments"
+        },
+        {
+          "value": "Tribunals",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:tribunals"
+        },
+        {
+          "value": "Highcourts & Supremecourt",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:supremecourt,scorders,highcourts"
+        }
+      ]
+    ],
+    [
+      "Courts and Laws",
+      [
+        {
+          "value": "Delhi District Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:delhidc",
+          "selected": false
+        },
+        {
+          "value": "Bangalore District Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:bangaloredc",
+          "selected": false
+        },
+        {
+          "value": "Delhi High Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:delhi",
+          "selected": false
+        },
+        {
+          "value": "Bombay High Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:bombay",
+          "selected": false
+        },
+        {
+          "value": "Madras High Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:chennai",
+          "selected": false
+        },
+        {
+          "value": "Karnataka High Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:karnataka",
+          "selected": false
+        },
+        {
+          "value": "Supreme Court of India",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:supremecourt",
+          "selected": false
+        },
+        {
+          "value": "Calcutta High Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:kolkata",
+          "selected": false
+        },
+        {
+          "value": "Punjab-Haryana High Court",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:punjab",
+          "selected": false
+        },
+        {
+          "value": "Income Tax Appellate Tribunal - Mumbai",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+doctypes:itat_mumbai",
+          "selected": false
+        }
+      ]
+    ],
+    [
+      "Authors",
+      [
+        {
+          "value": "Ramesh Deokinandan Dhanuka",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+authorid:r-d-dhanuka"
+        },
+        {
+          "value": "Rajiv Sahai Endlaw",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+authorid:r-s-endlaw"
+        },
+        {
+          "value": "Abhay Oka",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+authorid:a-oka"
+        },
+        {
+          "value": "Jagjivan Ram Midha",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+authorid:j-r-midha"
+        },
+        {
+          "value": "Devinder Pratap Wadhwa",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+authorid:d-p-wadhwa"
+        }
+      ]
+    ],
+    [
+      "Bench",
+      [
+        {
+          "value": "Ramesh Deokinandan Dhanuka",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:r-d-dhanuka"
+        },
+        {
+          "value": "V G Bisht",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:v-g-bisht"
+        },
+        {
+          "value": "Rajiv Sahai Endlaw",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:r-s-endlaw"
+        },
+        {
+          "value": "Abhay Oka",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:a-oka"
+        },
+        {
+          "value": "R I Chagla",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:r-i-chagla"
+        },
+        {
+          "value": "Jagjivan Ram Midha",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:j-r-midha"
+        },
+        {
+          "value": "Ramesh Chandra Lahoti",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:r-c-lahoti"
+        },
+        {
+          "value": "Pradeep Nandrajog",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:p-nandrajog"
+        },
+        {
+          "value": "Devinder Pratap Wadhwa",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:d-p-wadhwa"
+        },
+        {
+          "value": "V K Jain",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+benchid:v-k-jain"
+        }
+      ]
+    ],
+    [
+      "Years",
+      [
+        {
+          "value": "2025",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2025"
+        },
+        {
+          "value": "2024",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2024"
+        },
+        {
+          "value": "2016",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2016"
+        },
+        {
+          "value": "2021",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2021"
+        },
+        {
+          "value": "2023",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2023"
+        },
+        {
+          "value": "2026",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2026"
+        },
+        {
+          "value": "2022",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2022"
+        },
+        {
+          "value": "2018",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2018"
+        },
+        {
+          "value": "2014",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2014"
+        },
+        {
+          "value": "2019",
+          "formInput": "security%20deposit%20refund%20tenant%20landlord+year:2019"
+        }
+      ]
+    ]
+  ],
+  "docs": [
+    {
+      "tid": 183757259,
+      "catids": [
+        2809,
+        2806,
+        2805
+      ],
+      "doctype": 1002,
+      "publishdate": "2015-05-14",
+      "authorid": 658,
+      "bench": [
+        658
+      ],
+      "title": "Hs Bedi vs National Highway Authority Of India on 14 May, 2015",
+      "numcites": 31,
+      "numcitedby": 1,
+      "headline": "upon the <b>landlord</b> to take\nover the possession and <b>refund</b> the <b>security</b> <b>deposit</b>. The <b>landlord</b>\nwas not willing to <b>refund</b> the <b>security</b> <b>deposit</b> and therefore ... <b>security</b> <b>deposit</b> and take the possession. The <b>landlord</b>\nhowever, failed to take the possession whereupon the <b>tenant</b>\ninstituted a suit for recovery of <b>security</b> <b>deposit</b>",
+      "docsize": 152508,
+      "fragment": true,
+      "docsource": "Delhi High Court",
+      "author": "J R Midha",
+      "authorEncoded": "j-r-midha"
+    },
+    {
+      "tid": 65167213,
+      "catids": [
+        20,
+        1
+      ],
+      "doctype": 1025,
+      "publishdate": "2012-01-09",
+      "authorid": 1729,
+      "bench": [
+        1729
+      ],
+      "title": "Smt Mahendra Kaur Arora vs Rent Appe Tribunal Jaipur &Anr on 9 January, 2012",
+      "numcites": 15,
+      "numcitedby": 0,
+      "headline": "However in terms of the <b>deposit</b> agreement dated 13.10.2000, the <b>landlord</b> did not <b>refund</b> the <b>security</b> <b>deposit</b> to the <b>tenant</b>-Bank following the termination ... handed over to the <b>landlord</b>. Counsel submits that admittedly the <b>security</b> <b>deposit</b> was not <b>refunded</b> by the <b>landlord</b> to the <b>tenant</b>-Bank followed the termination",
+      "docsize": 38682,
+      "fragment": true,
+      "docsource": "Rajasthan High Court - Jaipur",
+      "author": "A Sharma",
+      "authorEncoded": "a-sharma"
+    },
+    {
+      "tid": 83930345,
+      "catids": null,
+      "doctype": 1002,
+      "publishdate": "2025-07-15",
+      "authorid": 728,
+      "bench": [
+        728
+      ],
+      "title": "M/S Ansal Housing And Construction Ltd vs Mrs Hardarshan Kaur on 15 July, 2025",
+      "numcites": 15,
+      "numcitedby": 0,
+      "headline": "upon the <b>landlord</b> to take possession and <b>refund</b>\n                          the <b>security</b> <b>deposit</b> but the <b>landlord</b> was unwilling to <b>refund</b> the <b>security</b>\n                          and the <b>tenant</b> ... till the <b>security</b>\n                                  <b>deposit</b> is <b>refunded</b>. In the event of non-<b>refund</b> of\n                                  <b>security</b> <b>deposit</b> by the <b>landlord</b>, the remedy of the <b>tenant</b>\n\n\n\n Signature",
+      "docsize": 76402,
+      "fragment": true,
+      "docsource": "Delhi High Court",
+      "author": "V Bakhru",
+      "authorEncoded": "v-bakhru"
+    },
+    {
+      "tid": 47062088,
+      "catids": null,
+      "doctype": 1020,
+      "publishdate": "2025-12-19",
+      "authorid": null,
+      "bench": null,
+      "title": "Smt Sarojamma vs Pallickamalil Cinema Company Pvt Ltd on 19 December, 2025",
+      "numcites": 12,
+      "numcitedby": 0,
+      "headline": "<b>security</b> <b>deposit</b> is <b>refunded</b>.\n\n      The remedy available to the <b>tenant</b> is to sue the <b>landlord</b> for\n\n      <b>refund</b> of the <b>security</b> <b>deposit</b> after handing over possession ... <b>refund</b> of\n<b>security</b> <b>deposit</b> by the <b>landlord</b>-- The <b>tenant</b>\ncannot refuse to hand over the possession till the\n<b>security</b> <b>deposit</b> is <b>refunded</b>. In the event",
+      "docsize": 84570,
+      "fragment": true,
+      "docsource": "Karnataka High Court"
+    },
+    {
+      "tid": 67428004,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-04-15",
+      "authorid": null,
+      "bench": null,
+      "title": "Yarramma vs Suganesh Nageshwaran on 15 April, 2024",
+      "numcites": 4,
+      "numcitedby": 0,
+      "headline": "heads, the\n\n<b>landlord</b> cannot contend that <b>landlord</b> is entitled to deduct\n\nany amount from the <b>security</b> <b>deposit</b> amount <b>refundable</b> to\n\nthe <b>tenant</b>.\n\n\n30.    In addition ... said 3 months from the <b>security</b> <b>deposit</b> of Rs. 70,000,\n\nthe <b>tenant</b> is entitled to <b>refund</b> of <b>security</b> <b>deposit</b> amount",
+      "docsize": 48733,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 87951270,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-04-15",
+      "authorid": null,
+      "bench": null,
+      "title": "S.A.K.Malinishri vs Yaramma on 15 April, 2024",
+      "numcites": 4,
+      "numcitedby": 0,
+      "headline": "heads, the\n\n<b>landlord</b> cannot contend that <b>landlord</b> is entitled to deduct\n\nany amount from the <b>security</b> <b>deposit</b> amount <b>refundable</b> to\n\nthe <b>tenant</b>.\n\n\n30.    In addition ... said 3 months from the <b>security</b> <b>deposit</b> of Rs. 70,000,\n\nthe <b>tenant</b> is entitled to <b>refund</b> of <b>security</b> <b>deposit</b> amount",
+      "docsize": 47608,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 36546029,
+      "catids": null,
+      "doctype": 10000,
+      "publishdate": "2025-05-29",
+      "authorid": null,
+      "bench": null,
+      "title": "M/S Gopal Das Estates And Housing ... vs Condor Air Services Pvt Ltd on 29 May, 2025",
+      "numcites": 17,
+      "numcitedby": 0,
+      "headline": "Remedy of <b>tenant</b> in case of non-<b>refund</b> of <b>security</b>\n                     <b>deposit</b> by the <b>landlord</b> - The <b>tenant</b> cannot refuse to hand\n                     over the possession ... till the <b>security</b> <b>deposit</b> is <b>refunded</b>. In\n                     the event of non- <b>refund</b> of <b>security</b> <b>deposit</b> by the <b>landlord</b>,\n                     the remedy of the <b>tenant</b>",
+      "docsize": 84094,
+      "fragment": true,
+      "docsource": "Delhi District Court"
+    },
+    {
+      "tid": 120998551,
+      "catids": [
+        2809
+      ],
+      "doctype": 10000,
+      "publishdate": "2018-08-09",
+      "authorid": null,
+      "bench": null,
+      "title": "Praveen Kumar vs Dalip Jain on 9 August, 2018",
+      "numcites": 7,
+      "numcitedby": 0,
+      "headline": "<b>refund</b> the rent worth Rs. 1,75,000/- illegally\n\n  deducted by the <b>landlord</b> (defendant) from the <b>refundable</b> <b>security</b> <b>deposit</b> of the <b>tenant</b>\n\n(plaintiff) has invited ... till the <b>security</b> <b>deposit</b> is <b>refunded</b>. In the event of\n          \t \t       non- <b>refund</b> of <b>security</b> <b>deposit</b> by the <b>landlord</b>, the remedy of\n          \t \t       the <b>tenant</b>",
+      "docsize": 15279,
+      "fragment": true,
+      "docsource": "Delhi District Court"
+    },
+    {
+      "tid": 59779946,
+      "catids": [
+        948,
+        927,
+        135,
+        49,
+        593
+      ],
+      "doctype": 1002,
+      "publishdate": "2009-02-26",
+      "authorid": 691,
+      "bench": [
+        691
+      ],
+      "title": "M/S General Electric International ... vs M/S U.C. Jain Huf & Ors. on 26 February, 2009",
+      "numcites": 12,
+      "numcitedby": 1,
+      "headline": "character of a <b>security</b> <b>deposit</b>. The <b>security</b> <b>deposit</b> is\n\ngenerally meant to secure the <b>landlord</b> against various defaults of\n\nthe <b>tenant</b> at the time ... <b>refund</b> of <b>security</b> <b>deposit</b> by the <b>landlord</b> and that the <b>tenant</b> in\n\nsuch case has an independent remedy to recover the <b>security</b> <b>deposit</b>",
+      "docsize": 36104,
+      "fragment": true,
+      "docsource": "Delhi High Court",
+      "author": "R S Endlaw",
+      "authorEncoded": "r-s-endlaw"
+    },
+    {
+      "tid": 97569056,
+      "catids": null,
+      "doctype": 1007,
+      "publishdate": "2024-12-21",
+      "authorid": null,
+      "bench": null,
+      "title": "Rr Donnelley India Outsource Private ... vs Saifuddin Lukmanji Bharmal on 21 December, 2024",
+      "numcites": 4,
+      "numcitedby": 0,
+      "headline": "filed by the <b>landlords</b>.\n\n\n\n                                    20.Coming to the counter claim made by the <b>tenant</b> with regard to\n\n                     <b>refund</b> of the <b>security</b> <b>deposit</b> and the balance ... disallowed\n\n                     the claim for <b>refund</b> of the <b>security</b> <b>deposit</b> from the <b>landlords</b>. In respect of\n\n                     the claim regarding the <b>security</b> <b>deposit</b> towards maintenance, the Arbitrator",
+      "docsize": 46368,
+      "fragment": true,
+      "docsource": "Madras High Court"
+    }
+  ],
+  "found": "1 - 10 of 3302",
+  "encodedformInput": "security%20deposit%20refund%20tenant%20landlord"
+}
