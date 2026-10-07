@@ -1,10 +1,12 @@
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
+
+from src.generation.generate import explain_with_llm, trim_incomplete
+from src.generation.schemas import LLMAnswer
+from src.llm import LLMUnavailable
+from src.retrieval.context import Citation
+from tests.helpers import llm_result
 
 import pytest
-
-from src.generation.generate import explain_with_llm
-from src.generation.schemas import LLMAnswer
-from src.retrieval.context import Citation
 
 
 def make_citation():
@@ -16,23 +18,9 @@ def make_citation():
     )
 
 
-def make_fake_response(text="The security deposit must be refunded.", finish_reason="STOP"):
-    candidate = MagicMock()
-    candidate.finish_reason.name = finish_reason
-
-    response = MagicMock()
-    response.text = text
-    response.candidates = [candidate]
-    response.usage_metadata = MagicMock(prompt_token_count=1200, candidates_token_count=150)
-    return response
-
-
-@patch("src.generation.generate._get_client")
-def test_explain_with_llm_returns_validated_answer(mock_get_client, monkeypatch):
-    monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
-    mock_client = MagicMock()
-    mock_client.models.generate_content.return_value = make_fake_response()
-    mock_get_client.return_value = mock_client
+@patch("src.generation.generate.complete")
+def test_explain_with_llm_returns_validated_answer(mock_complete):
+    mock_complete.return_value = llm_result("The security deposit must be refunded.", tokens_in=1200, tokens_out=150)
 
     result = explain_with_llm(
         question="Can my landlord keep my deposit?",
@@ -42,48 +30,43 @@ def test_explain_with_llm_returns_validated_answer(mock_get_client, monkeypatch)
 
     assert isinstance(result, LLMAnswer)
     assert result.text == "The security deposit must be refunded."
-    assert result.stop_reason == "STOP"
+    assert result.stop_reason == "STOP" and result.truncated is False
     assert result.usage.input_tokens == 1200
     assert result.usage.output_tokens == 150
 
 
-@patch("src.generation.generate._get_client")
-def test_explain_with_llm_uses_gemini_flash_model(mock_get_client, monkeypatch):
-    monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
-    mock_client = MagicMock()
-    mock_client.models.generate_content.return_value = make_fake_response()
-    mock_get_client.return_value = mock_client
+@patch("src.generation.generate.complete")
+def test_explain_with_llm_uses_the_answer_task_and_prompt(mock_complete):
+    mock_complete.return_value = llm_result()
 
-    explain_with_llm(
-        question="q",
-        context_text="context",
-        citations=[make_citation()],
-    )
+    explain_with_llm("my question", "the context", [make_citation()])
 
-    _, kwargs = mock_client.models.generate_content.call_args
-    assert kwargs["model"] == "gemini-2.5-flash"
+    task, prompt = mock_complete.call_args.args
+    assert task == "answer"
+    assert "my question" in prompt and "the context" in prompt
+    assert mock_complete.call_args.kwargs["max_tokens"] >= 4096
 
 
-@patch("src.generation.generate._get_client")
-def test_explain_with_llm_passes_api_key_from_env(mock_get_client, monkeypatch):
-    monkeypatch.setenv("LLM_API_KEY", "the-secret-key")
-    mock_client = MagicMock()
-    mock_client.models.generate_content.return_value = make_fake_response()
-    mock_get_client.return_value = mock_client
-
-    explain_with_llm(question="q", context_text="context", citations=[make_citation()])
-
-    # The _get_client function was called, meaning the module-level client is used
-    mock_get_client.assert_called_once()
+@patch("src.generation.generate.complete", side_effect=LLMUnavailable("all models failed"))
+def test_explain_with_llm_propagates_unavailable(mock_complete):
+    with pytest.raises(LLMUnavailable):
+        explain_with_llm("q", "ctx", [make_citation()])
 
 
-@patch("src.generation.generate._get_client")
-def test_explain_with_llm_raises_on_empty_response_text(mock_get_client, monkeypatch):
-    monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
-    mock_client = MagicMock()
-    empty_response = make_fake_response(text=None, finish_reason="SAFETY")
-    mock_client.models.generate_content.return_value = empty_response
-    mock_get_client.return_value = mock_client
+def test_trim_incomplete_cuts_back_to_last_complete_sentence():
+    assert trim_incomplete("First point. Second point. Third poi") == "First point. Second point."
+    assert trim_incomplete("Intro line\n**Mediation") == "Intro line"
+    assert trim_incomplete("No terminator here") == "No terminator here"
 
-    with pytest.raises(Exception):
-        explain_with_llm(question="q", context_text="context", citations=[make_citation()])
+
+@patch("src.generation.generate.complete")
+def test_explain_with_llm_flags_and_repairs_truncated_answer(mock_complete):
+    mock_complete.return_value = llm_result("Complete sentence. Cut off mid-wo", stop="MAX_TOKENS")
+
+    result = explain_with_llm("q", "ctx", [make_citation()])
+
+    assert result.truncated is True
+    assert result.stop_reason == "MAX_TOKENS"
+    assert "mid-wo" not in result.text
+    assert result.text.startswith("Complete sentence.")
+    assert "shortened" in result.text

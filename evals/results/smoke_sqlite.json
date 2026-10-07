@@ -1,0 +1,172 @@
+{
+  "label": "smoke_sqlite",
+  "partial": false,
+  "timestamp": "2026-10-07T05:35:23.588065+00:00",
+  "git": {
+    "commit": "c9bb272",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash,groq:openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": false,
+    "fresh_rewrite": false,
+    "judge": false
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 0,
+      "doc": 0
+    },
+    "ikanoon_logical": {
+      "search": 0,
+      "doc": 0
+    }
+  },
+  "summary": {
+    "cases": 2,
+    "ok": 2,
+    "skipped_not_recorded": 0,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "no_error": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "no_retrieval": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "route_ok": {
+        "passed": 1,
+        "applicable": 1
+      }
+    },
+    "pass_rate_by_category": {
+      "chitchat": 1.0,
+      "out_of_scope": 1.0
+    },
+    "latency_ms_p50": 437,
+    "latency_ms_p95": 438,
+    "ikanoon_calls_per_answer_case": null,
+    "gen_tokens_in_mean": null,
+    "gen_tokens_out_mean": null,
+    "truncation_rate": null,
+    "retrieval_hit_rate": null,
+    "retrieval_mrr": null,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": null,
+    "judge_rubric_coverage_mean": null,
+    "judge_personalised_advice_count": 0,
+    "judge_scored": 0,
+    "tiers": {},
+    "answer_models": {},
+    "halted_on_daily_quota": false
+  },
+  "cases": [
+    {
+      "id": "c02",
+      "category": "chitchat",
+      "behavior": "chitchat",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Who are you and what can you do?",
+          "answer": "Hello! I am an assistant designed to help Indian citizens understand their rights, relevant laws, and legal procedures in plain language. I give general legal information, not personalised legal advice.\n\nYou can ask me questions about everyday legal issues such as:\n• Tenancy & landlord disputes (security deposits, eviction, rent)\n• Employment & labor rights (unpaid wages, notice periods, termination)\n• Consumer complaints (defective goods, service deficiency, refunds)\n• Family and property matters\n\nWhat legal situation or question can I help you with today?",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 439,
+          "ikanoon_calls": 0,
+          "intent": "CHITCHAT",
+          "answer_model": null,
+          "stop_reason": null,
+          "tokens_in": 0,
+          "tokens_out": 0
+        }
+      ],
+      "final_answer": "Hello! I am an assistant designed to help Indian citizens understand their rights, relevant laws, and legal procedures in plain language. I give general legal information, not personalised legal advice.\n\nYou can ask me questions about everyday legal issues such as:\n• Tenancy & landlord disputes (security deposits, eviction, rent)\n• Employment & labor rights (unpaid wages, notice periods, termination)\n• Consumer complaints (defective goods, service deficiency, refunds)\n• Family and property matters\n\nWhat legal situation or question can I help you with today?",
+      "context_chars": 0,
+      "citation_titles": [],
+      "checks": {
+        "no_error": true,
+        "not_truncated": null,
+        "ends_cleanly": null,
+        "disclaimer_present": null,
+        "citations_valid": null,
+        "sections_grounded": null,
+        "expected_source_in_answer": null,
+        "expected_source_retrieved": null,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": true
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": null,
+      "ikanoon_calls_total": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": []
+    },
+    {
+      "id": "o01",
+      "category": "out_of_scope",
+      "behavior": "decline_out_of_scope",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "What is the punishment for tax evasion in the USA?",
+          "answer": "I can only help with questions about Indian law, such as tenancy, employment, consumer, family, and criminal matters. I can't help with that topic. If you have an Indian legal question, please ask it and I'll explain what the law says in plain language.",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 435,
+          "ikanoon_calls": 0,
+          "intent": "OUT_OF_SCOPE",
+          "answer_model": null,
+          "stop_reason": null,
+          "tokens_in": 0,
+          "tokens_out": 0
+        }
+      ],
+      "final_answer": "I can only help with questions about Indian law, such as tenancy, employment, consumer, family, and criminal matters. I can't help with that topic. If you have an Indian legal question, please ask it and I'll explain what the law says in plain language.",
+      "context_chars": 0,
+      "citation_titles": [],
+      "checks": {
+        "no_error": true,
+        "not_truncated": null,
+        "ends_cleanly": null,
+        "disclaimer_present": null,
+        "citations_valid": null,
+        "sections_grounded": null,
+        "expected_source_in_answer": null,
+        "expected_source_retrieved": null,
+        "must_not_ok": null,
+        "route_ok": null,
+        "no_retrieval": true
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": null,
+      "ikanoon_calls_total": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": []
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "label": "phase2_q26",
+  "timestamp": "2026-10-03T14:58:40.551084+00:00",
+  "git": {
+    "commit": "c9bb272",
+    "dirty": true
+  },
+  "config": {
+    "router": null,
+    "rewrite": null,
+    "answer": null,
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": true,
+    "fresh_rewrite": true,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 1,
+      "doc": 1
+    },
+    "ikanoon_logical": {
+      "search": 1,
+      "doc": 5
+    }
+  },
+  "summary": {
+    "cases": 1,
+    "ok": 1,
+    "skipped_not_recorded": 0,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "citations_valid": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "disclaimer_present": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "ends_cleanly": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "expected_source_in_answer": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "expected_source_retrieved": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "no_error": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "not_truncated": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "route_ok": {
+        "passed": 1,
+        "applicable": 1
+      },
+      "sections_grounded": {
+        "passed": 1,
+        "applicable": 1
+      }
+    },
+    "pass_rate_by_category": {
+      "criminal": 1.0
+    },
+    "latency_ms_p50": 9488,
+    "latency_ms_p95": 9488,
+    "ikanoon_calls_per_answer_case": 6.0,
+    "gen_tokens_in_mean": 6327.0,
+    "gen_tokens_out_mean": 951.0,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 1.0,
+    "retrieval_mrr": 1.0,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 1.0,
+    "judge_rubric_coverage_mean": 0.8,
+    "judge_personalised_advice_count": 0,
+    "judge_scored": 1,
+    "halted_on_daily_quota": false
+  },
+  "cases": [
+    {
+      "id": "q26",
+      "category": "criminal",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "What is the punishment for cheque bounce under Section 138 of the Negotiable Instruments Act?",
+          "answer": "Under Section 138 of the Negotiable Instruments Act, 1881 (NI Act), the punishment for a cheque bounce can include imprisonment for a term which may extend to two years, or a fine which may extend to twice the amount of the cheque, or both.\n\nHere's a general explanation of the law and the process:\n\n**Understanding Section 138 of the NI Act**\n\nSection 138 of the NI Act deals with the dishonour of a cheque for insufficiency of funds in the account. This is a criminal offence, but its impact is largely confined to the private parties involved (Damodar S. Prabhu vs Sayed Babalal H).\n\n**Conditions for an Offence under Section 138:**\n\nFor an offence under Section 138 to be established, certain conditions must be met:\n*   The cheque must have been issued for the discharge of a debt or other liability.\n*   The cheque must be presented to the bank within six months from the date on which it is drawn or within the period of its validity, whichever is earlier.\n*   The cheque must be returned unpaid by the bank due to insufficient funds or because it exceeds the amount arranged to be paid from that account.\n*   The payee (the person to whom the cheque was issued) must issue a written demand notice to the drawer (the person who issued the cheque) within 30 days of receiving information from the bank about the dishonour.\n*   The drawer must fail to make the payment of the cheque amount to the payee within 15 days of receiving the demand notice.\n\n**Punishment:**\n\nIf these conditions are met and the drawer fails to pay, they can be prosecuted. The punishment, as mentioned, can be:\n*   Imprisonment for a term which may extend to two years, or\n*   A fine which may extend to twice the amount of the cheque, or\n*   Both.\n\nFor example, in the case of *Yasir Amin Khan vs Abdul Rashid Ganie*, where a cheque of Rs. 10 lakh was dishonoured, the trial court initially awarded a compensation of Rs. 2 lakh and simple imprisonment for six months. However, the High Court later set aside the sentence, stating that the compensation awarded was only one-fifth of the cheque value and that the trial court should have considered imposing a fine sufficient to meet the liability of the cheque, potentially up to Rs. 30 lakh (three times the cheque amount, though the Act specifies twice the amount). This highlights that the fine can be substantial and aims to compensate the complainant.\n\n**Process for Filing a Complaint:**\n\n1.  **Dishonour of Cheque:** When a cheque bounces, the bank issues a 'cheque return memo'.\n2.  **Demand Notice:** The payee must send a legal notice to the drawer within 30 days of receiving the cheque return memo, demanding payment of the cheque amount.\n3.  **Failure to Pay:** If the drawer fails to pay the amount within 15 days of receiving the notice, the cause of action arises.\n4.  **Filing a Complaint:** The payee can then file a criminal complaint under Section 138 of the NI Act before a Judicial Magistrate First Class (JMFC) or Metropolitan Magistrate within one month of the cause of action arising (Section 142(b) of the NI Act).\n    *   The complaint must be filed in the court within whose local jurisdiction the cheque was dishonoured by the bank on which it was drawn (Dashrath Rupsingh Rathod vs State of Maharashtra & Anr).\n    *   The complaint should be accompanied by supporting documents and a verification affidavit (Mr. Rajesh Bhalchandra Chalke vs State of Maharashtra).\n5.  **Court Proceedings:** The court will examine the complaint and evidence. If a prima facie case is made out, the court will issue summons to the accused.\n6.  **Compounding of Offence:** The offence under Section 138 is compoundable, meaning the parties can reach a settlement at any stage of the litigation. The Supreme Court has encouraged early compounding to reduce the burden on the judicial system and has even suggested a graded scheme of imposing costs on parties who delay compounding (Damodar S. Prabhu vs Sayed Babalal H). These costs are to be deposited with the relevant Legal Services Authority.\n\nIt's important to remember that while the law provides for punishment, the primary aim in many cheque bounce cases is to ensure the complainant receives the amount due to them.\n\nSources:\n- M/S Shanthi Fortune(India) Ltd vs M/S Mukka Sea Foods Industries on 10 September, 2014: https://indiankanoon.org/doc/155595139/\n- Damodar S.Prabhu vs Sayed Babalal H on 3 May, 2010: https://indiankanoon.org/doc/1594211/\n- Dashrath Rupsingh Rathod vs State Of Maharashtra & Anr on 1 August, 2014: https://indiankanoon.org/doc/100995424/\n- Mr. Rajesh Bhalchandra Chalke vs State Of Maharashtra on 7 December, 2010: https://indiankanoon.org/doc/57018/\n- Yasir Amin Khan vs Abdul Rashid Ganie on 22 November, 2021: https://indiankanoon.org/doc/112024483/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 9488,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "stop_reason": "STOP",
+          "tokens_in": 6327,
+          "tokens_out": 951
+        }
+      ],
+      "final_answer": "Under Section 138 of the Negotiable Instruments Act, 1881 (NI Act), the punishment for a cheque bounce can include imprisonment for a term which may extend to two years, or a fine which may extend to twice the amount of the cheque, or both.\n\nHere's a general explanation of the law and the process:\n\n**Understanding Section 138 of the NI Act**\n\nSection 138 of the NI Act deals with the dishonour of a cheque for insufficiency of funds in the account. This is a criminal offence, but its impact is largely confined to the private parties involved (Damodar S. Prabhu vs Sayed Babalal H).\n\n**Conditions for an Offence under Section 138:**\n\nFor an offence under Section 138 to be established, certain conditions must be met:\n*   The cheque must have been issued for the discharge of a debt or other liability.\n*   The cheque must be presented to the bank within six months from the date on which it is drawn or within the period of its validity, whichever is earlier.\n*   The cheque must be returned unpaid by the bank due to insufficient funds or because it exceeds the amount arranged to be paid from that account.\n*   The payee (the person to whom the cheque was issued) must issue a written demand notice to the drawer (the person who issued the cheque) within 30 days of receiving information from the bank about the dishonour.\n*   The drawer must fail to make the payment of the cheque amount to the payee within 15 days of receiving the demand notice.\n\n**Punishment:**\n\nIf these conditions are met and the drawer fails to pay, they can be prosecuted. The punishment, as mentioned, can be:\n*   Imprisonment for a term which may extend to two years, or\n*   A fine which may extend to twice the amount of the cheque, or\n*   Both.\n\nFor example, in the case of *Yasir Amin Khan vs Abdul Rashid Ganie*, where a cheque of Rs. 10 lakh was dishonoured, the trial court initially awarded a compensation of Rs. 2 lakh and simple imprisonment for six months. However, the High Court later set aside the sentence, stating that the compensation awarded was only one-fifth of the cheque value and that the trial court should have considered imposing a fine sufficient to meet the liability of the cheque, potentially up to Rs. 30 lakh (three times the cheque amount, though the Act specifies twice the amount). This highlights that the fine can be substantial and aims to compensate the complainant.\n\n**Process for Filing a Complaint:**\n\n1.  **Dishonour of Cheque:** When a cheque bounces, the bank issues a 'cheque return memo'.\n2.  **Demand Notice:** The payee must send a legal notice to the drawer within 30 days of receiving the cheque return memo, demanding payment of the cheque amount.\n3.  **Failure to Pay:** If the drawer fails to pay the amount within 15 days of receiving the notice, the cause of action arises.\n4.  **Filing a Complaint:** The payee can then file a criminal complaint under Section 138 of the NI Act before a Judicial Magistrate First Class (JMFC) or Metropolitan Magistrate within one month of the cause of action arising (Section 142(b) of the NI Act).\n    *   The complaint must be filed in the court within whose local jurisdiction the cheque was dishonoured by the bank on which it was drawn (Dashrath Rupsingh Rathod vs State of Maharashtra & Anr).\n    *   The complaint should be accompanied by supporting documents and a verification affidavit (Mr. Rajesh Bhalchandra Chalke vs State of Maharashtra).\n5.  **Court Proceedings:** The court will examine the complaint and evidence. If a prima facie case is made out, the court will issue summons to the accused.\n6.  **Compounding of Offence:** The offence under Section 138 is compoundable, meaning the parties can reach a settlement at any stage of the litigation. The Supreme Court has encouraged early compounding to reduce the burden on the judicial system and has even suggested a graded scheme of imposing costs on parties who delay compounding (Damodar S. Prabhu vs Sayed Babalal H). These costs are to be deposited with the relevant Legal Services Authority.\n\nIt's important to remember that while the law provides for punishment, the primary aim in many cheque bounce cases is to ensure the complainant receives the amount due to them.\n\nSources:\n- M/S Shanthi Fortune(India) Ltd vs M/S Mukka Sea Foods Industries on 10 September, 2014: https://indiankanoon.org/doc/155595139/\n- Damodar S.Prabhu vs Sayed Babalal H on 3 May, 2010: https://indiankanoon.org/doc/1594211/\n- Dashrath Rupsingh Rathod vs State Of Maharashtra & Anr on 1 August, 2014: https://indiankanoon.org/doc/100995424/\n- Mr. Rajesh Bhalchandra Chalke vs State Of Maharashtra on 7 December, 2010: https://indiankanoon.org/doc/57018/\n- Yasir Amin Khan vs Abdul Rashid Ganie on 22 November, 2021: https://indiankanoon.org/doc/112024483/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 25521,
+      "citation_titles": [
+        "M/S Shanthi Fortune(India) Ltd vs M/S Mukka Sea Foods Industries on 10 September, 2014",
+        "Damodar S.Prabhu vs Sayed Babalal H on 3 May, 2010",
+        "Dashrath Rupsingh Rathod vs State Of Maharashtra & Anr on 1 August, 2014",
+        "Mr. Rajesh Bhalchandra Chalke vs State Of Maharashtra on 7 December, 2010",
+        "Yasir Amin Khan vs Abdul Rashid Ganie on 22 November, 2021"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 6327,
+      "tokens_out": 951,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 1,
+        "unsupported_claims": [
+          "punishment up to 2 years or fine",
+          "legal notice within 30 days",
+          "drawer must pay within 15 days",
+          "complaint must be filed within 1 month",
+          "interim compensation under s.143A"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rubric_coverage": 0.8,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer is legally accurate but not supported by the provided context."
+      }
+    }
+  ]
+}

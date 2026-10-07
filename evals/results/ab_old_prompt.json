@@ -1,0 +1,413 @@
+{
+  "label": "ab_old_prompt",
+  "partial": false,
+  "timestamp": "2026-10-07T05:32:15.909842+00:00",
+  "git": {
+    "commit": "c9bb272",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": false,
+    "fresh_rewrite": true,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 0,
+      "doc": 0
+    },
+    "ikanoon_logical": {
+      "search": 5,
+      "doc": 25
+    }
+  },
+  "summary": {
+    "cases": 5,
+    "ok": 4,
+    "skipped_not_recorded": 1,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "citations_valid": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "disclaimer_present": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "ends_cleanly": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "expected_source_in_answer": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "expected_source_retrieved": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "no_error": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "not_truncated": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "route_ok": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "sections_grounded": {
+        "passed": 4,
+        "applicable": 4
+      }
+    },
+    "pass_rate_by_category": {
+      "consumer": 1.0,
+      "employment": 1.0,
+      "tenancy": 1.0
+    },
+    "latency_ms_p50": 6165,
+    "latency_ms_p95": 8272,
+    "ikanoon_calls_per_answer_case": 6.0,
+    "gen_tokens_in_mean": 2576.5,
+    "gen_tokens_out_mean": 382.75,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 1.0,
+    "retrieval_mrr": 1.0,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 3.75,
+    "judge_rubric_coverage_mean": 0.5,
+    "judge_personalised_advice_count": 1,
+    "judge_scored": 4,
+    "answer_models": {
+      "google_genai:gemini-2.5-flash": 4
+    },
+    "halted_on_daily_quota": false
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord refuses to return my security deposit after I vacated the flat. What can I do?",
+          "answer": "The provided sources do not directly address the issue of a landlord refusing to return a security deposit after a tenant vacates a flat. However, they do provide information on the termination of leases and the legal requirements for property transfers.\n\nAccording to Section 106 of The Transfer of Property Act, 1882, if there is no written contract or local law/usage to the contrary, a lease of immovable property for purposes other than agriculture or manufacturing is considered a month-to-month lease [1]. Such a lease can be terminated by either the landlord or the tenant by giving fifteen days' notice [1]. This notice must be in writing, signed by or on behalf of the person giving it, and sent by post, delivered personally, or affixed to a conspicuous part of the property [1]. The period of notice starts from the date the notice is received [1].\n\nThe sources also discuss the legal requirements for the sale of immovable property. A \"sale\" is defined as a transfer of ownership in exchange for a price [3]. For tangible immovable property valued at one hundred rupees or more, or for intangible property, a sale can only be made by a registered instrument [3]. For tangible immovable property valued at less than one hundred rupees, a sale can be made either by a registered instrument or by delivery of the property [3]. A contract for sale of immovable property does not, by itself, create any interest in or charge on the property [3].\n\nSection 49 of The Registration Act, 1908 states that a document required to be registered under Section 17 of that Act or by the Transfer of Property Act, 1882, will not affect any immovable property or be received as evidence of any transaction affecting such property unless it has been registered [5]. However, an unregistered document affecting immovable property may be used as evidence of a contract in a suit for specific performance [5].\n\nGeneral background (not from the retrieved sources): In India, disputes regarding security deposits are often governed by the terms of the rental agreement. If the agreement specifies conditions for the return of the deposit, those terms would generally apply. In the absence of a specific clause, general contract law principles and local tenancy laws might be relevant.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [3] Section 54 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/613871/\n- [5] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 8568,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2335,
+          "tokens_out": 461
+        }
+      ],
+      "final_answer": "The provided sources do not directly address the issue of a landlord refusing to return a security deposit after a tenant vacates a flat. However, they do provide information on the termination of leases and the legal requirements for property transfers.\n\nAccording to Section 106 of The Transfer of Property Act, 1882, if there is no written contract or local law/usage to the contrary, a lease of immovable property for purposes other than agriculture or manufacturing is considered a month-to-month lease [1]. Such a lease can be terminated by either the landlord or the tenant by giving fifteen days' notice [1]. This notice must be in writing, signed by or on behalf of the person giving it, and sent by post, delivered personally, or affixed to a conspicuous part of the property [1]. The period of notice starts from the date the notice is received [1].\n\nThe sources also discuss the legal requirements for the sale of immovable property. A \"sale\" is defined as a transfer of ownership in exchange for a price [3]. For tangible immovable property valued at one hundred rupees or more, or for intangible property, a sale can only be made by a registered instrument [3]. For tangible immovable property valued at less than one hundred rupees, a sale can be made either by a registered instrument or by delivery of the property [3]. A contract for sale of immovable property does not, by itself, create any interest in or charge on the property [3].\n\nSection 49 of The Registration Act, 1908 states that a document required to be registered under Section 17 of that Act or by the Transfer of Property Act, 1882, will not affect any immovable property or be received as evidence of any transaction affecting such property unless it has been registered [5]. However, an unregistered document affecting immovable property may be used as evidence of a contract in a suit for specific performance [5].\n\nGeneral background (not from the retrieved sources): In India, disputes regarding security deposits are often governed by the terms of the rental agreement. If the agreement specifies conditions for the return of the deposit, those terms would generally apply. In the absence of a specific clause, general contract law principles and local tenancy laws might be relevant.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [3] Section 54 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/613871/\n- [5] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7206,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2335,
+      "tokens_out": 461,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Security deposit governed by rental agreement",
+          "General contract law principles may apply",
+          "General background not from retrieved sources"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.2,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mixes supported statutory excerpts with unsupported general statements."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Can a landlord evict a tenant without giving any notice in India?",
+          "answer": "No, a landlord generally cannot evict a tenant without giving notice in India. The law specifies how and when a lease can be terminated.\n\nAccording to Section 106 of The Transfer of Property Act, 1882, if there is no written contract or local law/usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes is considered a year-to-year lease, which can be terminated by either the landlord or tenant with six months' notice [1]. For any other purpose, a lease of immovable property is considered a month-to-month lease, terminable by either party with fifteen days' notice [1]. This notice period starts from the date the notice is received [1]. The notice must be in writing, signed by or on behalf of the person giving it, and sent by post, delivered personally, or affixed to a conspicuous part of the property if personal delivery is not possible [1]. A notice is not invalid just because the period mentioned in it is shorter than the specified period, as long as a suit or proceeding is filed after the expiry of the period mentioned in the notice [1].\n\nGeneral background (not from the retrieved sources): These provisions aim to provide a degree of security for tenants and ensure that they have reasonable time to make alternative arrangements before eviction.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 5735,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2389,
+          "tokens_out": 269
+        }
+      ],
+      "final_answer": "No, a landlord generally cannot evict a tenant without giving notice in India. The law specifies how and when a lease can be terminated.\n\nAccording to Section 106 of The Transfer of Property Act, 1882, if there is no written contract or local law/usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes is considered a year-to-year lease, which can be terminated by either the landlord or tenant with six months' notice [1]. For any other purpose, a lease of immovable property is considered a month-to-month lease, terminable by either party with fifteen days' notice [1]. This notice period starts from the date the notice is received [1]. The notice must be in writing, signed by or on behalf of the person giving it, and sent by post, delivered personally, or affixed to a conspicuous part of the property if personal delivery is not possible [1]. A notice is not invalid just because the period mentioned in it is shorter than the specified period, as long as a suit or proceeding is filed after the expiry of the period mentioned in the notice [1].\n\nGeneral background (not from the retrieved sources): These provisions aim to provide a degree of security for tenants and ensure that they have reasonable time to make alternative arrangements before eviction.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7474,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2389,
+      "tokens_out": 269,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.25,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Cites Section 106 accurately but does not address due‑process, self‑help eviction, or specific grounds."
+      }
+    },
+    {
+      "id": "q06",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "skipped",
+      "turns": [
+        {
+          "user": "My employer has not paid my salary for the last two months. How can I recover it?",
+          "answer": "",
+          "error": "document not recorded: 1939183",
+          "missing": true,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 1144,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": null,
+          "stop_reason": null,
+          "tokens_in": 0,
+          "tokens_out": 0
+        }
+      ],
+      "reason": "document not recorded: 1939183"
+    },
+    {
+      "id": "q09",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Is an employee entitled to gratuity if they resign before completing 5 years?",
+          "answer": "No, generally an employee is not entitled to gratuity if they resign before completing five years of continuous service [1].\n\nAccording to Section 4 of The Payment of Gratuity Act, 1972, gratuity is payable to an employee upon termination of employment after they have completed continuous service of not less than five years, which includes resignation [1]. However, this five-year continuous service requirement is not necessary if the termination of employment is due to death or disablement [1]. \"Continuous service\" means continuous service as defined in Section 2-A of the Act, and a \"completed year of service\" means continuous service for one year [4].\n\nIf there is a dispute regarding the amount of gratuity, its admissibility, or who is entitled to receive it, the employer or employee can apply to the controlling authority to resolve the dispute [2]. The controlling authority will conduct an inquiry, give both parties a chance to be heard, and then determine the amount payable and direct the employer to pay it [2]. If the employer does not pay the gratuity within thirty days from the date it becomes payable, they must pay simple interest from that date until the payment is made, unless the delay is due to the employee's fault and the employer has written permission from the controlling authority for the delay [2]. If the gratuity is not paid within the prescribed time, the aggrieved person can apply to the controlling authority, who will issue a certificate to the Collector to recover the amount, along with compound interest, as arrears of land revenue [3]. Before issuing such a certificate, the controlling authority must give the employer a reasonable opportunity to show cause [3]. The interest payable cannot exceed the gratuity amount [3].\n\nGeneral background (not from the retrieved sources): Gratuity is a lump sum payment made by an employer to an employee as a token of appreciation for their services. It is one of the many retirement benefits provided to employees in India.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n- [2] Section 7 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1974722/\n- [3] Section 8 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/36768/\n- [4] Section 2 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/329413/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 4575,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3243,
+          "tokens_out": 402
+        }
+      ],
+      "final_answer": "No, generally an employee is not entitled to gratuity if they resign before completing five years of continuous service [1].\n\nAccording to Section 4 of The Payment of Gratuity Act, 1972, gratuity is payable to an employee upon termination of employment after they have completed continuous service of not less than five years, which includes resignation [1]. However, this five-year continuous service requirement is not necessary if the termination of employment is due to death or disablement [1]. \"Continuous service\" means continuous service as defined in Section 2-A of the Act, and a \"completed year of service\" means continuous service for one year [4].\n\nIf there is a dispute regarding the amount of gratuity, its admissibility, or who is entitled to receive it, the employer or employee can apply to the controlling authority to resolve the dispute [2]. The controlling authority will conduct an inquiry, give both parties a chance to be heard, and then determine the amount payable and direct the employer to pay it [2]. If the employer does not pay the gratuity within thirty days from the date it becomes payable, they must pay simple interest from that date until the payment is made, unless the delay is due to the employee's fault and the employer has written permission from the controlling authority for the delay [2]. If the gratuity is not paid within the prescribed time, the aggrieved person can apply to the controlling authority, who will issue a certificate to the Collector to recover the amount, along with compound interest, as arrears of land revenue [3]. Before issuing such a certificate, the controlling authority must give the employer a reasonable opportunity to show cause [3]. The interest payable cannot exceed the gratuity amount [3].\n\nGeneral background (not from the retrieved sources): Gratuity is a lump sum payment made by an employer to an employee as a token of appreciation for their services. It is one of the many retirement benefits provided to employees in India.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n- [2] Section 7 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1974722/\n- [3] Section 8 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/36768/\n- [4] Section 2 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/329413/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 9950,
+      "citation_titles": [
+        "Section 4 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 7 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 8 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 2 in THE PAYMENT OF GRATUITY ACT, 1972"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3243,
+      "tokens_out": 402,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 4,
+        "unsupported_claims": [
+          "Reference to Section 2‑A definition of continuous service not in provided context"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "rubric_coverage": 0.75,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mostly aligns with the retrieved law but cites a section not present in the context."
+      }
+    },
+    {
+      "id": "q11",
+      "category": "consumer",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "I bought a defective product online and the company refuses to replace it. What should I do?",
+          "answer": "If you bought a defective product online and the company refuses to replace it, you can file a complaint as a consumer under the Consumer Protection Act, 2019 [2].\n\nUnder the Consumer Protection Act, 2019, a \"complaint\" can be made in writing by a \"complainant\" (which includes a consumer) for obtaining relief under the Act [2]. A complaint can be made if the goods bought suffer from one or more defects, or if a trader refuses to take back or withdraw defective goods and refund the consideration within the stipulated period, or within thirty days if no period is stipulated [2]. The Central Consumer Protection Authority (Central Authority) is established under Section 10 of the Act [2]. The Central Authority has an Investigation Wing, headed by a Director-General, to conduct inquiries or investigations as directed by the Central Authority [1]. The Central Government appoints the Director-General and other officers who have experience in investigation [1]. The Director-General submits the inquiries or investigations to the Central Authority [1]. The Central Government also provides officers and other employees to the Central Authority for its efficient functioning [4]. The Central Authority can also engage experts and professionals with special knowledge in areas like consumer rights, law, and product safety to assist in its functions [4]. There is also a Central Consumer Protection Council (Central Council), which is an advisory council established by the Central Government [5].\n\nThe sources do not cover the specific process of how to file a complaint, where to file it, or the exact steps the Central Authority takes after receiving a complaint. They also do not specify the types of relief that can be granted.\n\nGeneral background (not from the retrieved sources): In India, consumer complaints are typically filed with the District Consumer Disputes Redressal Commission, State Consumer Disputes Redressal Commission, or National Consumer Disputes Redressal Commission, depending on the value of the goods or services and compensation claimed.\n\nSources:\n- [1] Section 15 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/113616985/\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n- [4] Section 13 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/132544212/\n- [5] Section 3 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/31197202/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 6595,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2339,
+          "tokens_out": 399
+        }
+      ],
+      "final_answer": "If you bought a defective product online and the company refuses to replace it, you can file a complaint as a consumer under the Consumer Protection Act, 2019 [2].\n\nUnder the Consumer Protection Act, 2019, a \"complaint\" can be made in writing by a \"complainant\" (which includes a consumer) for obtaining relief under the Act [2]. A complaint can be made if the goods bought suffer from one or more defects, or if a trader refuses to take back or withdraw defective goods and refund the consideration within the stipulated period, or within thirty days if no period is stipulated [2]. The Central Consumer Protection Authority (Central Authority) is established under Section 10 of the Act [2]. The Central Authority has an Investigation Wing, headed by a Director-General, to conduct inquiries or investigations as directed by the Central Authority [1]. The Central Government appoints the Director-General and other officers who have experience in investigation [1]. The Director-General submits the inquiries or investigations to the Central Authority [1]. The Central Government also provides officers and other employees to the Central Authority for its efficient functioning [4]. The Central Authority can also engage experts and professionals with special knowledge in areas like consumer rights, law, and product safety to assist in its functions [4]. There is also a Central Consumer Protection Council (Central Council), which is an advisory council established by the Central Government [5].\n\nThe sources do not cover the specific process of how to file a complaint, where to file it, or the exact steps the Central Authority takes after receiving a complaint. They also do not specify the types of relief that can be granted.\n\nGeneral background (not from the retrieved sources): In India, consumer complaints are typically filed with the District Consumer Disputes Redressal Commission, State Consumer Disputes Redressal Commission, or National Consumer Disputes Redressal Commission, depending on the value of the goods or services and compensation claimed.\n\nSources:\n- [1] Section 15 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/113616985/\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n- [4] Section 13 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/132544212/\n- [5] Section 3 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/31197202/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7697,
+      "citation_titles": [
+        "Section 15 in Consumer Protection Act, 2019",
+        "Section 2 in Consumer Protection Act, 2019",
+        "Section 12 in Consumer Protection Act, 2019",
+        "Section 13 in Consumer Protection Act, 2019",
+        "Section 3 in Consumer Protection Act, 2019"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2339,
+      "tokens_out": 399,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Consumer complaints are typically filed with the District/State/National Consumer Disputes Redressal Commission",
+          "National Consumer Helpline 1915 / e‑Daakhil",
+          "Send a written complaint to the seller/platform first",
+          "File complaint before the District Consumer Commission",
+          "Remedies: replacement, refund, compensation"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "rubric_coverage": 0.8,
+        "personalised_advice": true,
+        "language_ok": true,
+        "notes": "Answer mixes supported statutory details with unsupported procedural advice."
+      }
+    }
+  ]
+}

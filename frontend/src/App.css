@@ -1214,28 +1214,6 @@
   margin-bottom: 1rem;
 }
 
-.dev-otp-hint {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--primary-subtle);
-  border: 1px solid var(--border-medium);
-  color: var(--primary);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
-}
-
-.dev-otp-copy-btn {
-  background: var(--primary);
-  color: var(--primary-text);
-  border: none;
-  border-radius: 4px;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
 .modal-footer-actions {
   display: flex;
   justify-content: space-between;

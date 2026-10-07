@@ -14,3 +14,9 @@ __pycache__/
 
 # debug dumps from API experiments
 scripts/last_search_*.json
+/docs
+# Eval harness: recordings contain IKanoon content (licence terms unverified); results are committed deliberately
+evals/recordings/
+data/
+docs/
+

@@ -1,0 +1,404 @@
+{
+  "label": "ab_new_prompt",
+  "partial": false,
+  "timestamp": "2026-10-07T05:34:03.158209+00:00",
+  "git": {
+    "commit": "c9bb272",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": false,
+    "fresh_rewrite": false,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 0,
+      "doc": 0
+    },
+    "ikanoon_logical": {
+      "search": 5,
+      "doc": 25
+    }
+  },
+  "summary": {
+    "cases": 5,
+    "ok": 4,
+    "skipped_not_recorded": 1,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "citations_valid": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "disclaimer_present": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "ends_cleanly": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "expected_source_in_answer": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "expected_source_retrieved": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "no_error": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "not_truncated": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "route_ok": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "sections_grounded": {
+        "passed": 4,
+        "applicable": 4
+      }
+    },
+    "pass_rate_by_category": {
+      "consumer": 1.0,
+      "employment": 1.0,
+      "tenancy": 1.0
+    },
+    "latency_ms_p50": 3975,
+    "latency_ms_p95": 5139,
+    "ikanoon_calls_per_answer_case": 6.0,
+    "gen_tokens_in_mean": 2688.5,
+    "gen_tokens_out_mean": 350.5,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 1.0,
+    "retrieval_mrr": 1.0,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 4.5,
+    "judge_rubric_coverage_mean": 0.35,
+    "judge_personalised_advice_count": 1,
+    "judge_scored": 4,
+    "answer_models": {
+      "google_genai:gemini-2.5-flash": 4
+    },
+    "halted_on_daily_quota": false
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord refuses to return my security deposit after I vacated the flat. What can I do?",
+          "answer": "The provided sources do not contain information about security deposits or the process for a tenant to recover a security deposit from a landlord.\n\nHowever, the sources do provide general information about leases and property transfers. For instance, a lease of immovable property for purposes other than agriculture or manufacturing is considered a month-to-month lease, terminable by either the lessor or lessee with fifteen days' notice, unless there is a contract, local law, or usage to the contrary, as per Section 106(1) of The Transfer Of Property Act, 1882 [1]. This notice must be in writing, signed by or on behalf of the person giving it, and can be sent by post, delivered personally, or affixed to a conspicuous part of the property if personal delivery is not practicable, according to Section 106(4) of The Transfer Of Property Act, 1882 [1]. The period of notice begins from the date of receipt of the notice, as stated in Section 106(2) of The Transfer Of Property Act, 1882 [1].\n\nGeneral background (not from the retrieved sources): Security deposits are typically governed by the terms of the rental agreement between the landlord and tenant, and specific state rent control acts may also have provisions regarding their return.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 5320,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2447,
+          "tokens_out": 270
+        }
+      ],
+      "final_answer": "The provided sources do not contain information about security deposits or the process for a tenant to recover a security deposit from a landlord.\n\nHowever, the sources do provide general information about leases and property transfers. For instance, a lease of immovable property for purposes other than agriculture or manufacturing is considered a month-to-month lease, terminable by either the lessor or lessee with fifteen days' notice, unless there is a contract, local law, or usage to the contrary, as per Section 106(1) of The Transfer Of Property Act, 1882 [1]. This notice must be in writing, signed by or on behalf of the person giving it, and can be sent by post, delivered personally, or affixed to a conspicuous part of the property if personal delivery is not practicable, according to Section 106(4) of The Transfer Of Property Act, 1882 [1]. The period of notice begins from the date of receipt of the notice, as stated in Section 106(2) of The Transfer Of Property Act, 1882 [1].\n\nGeneral background (not from the retrieved sources): Security deposits are typically governed by the terms of the rental agreement between the landlord and tenant, and specific state rent control acts may also have provisions regarding their return.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7206,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2447,
+      "tokens_out": 270,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Security deposits are governed by rental agreement terms",
+          "State rent control acts may have provisions regarding deposit return"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.2,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mixes supported lease info with unsupported deposit guidance."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Can a landlord evict a tenant without giving any notice in India?",
+          "answer": "No, a landlord generally cannot evict a tenant without giving notice in India. The law specifies notice periods for terminating leases, especially when there is no written contract or local usage to the contrary [1].\n\nAccording to Section 106 of The Transfer of Property Act, 1882, if there is no contract, local law, or usage stating otherwise, a lease of immovable property for agricultural or manufacturing purposes is considered a year-to-year lease, which can be ended by either the landlord or tenant with six months' notice [1]. For any other purpose, a lease of immovable property is considered a month-to-month lease, terminable by either the landlord or tenant with fifteen days' notice [1]. The period of notice begins from the date the notice is received [1]. A notice is not invalid just because the period mentioned in it is shorter than the specified period, as long as a suit or proceeding is filed after the specified period has expired [1]. Every notice must be in writing, signed by or on behalf of the person giving it, and sent by post, or delivered personally to the party, or to a family member or servant at their residence, or affixed to a conspicuous part of the property if personal delivery is not practical [1].\n\nGeneral background (not from the retrieved sources):\nThese provisions aim to provide a structured process for ending tenancy agreements, ensuring that both landlords and tenants have reasonable time to make alternative arrangements.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 3032,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2501,
+          "tokens_out": 299
+        }
+      ],
+      "final_answer": "No, a landlord generally cannot evict a tenant without giving notice in India. The law specifies notice periods for terminating leases, especially when there is no written contract or local usage to the contrary [1].\n\nAccording to Section 106 of The Transfer of Property Act, 1882, if there is no contract, local law, or usage stating otherwise, a lease of immovable property for agricultural or manufacturing purposes is considered a year-to-year lease, which can be ended by either the landlord or tenant with six months' notice [1]. For any other purpose, a lease of immovable property is considered a month-to-month lease, terminable by either the landlord or tenant with fifteen days' notice [1]. The period of notice begins from the date the notice is received [1]. A notice is not invalid just because the period mentioned in it is shorter than the specified period, as long as a suit or proceeding is filed after the specified period has expired [1]. Every notice must be in writing, signed by or on behalf of the person giving it, and sent by post, or delivered personally to the party, or to a family member or servant at their residence, or affixed to a conspicuous part of the property if personal delivery is not practical [1].\n\nGeneral background (not from the retrieved sources):\nThese provisions aim to provide a structured process for ending tenancy agreements, ensuring that both landlords and tenants have reasonable time to make alternative arrangements.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7474,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2501,
+      "tokens_out": 299,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.25,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer aligns with Section 106 but omits other rubric points."
+      }
+    },
+    {
+      "id": "q06",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "skipped",
+      "turns": [
+        {
+          "user": "My employer has not paid my salary for the last two months. How can I recover it?",
+          "answer": "",
+          "error": "document not recorded: 1939183",
+          "missing": true,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 596,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": null,
+          "stop_reason": null,
+          "tokens_in": 0,
+          "tokens_out": 0
+        }
+      ],
+      "reason": "document not recorded: 1939183"
+    },
+    {
+      "id": "q09",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Is an employee entitled to gratuity if they resign before completing 5 years?",
+          "answer": "No, an employee is generally not entitled to gratuity if they resign before completing five years of continuous service, according to The Payment of Gratuity Act, 1972 [1].\n\nGratuity is payable to an employee upon termination of employment after they have completed continuous service for not less than five years [1]. This includes termination due to superannuation, retirement, or resignation [1]. However, the requirement of five years of continuous service is not necessary if the termination of employment is due to death or disablement [1]. Disablement means an incapacitation for the work the employee was capable of performing before the accident or disease [1]. For every completed year of service or part thereof in excess of six months, the employer must pay gratuity at the rate of fifteen days' wages based on the last drawn wages [1].\n\nIf there is a dispute regarding the amount of gratuity or who is entitled to it, the employer must deposit the admitted amount with the controlling authority [2]. The employer, employee, or any other person involved in the dispute can apply to the controlling authority to resolve the matter [2]. The controlling authority will conduct an inquiry, give parties a chance to be heard, and then determine the amount payable, directing the employer to pay it [2]. If the employer does not pay the gratuity within thirty days from the date it becomes payable, they must pay simple interest from that date until the payment is made [2]. This interest is not payable if the delay is due to the employee's fault and the employer has written permission from the controlling authority for the delay [2]. If the gratuity is not paid within the prescribed time, the controlling authority can issue a certificate to the Collector, who will recover the amount with compound interest as arrears of land revenue [3]. The controlling authority must give the employer a reasonable opportunity to show cause before issuing such a certificate [3]. The amount of interest payable cannot exceed the amount of gratuity [3].\n\nGeneral background (not from the retrieved sources):\nGratuity is a lump sum payment made by an employer to an employee as a token of appreciation for their long-term service. It is a statutory right for employees covered under the Act.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n- [2] Section 7 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1974722/\n- [3] Section 8 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/36768/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 4119,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3355,
+          "tokens_out": 453
+        }
+      ],
+      "final_answer": "No, an employee is generally not entitled to gratuity if they resign before completing five years of continuous service, according to The Payment of Gratuity Act, 1972 [1].\n\nGratuity is payable to an employee upon termination of employment after they have completed continuous service for not less than five years [1]. This includes termination due to superannuation, retirement, or resignation [1]. However, the requirement of five years of continuous service is not necessary if the termination of employment is due to death or disablement [1]. Disablement means an incapacitation for the work the employee was capable of performing before the accident or disease [1]. For every completed year of service or part thereof in excess of six months, the employer must pay gratuity at the rate of fifteen days' wages based on the last drawn wages [1].\n\nIf there is a dispute regarding the amount of gratuity or who is entitled to it, the employer must deposit the admitted amount with the controlling authority [2]. The employer, employee, or any other person involved in the dispute can apply to the controlling authority to resolve the matter [2]. The controlling authority will conduct an inquiry, give parties a chance to be heard, and then determine the amount payable, directing the employer to pay it [2]. If the employer does not pay the gratuity within thirty days from the date it becomes payable, they must pay simple interest from that date until the payment is made [2]. This interest is not payable if the delay is due to the employee's fault and the employer has written permission from the controlling authority for the delay [2]. If the gratuity is not paid within the prescribed time, the controlling authority can issue a certificate to the Collector, who will recover the amount with compound interest as arrears of land revenue [3]. The controlling authority must give the employer a reasonable opportunity to show cause before issuing such a certificate [3]. The amount of interest payable cannot exceed the amount of gratuity [3].\n\nGeneral background (not from the retrieved sources):\nGratuity is a lump sum payment made by an employer to an employee as a token of appreciation for their long-term service. It is a statutory right for employees covered under the Act.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n- [2] Section 7 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1974722/\n- [3] Section 8 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/36768/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 9950,
+      "citation_titles": [
+        "Section 4 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 7 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 8 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 2 in THE PAYMENT OF GRATUITY ACT, 1972"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3355,
+      "tokens_out": 453,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "rubric_coverage": 0.75,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer covers most rubric points but omits the 240‑day rule."
+      }
+    },
+    {
+      "id": "q11",
+      "category": "consumer",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "I bought a defective product online and the company refuses to replace it. What should I do?",
+          "answer": "If you have bought a defective product online and the company refuses to replace it, you can file a complaint under the Consumer Protection Act, 2019. A complaint can be made if the goods bought suffer from one or more defects [2].\n\nUnder the Consumer Protection Act, 2019, a \"complainant\" can be a consumer, a voluntary consumer association, the Central Government or any State Government, the Central Authority, or one or more consumers with the same interest [2]. In case of a consumer's death, their legal heir or representative can complain, and for a minor consumer, their parent or legal guardian can complain [2]. A \"complaint\" is a written allegation made by a complainant to get relief under this Act [2]. This includes allegations that goods bought suffer from defects, or that a trader refuses to take back defective goods and refund the money within a stipulated period or within thirty days if no period is stipulated [2]. The Central Authority, established under Section 10 of the Act, has an Investigation Wing headed by a Director-General to conduct inquiries or investigations as directed by the Central Authority [1], [2]. The Central Government appoints the Director-General and other officers who have experience in investigation [1]. The Director-General submits the inquiries or investigations to the Central Authority [1]. The Central Government also provides the Central Authority with necessary officers and employees for its functions [4]. The Central Authority can also engage experts and professionals with special knowledge in areas like consumer rights, law, and product safety to assist it [4]. The Central Government also establishes the Central Consumer Protection Council, which is an advisory council [5].\n\nGeneral background (not from the retrieved sources): The Consumer Protection Act, 2019, aims to protect the interests of consumers and provides mechanisms for redressal of consumer grievances.\n\nSources:\n- [1] Section 15 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/113616985/\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n- [4] Section 13 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/132544212/\n- [5] Section 3 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/31197202/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 3831,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2451,
+          "tokens_out": 380
+        }
+      ],
+      "final_answer": "If you have bought a defective product online and the company refuses to replace it, you can file a complaint under the Consumer Protection Act, 2019. A complaint can be made if the goods bought suffer from one or more defects [2].\n\nUnder the Consumer Protection Act, 2019, a \"complainant\" can be a consumer, a voluntary consumer association, the Central Government or any State Government, the Central Authority, or one or more consumers with the same interest [2]. In case of a consumer's death, their legal heir or representative can complain, and for a minor consumer, their parent or legal guardian can complain [2]. A \"complaint\" is a written allegation made by a complainant to get relief under this Act [2]. This includes allegations that goods bought suffer from defects, or that a trader refuses to take back defective goods and refund the money within a stipulated period or within thirty days if no period is stipulated [2]. The Central Authority, established under Section 10 of the Act, has an Investigation Wing headed by a Director-General to conduct inquiries or investigations as directed by the Central Authority [1], [2]. The Central Government appoints the Director-General and other officers who have experience in investigation [1]. The Director-General submits the inquiries or investigations to the Central Authority [1]. The Central Government also provides the Central Authority with necessary officers and employees for its functions [4]. The Central Authority can also engage experts and professionals with special knowledge in areas like consumer rights, law, and product safety to assist it [4]. The Central Government also establishes the Central Consumer Protection Council, which is an advisory council [5].\n\nGeneral background (not from the retrieved sources): The Consumer Protection Act, 2019, aims to protect the interests of consumers and provides mechanisms for redressal of consumer grievances.\n\nSources:\n- [1] Section 15 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/113616985/\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n- [4] Section 13 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/132544212/\n- [5] Section 3 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/31197202/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7697,
+      "citation_titles": [
+        "Section 15 in Consumer Protection Act, 2019",
+        "Section 2 in Consumer Protection Act, 2019",
+        "Section 12 in Consumer Protection Act, 2019",
+        "Section 13 in Consumer Protection Act, 2019",
+        "Section 3 in Consumer Protection Act, 2019"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2451,
+      "tokens_out": 380,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.2,
+        "personalised_advice": true,
+        "language_ok": true,
+        "notes": "Answer is faithful but misses several rubric steps."
+      }
+    }
+  ]
+}

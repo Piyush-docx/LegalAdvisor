@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 980" width="100%" role="img" aria-label="Citizen Legal Help — whole-system master diagram">
+<title>Citizen Legal Help — master diagram</title>
+<style>
+  .bg{fill:#ffffff}
+  .band{fill:#f6f8fc;stroke:#c3cad8;stroke-width:1.5}
+  .bandext{fill:#fffaf2;stroke:#e0a760;stroke-width:1.5}
+  .banddata{fill:#faf5ff;stroke:#b9a0e8;stroke-width:1.5}
+  .bandlabel{font:600 12px system-ui,-apple-system,Segoe UI,sans-serif;fill:#5a6577;letter-spacing:.04em}
+  .box{fill:#eef2fd;stroke:#7d93d6;stroke-width:1.4}
+  .boxhot{fill:#d8e4fd;stroke:#1a73e8;stroke-width:2.2}
+  .boxfree{fill:#e3f5e8;stroke:#1e8e3e;stroke-width:1.6}
+  .boxpaid{fill:#fdeaea;stroke:#d93025;stroke-width:1.6}
+  .boxext{fill:#fdefdc;stroke:#d9822b;stroke-width:1.6}
+  .boxdata{fill:#f2e9fe;stroke:#8b5cf6;stroke-width:1.5}
+  .actor{fill:#ffffff;stroke:#5a6577;stroke-width:1.6}
+  .title{font:700 12.5px system-ui,-apple-system,Segoe UI,sans-serif;fill:#161d2b;text-anchor:middle}
+  .sub{font:400 11px system-ui,-apple-system,Segoe UI,sans-serif;fill:#414b5c;text-anchor:middle}
+  .elabel{font:600 10.5px system-ui,-apple-system,Segoe UI,sans-serif;fill:#2b3546}
+  .edge{fill:none;stroke:#5a6577;stroke-width:1.5}
+  .edgefree{fill:none;stroke:#1e8e3e;stroke-width:1.8}
+  .edgepaid{fill:none;stroke:#d93025;stroke-width:1.8}
+  .edgeplan{fill:none;stroke:#9aa0a6;stroke-width:1.5;stroke-dasharray:6 4}
+  .note{font:400 10.5px system-ui,-apple-system,Segoe UI,sans-serif;fill:#5a6577}
+  .key{font:600 11px system-ui,-apple-system,Segoe UI,sans-serif;fill:#2b3546}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#12151c}
+    .band{fill:#1a1f2b;stroke:#3a4356}
+    .bandext{fill:#241d13;stroke:#7a5426}
+    .banddata{fill:#201a2e;stroke:#5c4899}
+    .bandlabel{fill:#9aa5b8}
+    .box{fill:#1e2740;stroke:#6b82c9}
+    .boxhot{fill:#1e3358;stroke:#5b9bf8}
+    .boxfree{fill:#14301e;stroke:#3ea55f}
+    .boxpaid{fill:#331717;stroke:#e06055}
+    .boxext{fill:#2c2112;stroke:#d9822b}
+    .boxdata{fill:#251b38;stroke:#a483f0}
+    .actor{fill:#1a1f2b;stroke:#9aa5b8}
+    .title{fill:#eef1f7}
+    .sub{fill:#b9c2d2}
+    .elabel{fill:#cdd5e3}
+    .edge{stroke:#8d99ad}
+    .note{fill:#9aa5b8}
+    .key{fill:#cdd5e3}
+  }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5a6577"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1280" height="980"/>
+<rect class="actor" x="40" y="14" width="210" height="50" rx="20"/>
+<text class="title" x="145" y="36">Citizen</text>
+<text class="sub" x="145" y="52">asks in everyday language</text>
+<rect class="actor" x="380" y="14" width="210" height="50" rx="20"/>
+<text class="title" x="485" y="36">Admin</text>
+<text class="sub" x="485" y="52">email listed in ADMIN_EMAILS</text>
+<rect class="band" x="28" y="84" width="872" height="118" rx="10"/>
+<text class="bandlabel" x="42" y="104">BROWSER</text>
+<text class="bandlabel" style="font-weight:400" x="886" y="104" text-anchor="end">React 19 · Vite :5173 · Context only, no state library</text>
+<rect class="box" x="46" y="108" width="168" height="76" rx="6"/>
+<text class="title" x="130" y="128">Chat.jsx</text>
+<text class="sub" x="130" y="146">messages · sessionId</text>
+<text class="sub" x="130" y="161">sessions · isLoading</text>
+<rect class="box" x="228" y="108" width="150" height="76" rx="6"/>
+<text class="title" x="303" y="128">Sidebar.jsx</text>
+<text class="sub" x="303" y="146">list · search</text>
+<text class="sub" x="303" y="161">rename · delete</text>
+<rect class="box" x="392" y="108" width="140" height="76" rx="6"/>
+<text class="title" x="462" y="128">Admin.jsx</text>
+<text class="sub" x="462" y="146">metrics table</text>
+<text class="sub" x="462" y="161">(P9)</text>
+<rect class="box" x="546" y="108" width="150" height="76" rx="6"/>
+<text class="title" x="621" y="128">LoginModal</text>
+<text class="sub" x="621" y="146">email, then</text>
+<text class="sub" x="621" y="161">6-digit code</text>
+<rect class="boxhot" x="710" y="108" width="172" height="76" rx="6"/>
+<text class="title" x="796" y="128">api/client.js</text>
+<text class="sub" x="796" y="146">the ONLY fetch layer</text>
+<text class="sub" x="796" y="161">Bearer from localStorage</text>
+<rect class="band" x="28" y="232" width="872" height="566" rx="10"/>
+<text class="bandlabel" x="42" y="252">BACKEND</text>
+<text class="bandlabel" style="font-weight:400" x="886" y="252" text-anchor="end">FastAPI :8000 · uvicorn · sync def on threadpool</text>
+<rect class="box" x="46" y="256" width="396" height="56" rx="6"/>
+<text class="title" x="244" y="276">api.py</text>
+<text class="sub" x="244" y="294">10 routes · Pydantic validation · CORS allow-list</text>
+<rect class="box" x="460" y="256" width="422" height="56" rx="6"/>
+<text class="title" x="671" y="276">auth.py — dependency ladder</text>
+<text class="sub" x="671" y="294">optional  →  required  →  admin   (P6)</text>
+<rect class="boxhot" x="46" y="336" width="836" height="46" rx="6"/>
+<text class="title" x="464" y="356">pipeline.answer_question</text>
+<text class="sub" x="464" y="374">the only place the three branches meet</text>
+<rect class="box" x="46" y="406" width="268" height="50" rx="6"/>
+<text class="title" x="180" y="426">classify_intent</text>
+<text class="sub" x="180" y="444">regex fast path, then Gemini</text>
+<rect class="boxfree" x="46" y="486" width="250" height="74" rx="6"/>
+<text class="title" x="171" y="506">CHITCHAT</text>
+<text class="sub" x="171" y="524">hardcoded reply</text>
+<text class="sub" x="171" y="539">0 Gemini · 0 IKanoon · ₹0</text>
+<rect class="boxfree" x="316" y="486" width="268" height="74" rx="6"/>
+<text class="title" x="450" y="506">FOLLOW_UP</text>
+<text class="sub" x="450" y="524">reuse session.last_context_text</text>
+<text class="sub" x="450" y="539">if the check returns True → ₹0</text>
+<rect class="box" x="604" y="486" width="278" height="74" rx="6"/>
+<text class="title" x="743" y="506">NEW_QUERY</text>
+<text class="sub" x="743" y="524">rewrite_query  (P1)</text>
+<text class="sub" x="743" y="539">then look in the cache</text>
+<rect class="boxfree" x="604" y="584" width="278" height="46" rx="6"/>
+<text class="title" x="743" y="604">query_cache lookup</text>
+<text class="sub" x="743" y="622">hit → 0 IKanoon calls   (P7)</text>
+<rect class="boxpaid" x="316" y="656" width="566" height="62" rx="6"/>
+<text class="title" x="599" y="676">build_context — 1 search + 5 parallel doc fetches (P4)</text>
+<text class="sub" x="599" y="694">extract Issue / Facts / Conclusion only, ~90% fewer tokens (P2)</text>
+<text class="sub" x="599" y="709">₹0.50–0.90 per question</text>
+<rect class="boxhot" x="46" y="742" width="836" height="42" rx="6"/>
+<text class="title" x="464" y="762">attach_disclaimer_and_attribution — every non-CHITCHAT path (P8)</text>
+<rect class="band" x="930" y="232" width="322" height="330" rx="10"/>
+<text class="bandlabel" x="944" y="252">EXTERNAL</text>
+<text class="bandlabel" style="font-weight:400" x="1238" y="252" text-anchor="end">we own none of this</text>
+<rect class="boxext" x="946" y="258" width="290" height="86" rx="6"/>
+<text class="title" x="1091" y="278">Indian Kanoon API</text>
+<text class="sub" x="1091" y="296">POST /search/ · POST /doc/{tid}/</text>
+<text class="sub" x="1091" y="311">keyword only · PREPAID, no grace period</text>
+<text class="sub" x="1091" y="326">the entire legal corpus</text>
+<rect class="boxext" x="946" y="360" width="290" height="86" rx="6"/>
+<text class="title" x="1091" y="380">Google Gemini API</text>
+<text class="sub" x="1091" y="398">gemini-2.5-flash</text>
+<text class="sub" x="1091" y="413">4 call sites: route · rewrite ·</text>
+<text class="sub" x="1091" y="428">context-check · explain</text>
+<rect class="boxext" x="946" y="462" width="290" height="60" rx="6"/>
+<text class="title" x="1091" y="482">SMTP</text>
+<text class="sub" x="1091" y="500">OTP delivery, or console log</text>
+<text class="sub" x="1091" y="515">when unconfigured</text>
+<rect class="banddata" x="930" y="590" width="322" height="222" rx="10"/>
+<text class="bandlabel" x="944" y="610">DATA</text>
+<text class="bandlabel" style="font-weight:400" x="1238" y="610" text-anchor="end">SQLite · legal.db</text>
+<rect class="boxdata" x="946" y="616" width="138" height="44" rx="6"/>
+<text class="title" x="1015" y="636">users</text>
+<text class="sub" x="1015" y="654">id · email</text>
+<rect class="boxdata" x="1096" y="616" width="140" height="44" rx="6"/>
+<text class="title" x="1166" y="636">otps</text>
+<text class="sub" x="1166" y="654">⚠ plaintext code</text>
+<rect class="boxdata" x="946" y="672" width="138" height="44" rx="6"/>
+<text class="title" x="1015" y="692">sessions</text>
+<text class="sub" x="1015" y="710">last_context_text</text>
+<rect class="boxdata" x="1096" y="672" width="140" height="44" rx="6"/>
+<text class="title" x="1166" y="692">messages</text>
+<text class="sub" x="1166" y="710">append-only</text>
+<rect class="boxdata" x="946" y="728" width="138" height="60" rx="6"/>
+<text class="title" x="1015" y="748">query_cache</text>
+<text class="sub" x="1015" y="766">key = rewritten</text>
+<text class="sub" x="1015" y="781">⚠ no TTL</text>
+<rect class="boxdata" x="1096" y="728" width="140" height="60" rx="6"/>
+<text class="title" x="1166" y="748">query_logs</text>
+<text class="sub" x="1166" y="766">latency · intent</text>
+<text class="sub" x="1166" y="781">no user_id</text>
+<path class="edge" d="M 145 64 L 145 108" marker-end="url(#ah)"/>
+<text class="elabel" x="150" y="82" text-anchor="start">question</text>
+<path class="edge" d="M 485 64 L 462 108" marker-end="url(#ah)"/>
+<text class="elabel" x="500" y="86" text-anchor="start">/admin</text>
+<path class="edge" d="M 796 184 L 796 214 L 300 214 L 300 256" marker-end="url(#ah)"/>
+<text class="elabel" x="548" y="228" text-anchor="middle">fetch · JSON · Bearer</text>
+<path class="edge" d="M 244 312 L 244 336" marker-end="url(#ah)"/>
+<path class="edge" d="M 671 312 L 671 326 L 640 326 L 640 336" marker-end="url(#ah)"/>
+<text class="elabel" x="700" y="330" text-anchor="start">user_id or None</text>
+<path class="edge" d="M 180 382 L 180 406" marker-end="url(#ah)"/>
+<path class="edgefree" d="M 140 456 L 140 486" marker-end="url(#ah)"/>
+<path class="edgefree" d="M 230 456 L 230 470 L 430 470 L 430 486" marker-end="url(#ah)"/>
+<text class="elabel" x="330" y="466" text-anchor="middle">RouteIntent</text>
+<path class="edge" d="M 300 428 L 743 428 L 743 486" marker-end="url(#ah)"/>
+<text class="elabel" x="752" y="452" text-anchor="start">NEW_QUERY</text>
+<path class="edge" d="M 743 560 L 743 584" marker-end="url(#ah)"/>
+<path class="edgepaid" d="M 743 630 L 743 644 L 620 644 L 620 656" marker-end="url(#ah)"/>
+<text class="elabel" x="760" y="648" text-anchor="start">None → pay</text>
+<path class="edgepaid" d="M 430 560 L 430 656" marker-end="url(#ah)"/>
+<text class="elabel" x="436" y="600" text-anchor="start">False</text>
+<path class="edgefree" d="M 140 560 L 140 742" marker-end="url(#ah)"/>
+<path class="edgefree" d="M 380 560 L 380 600 L 250 600 L 250 730 L 300 742" marker-end="url(#ah)"/>
+<text class="elabel" x="256" y="596" text-anchor="start">True</text>
+<path class="edge" d="M 599 718 L 599 742" marker-end="url(#ah)"/>
+<path class="edgepaid" d="M 882 687 L 906 687 L 906 301 L 946 301" marker-end="url(#ah)"/>
+<path class="edge" d="M 882 359 L 914 359 L 914 403 L 946 403" marker-end="url(#ah)"/>
+<path class="edge" d="M 882 284 L 922 284 L 922 492 L 946 492" marker-end="url(#ah)"/>
+<path class="edge" d="M 882 763 L 890 763 L 890 700 L 930 700" marker-end="url(#ah)"/>
+<text class="key" x="40" y="838">Reading the colours</text>
+<rect class="boxfree" x="40" y="850" width="18" height="14" rx="3"/>
+<text class="note" x="66" y="861">₹0 in Indian Kanoon fees — three of five paths (P3)</text>
+<rect class="boxpaid" x="40" y="872" width="18" height="14" rx="3"/>
+<text class="note" x="66" y="883">₹0.50–0.90 per question — the paid retrieval path</text>
+<rect class="boxhot" x="40" y="894" width="18" height="14" rx="3"/>
+<text class="note" x="66" y="905">the seams everything else routes through</text>
+<text class="note" x="40" y="932">⚠ marks a known defect, drawn where it lives. P-numbers are problem IDs — see uml/README.md.</text>
+<text class="note" x="40" y="952">The system owns no legal corpus: every answer&#8217;s law is fetched from Indian Kanoon at request time.</text>
+<text class="note" x="40" y="968">That one constraint explains the router, the rewriter, the extractor and the cache.</text>
+</svg>

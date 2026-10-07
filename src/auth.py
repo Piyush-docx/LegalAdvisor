@@ -3,7 +3,7 @@ import logging
 import os
 import secrets
 import smtplib
-from email.mime.text import MIMEText
+from email.message import EmailMessage
 from typing import Optional
 import uuid
 
@@ -25,6 +25,12 @@ TOKEN_EXPIRY_SECONDS = 86400  # 24 hours / 1 day
 OTP_VALIDITY_MINUTES = 10
 
 serializer = URLSafeTimedSerializer(SECRET_KEY, salt="auth-token")
+
+SMTP_TIMEOUT_SECONDS = 15
+
+
+class OTPDeliveryError(Exception):
+    """The login code could not be emailed."""
 
 
 def create_auth_token(email: str, user_id: str) -> str:
@@ -60,41 +66,63 @@ def generate_otp(email: str, db_conn=None) -> str:
         if not db_conn:
             conn.close()
 
-    send_otp(normalized_email, otp_code)
+    try:
+        send_otp(normalized_email, otp_code)
+    except OTPDeliveryError:
+        # Don't leave a valid code behind that the user never received.
+        conn = db_conn or get_db()
+        try:
+            with conn:
+                conn.execute(
+                    "DELETE FROM otps WHERE email = ? AND otp_code = ? AND used = 0",
+                    (normalized_email, otp_code),
+                )
+        finally:
+            if not db_conn:
+                conn.close()
+        raise
     return otp_code
 
 
+def smtp_configured() -> bool:
+    return all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD"))
+
+
 def send_otp(email: str, code: str) -> None:
-    """Send OTP via SMTP if configured, or log to console for development."""
-    smtp_host = os.environ.get("SMTP_HOST")
+    """Email the code over SMTP. Without SMTP settings (local dev only) print it to the terminal.
+
+    Raises OTPDeliveryError if SMTP is configured but sending fails, so the API never claims
+    a code was sent when it was not."""
+    if not smtp_configured():
+        logger.warning("SMTP is not configured: OTP for %s is %s (dev only)", _mask_email(email), code)
+        return
+
+    smtp_host = os.environ["SMTP_HOST"]
     smtp_port = int(os.environ.get("SMTP_PORT", "587"))
-    smtp_user = os.environ.get("SMTP_USER")
-    smtp_password = os.environ.get("SMTP_PASSWORD")
+    smtp_user = os.environ["SMTP_USER"]
+    # Providers such as Brevo log in with a technical username; the visible sender must be a
+    # verified address, which is what SMTP_FROM is for.
+    sender = os.environ.get("SMTP_FROM") or smtp_user
 
-    if smtp_host and smtp_user and smtp_password:
-        try:
-            msg = MIMEText(
-                f"Your Legal Help login code is: {code}\n\n"
-                f"This code will expire in {OTP_VALIDITY_MINUTES} minutes.\n"
-                "If you did not request this code, please ignore this email."
-            )
-            msg["Subject"] = "Your Legal Help Login Code"
-            msg["From"] = smtp_user
-            msg["To"] = email
+    msg = EmailMessage()
+    msg["Subject"] = "Your Legal Help Login Code"
+    msg["From"] = sender
+    msg["To"] = email
+    msg.set_content(
+        f"Your Legal Help login code is: {code}\n\n"
+        f"This code will expire in {OTP_VALIDITY_MINUTES} minutes.\n"
+        "If you did not request this code, please ignore this email."
+    )
 
-            with smtplib.SMTP(smtp_host, smtp_port) as server:
-                server.starttls()
-                server.login(smtp_user, smtp_password)
-                server.send_message(msg)
-            logger.info(f"OTP email sent successfully to {_mask_email(email)}")
-            return
-        except Exception as exc:
-            logger.error(f"Failed to send OTP email via SMTP to {_mask_email(email)}: {exc}")
-
-    # Fallback to local dev logger
-    logger.info("==================================================")
-    logger.info(f"[AUTH DEV] OTP for {_mask_email(email)} is: {code}")
-    logger.info("==================================================")
+    try:
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=SMTP_TIMEOUT_SECONDS) as server:
+            server.starttls()
+            server.login(smtp_user, os.environ["SMTP_PASSWORD"])
+            server.send_message(msg)
+    except Exception as exc:
+        logger.error("Failed to send OTP email to %s: %s: %s", _mask_email(email), type(exc).__name__, exc)
+        raise OTPDeliveryError(str(exc)) from exc
+    logger.info("OTP email sent to %s", _mask_email(email))
 
 
 def _mask_email(email: str) -> str:

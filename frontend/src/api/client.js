@@ -145,3 +145,22 @@ export async function fetchAdminLogs() {
 
   return response.json()
 }
+
+export async function sendFeedback({ rating, question, answerExcerpt, sessionId }) {
+  const response = await fetch(`${API_BASE}/feedback`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    body: JSON.stringify({
+      rating,
+      question: question.slice(0, 2000),
+      answer_excerpt: answerExcerpt.slice(0, 1000),
+      session_id: sessionId || null,
+    }),
+  })
+
+  if (!response.ok) {
+    throw new Error('Could not save feedback.')
+  }
+
+  return response.json()
+}

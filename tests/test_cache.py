@@ -66,3 +66,54 @@ def test_pipeline_cache_hit_bypasses_llm(
     # Verify expensive functions were NOT called
     mock_build.assert_not_called()
     mock_explain.assert_not_called()
+
+
+def _run_new_query(mock_classify, mock_rewrite, mock_build, mock_explain, context, answer):
+    from src.router import RouteIntent
+
+    mock_classify.return_value = RouteIntent.NEW_QUERY
+    mock_rewrite.return_value = '"deposit" ANDD tenancy doctypes: laws'
+    mock_build.return_value = (context, [Citation(title="T", docsource="SC", publishdate="2020", url="u")])
+    mock_explain.return_value = answer
+    return answer_question("my landlord keeps my deposit")
+
+
+def _answer(text="An answer.", truncated=False):
+    from src.generation.schemas import LLMAnswer, Usage
+
+    return LLMAnswer(
+        text=text, stop_reason="MAX_TOKENS" if truncated else "STOP", truncated=truncated,
+        usage=Usage(input_tokens=1, output_tokens=1),
+    )
+
+
+@patch("src.pipeline.explain_with_llm")
+@patch("src.pipeline.build_context")
+@patch("src.pipeline.rewrite_query")
+@patch("src.pipeline.classify_intent")
+def test_miss_caches_grounded_complete_answer_without_history(mock_classify, mock_rewrite, mock_build, mock_explain):
+    _run_new_query(mock_classify, mock_rewrite, mock_build, mock_explain, "real context", _answer())
+
+    assert get_cached_query('"deposit" ANDD tenancy doctypes: laws') is not None
+    # Shared cache entries must never be generated from one user's conversation history.
+    assert mock_explain.call_args.kwargs["history"] is None
+
+
+@patch("src.pipeline.explain_with_llm")
+@patch("src.pipeline.build_context")
+@patch("src.pipeline.rewrite_query")
+@patch("src.pipeline.classify_intent")
+def test_miss_does_not_cache_empty_context_answer(mock_classify, mock_rewrite, mock_build, mock_explain):
+    _run_new_query(mock_classify, mock_rewrite, mock_build, mock_explain, "", _answer())
+
+    assert get_cached_query('"deposit" ANDD tenancy doctypes: laws') is None
+
+
+@patch("src.pipeline.explain_with_llm")
+@patch("src.pipeline.build_context")
+@patch("src.pipeline.rewrite_query")
+@patch("src.pipeline.classify_intent")
+def test_miss_does_not_cache_truncated_answer(mock_classify, mock_rewrite, mock_build, mock_explain):
+    _run_new_query(mock_classify, mock_rewrite, mock_build, mock_explain, "real context", _answer(truncated=True))
+
+    assert get_cached_query('"deposit" ANDD tenancy doctypes: laws') is None

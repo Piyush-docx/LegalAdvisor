@@ -1,0 +1,249 @@
+{
+  "label": "pg_tiers_2",
+  "partial": false,
+  "timestamp": "2026-10-07T05:39:59.393944+00:00",
+  "git": {
+    "commit": "c9bb272",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash,groq:openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": false,
+    "fresh_rewrite": false,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 0,
+      "doc": 0
+    },
+    "ikanoon_logical": {
+      "search": 3,
+      "doc": 10
+    }
+  },
+  "summary": {
+    "cases": 2,
+    "ok": 2,
+    "skipped_not_recorded": 0,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "citations_valid": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "disclaimer_present": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "ends_cleanly": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "expected_source_in_answer": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "expected_source_retrieved": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "no_error": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "not_truncated": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "route_ok": {
+        "passed": 2,
+        "applicable": 2
+      },
+      "sections_grounded": {
+        "passed": 2,
+        "applicable": 2
+      }
+    },
+    "pass_rate_by_category": {
+      "tenancy": 1.0
+    },
+    "latency_ms_p50": 8168,
+    "latency_ms_p95": 10763,
+    "ikanoon_calls_per_answer_case": 3.5,
+    "gen_tokens_in_mean": 2430.5,
+    "gen_tokens_out_mean": 154.0,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 1.0,
+    "retrieval_mrr": 1.0,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 4.0,
+    "judge_rubric_coverage_mean": 0.35,
+    "judge_personalised_advice_count": 0,
+    "judge_scored": 2,
+    "tiers": {
+      "tier:cold": 2
+    },
+    "answer_models": {
+      "google_genai:gemini-2.5-flash": 1,
+      "groq:openai/gpt-oss-120b": 1
+    },
+    "halted_on_daily_quota": true
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord refuses to return my security deposit after I vacated the flat. What can I do?",
+          "answer": "The provided sources do not contain information about security deposits or their return by landlords. Therefore, it is not possible to answer your question based on the given legal texts.\n\nGeneral background (not from the retrieved sources): Disputes regarding security deposits are typically governed by the terms of the rental agreement and relevant state-specific rent control laws.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [2] Section 53A in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/221518/\n- [3] Section 54 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/613871/\n- [4] Section 52 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/1634925/\n- [5] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 11052,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2447,
+          "tokens_out": 66
+        }
+      ],
+      "final_answer": "The provided sources do not contain information about security deposits or their return by landlords. Therefore, it is not possible to answer your question based on the given legal texts.\n\nGeneral background (not from the retrieved sources): Disputes regarding security deposits are typically governed by the terms of the rental agreement and relevant state-specific rent control laws.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [2] Section 53A in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/221518/\n- [3] Section 54 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/613871/\n- [4] Section 52 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/1634925/\n- [5] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7206,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2447,
+      "tokens_out": 66,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [
+        "tier:cold"
+      ],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Security deposits are typically governed by rental agreement and state rent control laws"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.2,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer includes unsupported general background despite noting lack of source info."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Can a landlord evict a tenant without giving any notice in India?",
+          "answer": "No. A landlord cannot evict a tenant without first giving the notice prescribed by law.  \n\nSection 106 of the Transfer of Property Act, 1882 provides that, in the absence of a written contract or contrary local usage, a lease of immovable property for agricultural or manufacturing purposes is deemed a year‑to‑year tenancy that may be terminated by either party only upon giving six months’ notice, and a lease for any other purpose is deemed a month‑to‑month tenancy that may be terminated only upon giving fifteen days’ notice. The notice must be in writing, signed by the person giving it, and must be sent by post or personally delivered (or affixed to the property if delivery is not practicable) [1].  \n\nThus, without serving the required written notice, a landlord has no legal right to evict the tenant.  \n\nGeneral background (not from the retrieved sources): The requirement of notice protects tenants from sudden loss of possession and ensures that any eviction process follows the procedural safeguards laid down in the relevant tenancy laws and court rules.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 5284,
+          "ikanoon_calls": 1,
+          "intent": "NEW_QUERY",
+          "answer_model": "groq:openai/gpt-oss-120b",
+          "stop_reason": "STOP",
+          "tokens_in": 2414,
+          "tokens_out": 242
+        }
+      ],
+      "final_answer": "No. A landlord cannot evict a tenant without first giving the notice prescribed by law.  \n\nSection 106 of the Transfer of Property Act, 1882 provides that, in the absence of a written contract or contrary local usage, a lease of immovable property for agricultural or manufacturing purposes is deemed a year‑to‑year tenancy that may be terminated by either party only upon giving six months’ notice, and a lease for any other purpose is deemed a month‑to‑month tenancy that may be terminated only upon giving fifteen days’ notice. The notice must be in writing, signed by the person giving it, and must be sent by post or personally delivered (or affixed to the property if delivery is not practicable) [1].  \n\nThus, without serving the required written notice, a landlord has no legal right to evict the tenant.  \n\nGeneral background (not from the retrieved sources): The requirement of notice protects tenants from sudden loss of possession and ensures that any eviction process follows the procedural safeguards laid down in the relevant tenancy laws and court rules.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7474,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 1,
+      "tokens_in": 2414,
+      "tokens_out": 242,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [
+        "tier:cold"
+      ],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.5,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer correctly cites notice requirement but omits self‑help and specific grounds."
+      }
+    }
+  ]
+}

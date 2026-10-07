@@ -69,13 +69,25 @@ def test_ask_returns_500_with_safe_message_on_pipeline_failure(mock_answer_quest
     assert "invalid or exhausted" not in body["detail"]
 
 
-def test_send_and_verify_otp_flow():
+@patch("src.api.generate_otp")
+def test_send_and_verify_otp_flow(mock_generate_otp):
+    from src.auth import generate_otp as real_generate_otp
+
+    captured = {}
+
+    def fake_generate_otp(email, db_conn=None):
+        code = real_generate_otp(email, db_conn=db_conn)
+        captured["otp"] = code
+        return code
+
+    mock_generate_otp.side_effect = fake_generate_otp
+
     # Send OTP
     resp_send = client.post("/auth/send-otp", json={"email": "tester@example.com"})
     assert resp_send.status_code == 200
     body_send = resp_send.json()
-    assert "dev_otp" in body_send
-    otp = body_send["dev_otp"]
+    assert "dev_otp" not in body_send
+    otp = captured["otp"]
 
     # Verify OTP
     resp_verify = client.post(

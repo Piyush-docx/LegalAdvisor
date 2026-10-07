@@ -185,3 +185,15 @@
   color: var(--text-muted);
   padding: 2rem !important;
 }
+
+.guardrail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guardrail-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}

@@ -7,7 +7,6 @@ export default function LoginModal({ isOpen, onClose, onSuccess }) {
   const [step, setStep] = useState('email') // 'email' | 'otp'
   const [email, setEmail] = useState('')
   const [otp, setOtp] = useState('')
-  const [devOtp, setDevOtp] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -17,7 +16,6 @@ export default function LoginModal({ isOpen, onClose, onSuccess }) {
     setStep('email')
     setEmail('')
     setOtp('')
-    setDevOtp(null)
     setError(null)
     setIsLoading(false)
   }
@@ -35,10 +33,7 @@ export default function LoginModal({ isOpen, onClose, onSuccess }) {
     setIsLoading(true)
     setError(null)
     try {
-      const res = await sendOtp(trimmed)
-      if (res.dev_otp) {
-        setDevOtp(res.dev_otp)
-      }
+      await sendOtp(trimmed)
       setStep('otp')
     } catch (err) {
       setError(err.message)
@@ -122,19 +117,6 @@ export default function LoginModal({ isOpen, onClose, onSuccess }) {
             <p className="modal-desc">
               We sent a 6-digit code to <strong>{email}</strong>. The code expires in 10 minutes.
             </p>
-
-            {devOtp && (
-              <div className="dev-otp-hint">
-                <span>Dev / Testing OTP:</span> <strong>{devOtp}</strong>
-                <button
-                  type="button"
-                  className="dev-otp-copy-btn"
-                  onClick={() => setOtp(devOtp)}
-                >
-                  Use Code
-                </button>
-              </div>
-            )}
 
             <div className="form-group">
               <label htmlFor="otp-input">6-digit code</label>

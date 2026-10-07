@@ -1,0 +1,465 @@
+{
+  "label": "e1b_batch1",
+  "partial": false,
+  "timestamp": "2026-10-05T06:06:05.707214+00:00",
+  "git": {
+    "commit": "c9bb272",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash,groq:openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": true,
+    "fresh_rewrite": true,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 0,
+      "doc": 9
+    },
+    "ikanoon_logical": {
+      "search": 3,
+      "doc": 15
+    }
+  },
+  "summary": {
+    "cases": 5,
+    "ok": 5,
+    "skipped_not_recorded": 0,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "citations_valid": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "disclaimer_present": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "ends_cleanly": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "expected_source_in_answer": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "expected_source_retrieved": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "no_error": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "not_truncated": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "route_ok": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "sections_grounded": {
+        "passed": 5,
+        "applicable": 5
+      }
+    },
+    "pass_rate_by_category": {
+      "consumer": 1.0,
+      "employment": 1.0,
+      "tenancy": 1.0
+    },
+    "latency_ms_p50": 9622,
+    "latency_ms_p95": 38682,
+    "ikanoon_calls_per_answer_case": 6.0,
+    "gen_tokens_in_mean": 2681.2,
+    "gen_tokens_out_mean": 477.8,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 1.0,
+    "retrieval_mrr": 1.0,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 3.6,
+    "judge_rubric_coverage_mean": 0.51,
+    "judge_personalised_advice_count": 3,
+    "judge_scored": 5,
+    "answer_models": {
+      "groq:openai/gpt-oss-120b": 4,
+      "google_genai:gemini-2.5-flash": 1
+    },
+    "halted_on_daily_quota": false
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord refuses to return my security deposit after I vacated the flat. What can I do?",
+          "answer": "**Bottom line:** You can serve a written notice on your landlord demanding the return of the security deposit and, if he does not comply, you may file a civil suit for recovery of the amount.  \n\n**How the law works and steps you can follow**\n\n1. **Termination of the lease** – When there is no written lease specifying a different term, a tenancy for residential purposes is treated as a month‑to‑month lease that can be ended by either party on giving **15 days’ written notice**. The notice must be signed and sent by post or delivered personally (or affixed to the property if delivery is not practicable) [1] (Section 106, T.P. Act).  \n\n2. **Demanding the deposit** – After you have given the required notice and vacated the premises, send a **formal written demand** to the landlord asking for the return of the security deposit, stating the date you vacated, the amount claimed, and a reasonable deadline (e.g., 15 days). Keep a copy of the notice and proof of delivery (registered post receipt, email read‑receipt, or a signed acknowledgment).  \n\n3. **If the landlord refuses** – You may file a **civil suit for recovery of money** (e.g., a suit for specific performance of the deposit‑return clause or a suit for recovery of money) in the civil court having jurisdiction over the property. The court will consider the tenancy agreement (if any), the notice you gave, and the landlord’s refusal.  \n\n4. **Effect of pending suit** – While the suit is pending, the landlord cannot transfer the property in a way that would affect your right to the deposit, and the court may issue an injunction to prevent disposal of the flat until the dispute is resolved [4] (Section 52, T.P. Act).  \n\n5. **Evidence** – Even if the tenancy or deposit agreement was not registered, the written notice and any correspondence can be admitted as evidence of the contract and your claim [5] (Section 49, Registration Act).  \n\n**General background (not from the retrieved sources):** Security deposits are usually governed by the terms of the rental agreement and, in many states, by specific rent‑control or tenancy statutes that prescribe the time frame within which a landlord must return the deposit (often 30 days) and the permissible deductions. If the landlord makes unlawful deductions, you can also claim damages under consumer protection laws.\n\nNote: the figure(s) 30 days mentioned above could not be found in the sources retrieved for this answer. Please verify them before relying on them.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [4] Section 52 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/1634925/\n- [5] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 17326,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "groq:openai/gpt-oss-120b",
+          "stop_reason": "STOP",
+          "tokens_in": 2250,
+          "tokens_out": 565
+        }
+      ],
+      "final_answer": "**Bottom line:** You can serve a written notice on your landlord demanding the return of the security deposit and, if he does not comply, you may file a civil suit for recovery of the amount.  \n\n**How the law works and steps you can follow**\n\n1. **Termination of the lease** – When there is no written lease specifying a different term, a tenancy for residential purposes is treated as a month‑to‑month lease that can be ended by either party on giving **15 days’ written notice**. The notice must be signed and sent by post or delivered personally (or affixed to the property if delivery is not practicable) [1] (Section 106, T.P. Act).  \n\n2. **Demanding the deposit** – After you have given the required notice and vacated the premises, send a **formal written demand** to the landlord asking for the return of the security deposit, stating the date you vacated, the amount claimed, and a reasonable deadline (e.g., 15 days). Keep a copy of the notice and proof of delivery (registered post receipt, email read‑receipt, or a signed acknowledgment).  \n\n3. **If the landlord refuses** – You may file a **civil suit for recovery of money** (e.g., a suit for specific performance of the deposit‑return clause or a suit for recovery of money) in the civil court having jurisdiction over the property. The court will consider the tenancy agreement (if any), the notice you gave, and the landlord’s refusal.  \n\n4. **Effect of pending suit** – While the suit is pending, the landlord cannot transfer the property in a way that would affect your right to the deposit, and the court may issue an injunction to prevent disposal of the flat until the dispute is resolved [4] (Section 52, T.P. Act).  \n\n5. **Evidence** – Even if the tenancy or deposit agreement was not registered, the written notice and any correspondence can be admitted as evidence of the contract and your claim [5] (Section 49, Registration Act).  \n\n**General background (not from the retrieved sources):** Security deposits are usually governed by the terms of the rental agreement and, in many states, by specific rent‑control or tenancy statutes that prescribe the time frame within which a landlord must return the deposit (often 30 days) and the permissible deductions. If the landlord makes unlawful deductions, you can also claim damages under consumer protection laws.\n\nNote: the figure(s) 30 days mentioned above could not be found in the sources retrieved for this answer. Please verify them before relying on them.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [4] Section 52 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/1634925/\n- [5] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7206,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2250,
+      "tokens_out": 565,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Model Tenancy Act 2021 caps residential deposit (2 months' rent)",
+          "30‑day return period for deposit",
+          "Landlord may deduct only for proven damage or arrears",
+          "Rent authority as remedy",
+          "Deposit refund governed mainly by rent agreement terms"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          true,
+          false
+        ],
+        "rubric_coverage": 0.4,
+        "personalised_advice": true,
+        "language_ok": true,
+        "notes": "Answer mixes supported and unsupported statements."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Can a landlord evict a tenant without giving any notice in India?",
+          "answer": "No. A landlord cannot evict a tenant without first giving the notice required by law.  \n\n**What the law says**  \n- If there is no written lease or any local usage that says otherwise, the tenancy is deemed *month‑to‑month* for non‑agricultural/commercial purposes. Under **Section 106 of the Transfer of Property Act**, either the landlord or the tenant may terminate such a tenancy only by giving **15 days’ written notice**. The notice must be signed and sent by post or delivered personally (or affixed to the property if delivery is not practicable) [1].  \n- For a lease of agricultural or manufacturing land (or a lease that is deemed *year‑to‑year*), the required notice is **six months** [1].  \n\n**General process**  \n1. **Check the type of lease** – Determine whether the tenancy is for agricultural/manufacturing use (year‑to‑year) or for any other purpose (month‑to‑month).  \n2. **Serve the proper written notice** – Draft a notice stating the intention to terminate, sign it, and either post it to the tenant’s address, deliver it personally, or affix it conspicuously on the premises as prescribed in Section 106 [1].  \n3. **Observe the notice period** – Wait the full 15 days (or six months for agricultural/manufacturing leases) after the tenant receives the notice. Only after this period may the landlord seek possession through the courts if the tenant does not vacate voluntarily.  \n\nIf a landlord tries to evict without giving the statutory notice, the eviction would be unlawful and the tenant can defend against any suit for possession.  \n\n**General background (not from the retrieved sources):**  \nUnder Indian law, a landlord’s right to recover possession is generally exercised through a court decree after the proper notice period has elapsed, unless the tenancy agreement contains a different, legally valid termination clause.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 2,
+          "retry_errors": [
+            "LLMUnavailable(\"no model available for task 'answer': google_genai:gemini-2.5-flash: cooling down; groq:openai/gpt-oss-120b: Error code: 429 - {'error': {'message': 'Rate limit reached for model `open"
+          ],
+          "latency_ms": 44022,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "groq:openai/gpt-oss-120b",
+          "stop_reason": "STOP",
+          "tokens_in": 2301,
+          "tokens_out": 433
+        }
+      ],
+      "final_answer": "No. A landlord cannot evict a tenant without first giving the notice required by law.  \n\n**What the law says**  \n- If there is no written lease or any local usage that says otherwise, the tenancy is deemed *month‑to‑month* for non‑agricultural/commercial purposes. Under **Section 106 of the Transfer of Property Act**, either the landlord or the tenant may terminate such a tenancy only by giving **15 days’ written notice**. The notice must be signed and sent by post or delivered personally (or affixed to the property if delivery is not practicable) [1].  \n- For a lease of agricultural or manufacturing land (or a lease that is deemed *year‑to‑year*), the required notice is **six months** [1].  \n\n**General process**  \n1. **Check the type of lease** – Determine whether the tenancy is for agricultural/manufacturing use (year‑to‑year) or for any other purpose (month‑to‑month).  \n2. **Serve the proper written notice** – Draft a notice stating the intention to terminate, sign it, and either post it to the tenant’s address, deliver it personally, or affix it conspicuously on the premises as prescribed in Section 106 [1].  \n3. **Observe the notice period** – Wait the full 15 days (or six months for agricultural/manufacturing leases) after the tenant receives the notice. Only after this period may the landlord seek possession through the courts if the tenant does not vacate voluntarily.  \n\nIf a landlord tries to evict without giving the statutory notice, the eviction would be unlawful and the tenant can defend against any suit for possession.  \n\n**General background (not from the retrieved sources):**  \nUnder Indian law, a landlord’s right to recover possession is generally exercised through a court decree after the proper notice period has elapsed, unless the tenancy agreement contains a different, legally valid termination clause.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7474,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2301,
+      "tokens_out": 433,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Landlord’s right to recover possession is exercised through a court decree after notice period"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.5,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer is mostly faithful but adds an unsupported claim about court decree."
+      }
+    },
+    {
+      "id": "q06",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My employer has not paid my salary for the last two months. How can I recover it?",
+          "answer": "If your employer has not paid your salary, you can file a claim for delayed payment of wages under the Payment of Wages Act, 1936 [1]. An authority appointed by the government will hear and decide your claim [1].\n\nUnder the Payment of Wages Act, 1936, \"wages\" include salary, allowances, remuneration for overtime or holidays, additional remuneration (like bonus), and sums payable upon termination of employment [2]. Your employer is responsible for paying your wages [5]. Wages must be paid without any deductions except those specifically authorized by the Act [4].\n\nTo recover your unpaid salary, you can make an application to the appropriate authority [1]. The government appoints specific officers, such as Commissioners for Workmen's Compensation, Regional Labour Commissioners, Assistant Labour Commissioners, presiding officers of Labour Courts or Industrial Tribunals, or other officers with experience as a Civil Court Judge or Judicial Magistrate, to hear and decide claims related to delayed payment of wages [1].\n\nWhen your application is accepted, the authority will hear both you and your employer, or give you both an opportunity to be heard [1]. After any necessary inquiry, the authority may direct your employer to pay the delayed wages [1]. The authority can also direct your employer to pay compensation, which can be between one thousand five hundred rupees and three thousand rupees for delayed wages [1]. Even if the delayed wages are paid before the application is decided, the authority can still direct compensation up to two thousand rupees [1]. The aim is for claims under this Act to be resolved within three months from the date of registration, though this period can be extended [1].\n\nAn inquiry under this section is considered a judicial proceeding [1]. If the authority directs payment, and the employer does not pay, the amount can be recovered as if it were a fine imposed by a Magistrate [1].\n\nIf you are not satisfied with the authority's decision, you may be able to appeal it [3]. An appeal can be made by an employed person if the total amount of wages claimed to have been withheld exceeds twenty rupees [3].\n\nGeneral background (not from the retrieved sources): The Payment of Wages Act, 1936, aims to ensure that wages are paid regularly and without unauthorized deductions to persons employed in certain industries and establishments.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 15 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/1106018/\n- [2] Section 2 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/511167/\n- [3] Section 17 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/1201492/\n- [4] Section 7 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/392051/\n- [5] Section 3 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/1223608/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 5970,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3438,
+          "tokens_out": 473
+        }
+      ],
+      "final_answer": "If your employer has not paid your salary, you can file a claim for delayed payment of wages under the Payment of Wages Act, 1936 [1]. An authority appointed by the government will hear and decide your claim [1].\n\nUnder the Payment of Wages Act, 1936, \"wages\" include salary, allowances, remuneration for overtime or holidays, additional remuneration (like bonus), and sums payable upon termination of employment [2]. Your employer is responsible for paying your wages [5]. Wages must be paid without any deductions except those specifically authorized by the Act [4].\n\nTo recover your unpaid salary, you can make an application to the appropriate authority [1]. The government appoints specific officers, such as Commissioners for Workmen's Compensation, Regional Labour Commissioners, Assistant Labour Commissioners, presiding officers of Labour Courts or Industrial Tribunals, or other officers with experience as a Civil Court Judge or Judicial Magistrate, to hear and decide claims related to delayed payment of wages [1].\n\nWhen your application is accepted, the authority will hear both you and your employer, or give you both an opportunity to be heard [1]. After any necessary inquiry, the authority may direct your employer to pay the delayed wages [1]. The authority can also direct your employer to pay compensation, which can be between one thousand five hundred rupees and three thousand rupees for delayed wages [1]. Even if the delayed wages are paid before the application is decided, the authority can still direct compensation up to two thousand rupees [1]. The aim is for claims under this Act to be resolved within three months from the date of registration, though this period can be extended [1].\n\nAn inquiry under this section is considered a judicial proceeding [1]. If the authority directs payment, and the employer does not pay, the amount can be recovered as if it were a fine imposed by a Magistrate [1].\n\nIf you are not satisfied with the authority's decision, you may be able to appeal it [3]. An appeal can be made by an employed person if the total amount of wages claimed to have been withheld exceeds twenty rupees [3].\n\nGeneral background (not from the retrieved sources): The Payment of Wages Act, 1936, aims to ensure that wages are paid regularly and without unauthorized deductions to persons employed in certain industries and establishments.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 15 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/1106018/\n- [2] Section 2 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/511167/\n- [3] Section 17 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/1201492/\n- [4] Section 7 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/392051/\n- [5] Section 3 in The Payment Of Wages Act, 1936: https://indiankanoon.org/doc/1223608/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 10930,
+      "citation_titles": [
+        "Section 15 in The Payment Of Wages Act, 1936",
+        "Section 2 in The Payment Of Wages Act, 1936",
+        "Section 17 in The Payment Of Wages Act, 1936",
+        "Section 7 in The Payment Of Wages Act, 1936",
+        "Section 3 in The Payment Of Wages Act, 1936"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3438,
+      "tokens_out": 473,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [
+          "Mention of Code on Wages consolidation not in retrieved context"
+        ],
+        "rubric_flags": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "rubric_coverage": 0.5,
+        "personalised_advice": true,
+        "language_ok": true,
+        "notes": "Answer largely faithful but misses some rubric points."
+      }
+    },
+    {
+      "id": "q09",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Is an employee entitled to gratuity if they resign before completing 5 years?",
+          "answer": "No. An employee who resigns before completing five years of continuous service is not eligible for gratuity under the Payment of Gratuity Act, 1972.  \n\nThe Act states that gratuity is payable only when an employee’s employment is terminated **after he has rendered continuous service for not less than five years**, and this includes termination on superannuation, retirement, resignation, death, or disablement. The five‑year requirement does not apply only in cases of death or disablement, not for a voluntary resignation [1].  \n\nTherefore, if you resign before reaching the five‑year mark, the employer is not legally required to pay gratuity. (The Act does allow a better gratuity provision if a contract, award or agreement provides more favorable terms, but the statutory minimum does not apply.)  \n\n**General background (not from the retrieved sources):** Gratuity is a statutory retirement benefit meant to provide a lump‑sum payment to employees who have served a minimum period, and many employers also offer it as part of their HR policies.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 9622,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "groq:openai/gpt-oss-120b",
+          "stop_reason": "STOP",
+          "tokens_in": 3144,
+          "tokens_out": 248
+        }
+      ],
+      "final_answer": "No. An employee who resigns before completing five years of continuous service is not eligible for gratuity under the Payment of Gratuity Act, 1972.  \n\nThe Act states that gratuity is payable only when an employee’s employment is terminated **after he has rendered continuous service for not less than five years**, and this includes termination on superannuation, retirement, resignation, death, or disablement. The five‑year requirement does not apply only in cases of death or disablement, not for a voluntary resignation [1].  \n\nTherefore, if you resign before reaching the five‑year mark, the employer is not legally required to pay gratuity. (The Act does allow a better gratuity provision if a contract, award or agreement provides more favorable terms, but the statutory minimum does not apply.)  \n\n**General background (not from the retrieved sources):** Gratuity is a statutory retirement benefit meant to provide a lump‑sum payment to employees who have served a minimum period, and many employers also offer it as part of their HR policies.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 9950,
+      "citation_titles": [
+        "Section 4 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 7 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 8 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 2 in THE PAYMENT OF GRATUITY ACT, 1972"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3144,
+      "tokens_out": 248,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "rubric_coverage": 0.75,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer matches most rubric points but omits the 240‑day rule."
+      }
+    },
+    {
+      "id": "q11",
+      "category": "consumer",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "I bought a defective product online and the company refuses to replace it. What should I do?",
+          "answer": "**Bottom line:** You can file a written complaint with the Central Consumer Protection Authority (or the appropriate consumer forum) asking for replacement or refund of the defective product; the Authority’s Investigation Wing will look into the matter and can order the seller to comply.  \n\n**How the law works and what steps to follow**\n\n1. **You are a “consumer” and can complain.**  \n   Under the Consumer Protection Act 2019, a “consumer” includes anyone who buys goods online (the definition also covers purchases made through electronic means) [2].  \n\n2. **Your grievance is a “consumer dispute.”**  \n   A complaint about a defective product that the seller refuses to replace falls under a “consumer dispute” – a dispute where the seller denies or disputes the allegations in the complaint [2].  \n\n3. **You may file a written complaint.**  \n   The Act defines a “complaint” as any written allegation made by a consumer for relief when goods are defective, among other grounds [2]. The complaint can be filed with the Central Consumer Protection Authority (CCPA) or the appropriate State Consumer Disputes Redressal Commission/Forum.  \n\n4. **Investigation by the CCPA.**  \n   The CCPA has an Investigation Wing headed by a Director‑General. Once a complaint is lodged, the Investigation Wing can conduct an inquiry or investigation as directed by the Central Authority [1]. The Director‑General may delegate powers to officers (Director, Joint Director, etc.) to carry out the investigation [1].  \n\n5. **Possible outcomes.**  \n   After investigation, the Authority can order the seller to replace the defective product, refund the price, or take other remedial action as provided under the Act.  \n\n6. **Practical steps:**  \n   - Prepare a written complaint stating: your name, contact details, order details, nature of the defect, and the seller’s refusal to replace.  \n   - Attach copies of the purchase invoice, any correspondence with the seller, and evidence of the defect.  \n   - Submit the complaint to the CCPA (online portal or physical office) or to the consumer forum having jurisdiction over your location.  \n   - The Investigation Wing will then examine the case and may summon the seller for inquiry.  \n\n**What the sources do not cover**  \nThe retrieved sections do not specify the exact time limits for filing the complaint, the exact forum hierarchy (district, state, national), or the detailed procedure for appealing an order. Those procedural details are found in other parts of the Act not included here.  \n\n**General background (not from the retrieved sources):**  \nThe Consumer Protection Act 2019 strengthened consumer rights, especially for online transactions, by allowing consumers to approach the Central Consumer Protection Authority directly for redressal of unfair trade practices, including defective goods. The Act also provides for a three‑tier consumer dispute redressal system (district, state, and national commissions) and sets a two‑year limitation period for filing complaints, unless otherwise specified.\n\nSources:\n- [1] Section 15 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/113616985/\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 4043,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "groq:openai/gpt-oss-120b",
+          "stop_reason": "STOP",
+          "tokens_in": 2273,
+          "tokens_out": 670
+        }
+      ],
+      "final_answer": "**Bottom line:** You can file a written complaint with the Central Consumer Protection Authority (or the appropriate consumer forum) asking for replacement or refund of the defective product; the Authority’s Investigation Wing will look into the matter and can order the seller to comply.  \n\n**How the law works and what steps to follow**\n\n1. **You are a “consumer” and can complain.**  \n   Under the Consumer Protection Act 2019, a “consumer” includes anyone who buys goods online (the definition also covers purchases made through electronic means) [2].  \n\n2. **Your grievance is a “consumer dispute.”**  \n   A complaint about a defective product that the seller refuses to replace falls under a “consumer dispute” – a dispute where the seller denies or disputes the allegations in the complaint [2].  \n\n3. **You may file a written complaint.**  \n   The Act defines a “complaint” as any written allegation made by a consumer for relief when goods are defective, among other grounds [2]. The complaint can be filed with the Central Consumer Protection Authority (CCPA) or the appropriate State Consumer Disputes Redressal Commission/Forum.  \n\n4. **Investigation by the CCPA.**  \n   The CCPA has an Investigation Wing headed by a Director‑General. Once a complaint is lodged, the Investigation Wing can conduct an inquiry or investigation as directed by the Central Authority [1]. The Director‑General may delegate powers to officers (Director, Joint Director, etc.) to carry out the investigation [1].  \n\n5. **Possible outcomes.**  \n   After investigation, the Authority can order the seller to replace the defective product, refund the price, or take other remedial action as provided under the Act.  \n\n6. **Practical steps:**  \n   - Prepare a written complaint stating: your name, contact details, order details, nature of the defect, and the seller’s refusal to replace.  \n   - Attach copies of the purchase invoice, any correspondence with the seller, and evidence of the defect.  \n   - Submit the complaint to the CCPA (online portal or physical office) or to the consumer forum having jurisdiction over your location.  \n   - The Investigation Wing will then examine the case and may summon the seller for inquiry.  \n\n**What the sources do not cover**  \nThe retrieved sections do not specify the exact time limits for filing the complaint, the exact forum hierarchy (district, state, national), or the detailed procedure for appealing an order. Those procedural details are found in other parts of the Act not included here.  \n\n**General background (not from the retrieved sources):**  \nThe Consumer Protection Act 2019 strengthened consumer rights, especially for online transactions, by allowing consumers to approach the Central Consumer Protection Authority directly for redressal of unfair trade practices, including defective goods. The Act also provides for a three‑tier consumer dispute redressal system (district, state, and national commissions) and sets a two‑year limitation period for filing complaints, unless otherwise specified.\n\nSources:\n- [1] Section 15 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/113616985/\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7697,
+      "citation_titles": [
+        "Section 15 in Consumer Protection Act, 2019",
+        "Section 2 in Consumer Protection Act, 2019",
+        "Section 12 in Consumer Protection Act, 2019",
+        "Section 13 in Consumer Protection Act, 2019",
+        "Section 3 in Consumer Protection Act, 2019"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2273,
+      "tokens_out": 670,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 2,
+        "unsupported_claims": [
+          "Authority can order replacement or refund",
+          "File complaint with Central Consumer Protection Authority",
+          "Investigation wing may summon seller",
+          "Three‑tier redressal system and two‑year limitation not in context",
+          "General background not supported"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          false,
+          true
+        ],
+        "rubric_coverage": 0.4,
+        "personalised_advice": true,
+        "language_ok": true,
+        "notes": "Answer mixes supported and unsupported statements."
+      }
+    }
+  ]
+}

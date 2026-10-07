@@ -1,23 +1,27 @@
+import logging
 import os
-
-from google import genai
-from google.genai import types
+import re
 
 from src.generation.prompt import build_prompt
 from src.generation.schemas import LLMAnswer, Usage
+from src.llm import complete
 from src.retrieval.context import Citation
 
-MODEL = "gemini-2.5-flash"
+logger = logging.getLogger(__name__)
 
-_client = None
+# 1024 used to cut detailed answers off mid-sentence; stop_reason is now checked as well.
+MAX_OUTPUT_TOKENS = int(os.environ.get("ANSWER_MAX_OUTPUT_TOKENS", "4096"))
+# Low but not zero: stable wording for a shared cache, without flat repetition.
+ANSWER_TEMPERATURE = float(os.environ.get("ANSWER_TEMPERATURE", "0.2"))
+TRUNCATION_NOTE = "(This answer was shortened. Ask a follow-up question for more detail.)"
 
-
-def _get_client():
-    global _client
-    if _client is None:
-        api_key = os.environ["LLM_API_KEY"]
-        _client = genai.Client(api_key=api_key)
-    return _client
+def trim_incomplete(text: str) -> str:
+    """Cut a token-capped answer back to its last complete sentence or line."""
+    text = text.rstrip()
+    matches = list(re.finditer(r"[.!?\u0964:)](?=\s|$)|\n", text))
+    if not matches:
+        return text
+    return text[: matches[-1].end()].rstrip()
 
 
 def explain_with_llm(
@@ -26,30 +30,17 @@ def explain_with_llm(
     citations: list[Citation],
     history: list | None = None,
 ) -> LLMAnswer:
-    client = _get_client()
-
     prompt = build_prompt(question, context_text, citations, history=history)
+    result = complete("answer", prompt, max_tokens=MAX_OUTPUT_TOKENS, temperature=ANSWER_TEMPERATURE)
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            max_output_tokens=1024,
-            thinking_config=types.ThinkingConfig(thinking_budget=0),
-        ),
-    )
-
-    if not response.text:
-        candidate = response.candidates[0] if response.candidates else None
-        finish_reason = candidate.finish_reason if candidate else None
-        raise ValueError(f"No text content in LLM response (finish_reason={finish_reason!r})")
-
-    candidate = response.candidates[0]
+    text = result.text
+    truncated = result.stop_reason == "MAX_TOKENS"
+    if truncated:
+        logger.warning("LLM answer hit max_output_tokens=%s; trimming to last complete sentence", MAX_OUTPUT_TOKENS)
+        text = f"{trim_incomplete(text)}\n\n{TRUNCATION_NOTE}"
     return LLMAnswer(
-        text=response.text,
-        stop_reason=candidate.finish_reason.name if candidate.finish_reason else "STOP",
-        usage=Usage(
-            input_tokens=response.usage_metadata.prompt_token_count or 0,
-            output_tokens=response.usage_metadata.candidates_token_count or 0,
-        ),
+        text=text,
+        stop_reason=result.stop_reason,
+        truncated=truncated,
+        usage=Usage(input_tokens=result.input_tokens, output_tokens=result.output_tokens),
     )

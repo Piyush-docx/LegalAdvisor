@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { sendFeedback } from '../api/client'
 
-export default function MessageItem({ message, isLast, onRegenerate }) {
+export default function MessageItem({ message, isLast, onRegenerate, question = '', sessionId = null }) {
   const isUser = message.role === 'user'
   const [copied, setCopied] = useState(false)
   const [reaction, setReaction] = useState(null) // 'like' | 'dislike' | null
@@ -15,8 +16,21 @@ export default function MessageItem({ message, isLast, onRegenerate }) {
     }
   }
 
-  function toggleReaction(type) {
-    setReaction((prev) => (prev === type ? null : type))
+  async function toggleReaction(type) {
+    const previous = reaction
+    const next = previous === type ? null : type
+    setReaction(next)
+    if (!next) return
+    try {
+      await sendFeedback({
+        rating: next === 'like' ? 'up' : 'down',
+        question,
+        answerExcerpt: message.text,
+        sessionId,
+      })
+    } catch {
+      setReaction(previous) // not saved: do not show a reaction the server never received
+    }
   }
 
   // Parse structured blocks if Assistant message

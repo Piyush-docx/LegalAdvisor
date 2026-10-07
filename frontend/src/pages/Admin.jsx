@@ -59,6 +59,27 @@ export default function Admin() {
           <div className="metric-label">Avg Response Time</div>
           <div className="metric-value">{metrics.avg_response_time_ms} ms</div>
         </div>
+        <div className="metric-card">
+          <div className="metric-label">Feedback</div>
+          <div className="metric-value">
+            👍 {metrics.feedback?.up ?? 0} · 👎 {metrics.feedback?.down ?? 0}
+          </div>
+        </div>
+      </div>
+
+      <div className="admin-logs-section">
+        <h2>Guardrail Triggers</h2>
+        {Object.keys(metrics.guardrail_counts || {}).length === 0 ? (
+          <p className="logs-empty">No guardrails triggered yet.</p>
+        ) : (
+          <div className="guardrail-chips">
+            {Object.entries(metrics.guardrail_counts).map(([flag, count]) => (
+              <span key={flag} className="badge guardrail-chip">
+                {flag} · {count}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="admin-logs-section">
@@ -72,6 +93,7 @@ export default function Admin() {
                 <th>Intent</th>
                 <th>Cache</th>
                 <th>Duration (ms)</th>
+                <th>Guardrails</th>
               </tr>
             </thead>
             <tbody>
@@ -90,11 +112,12 @@ export default function Admin() {
                     </span>
                   </td>
                   <td>{log.response_time_ms}</td>
+                  <td>{log.guardrails || '—'}</td>
                 </tr>
               ))}
               {logs.length === 0 && (
                 <tr>
-                  <td colSpan="5" className="logs-empty">No queries logged yet.</td>
+                  <td colSpan="6" className="logs-empty">No queries logged yet.</td>
                 </tr>
               )}
             </tbody>

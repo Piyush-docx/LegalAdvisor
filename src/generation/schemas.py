@@ -9,4 +9,5 @@ class Usage(BaseModel):
 class LLMAnswer(BaseModel):
     text: str
     stop_reason: str
+    truncated: bool = False
     usage: Usage

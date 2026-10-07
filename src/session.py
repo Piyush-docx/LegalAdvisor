@@ -197,6 +197,7 @@ class SessionStore:
                             """
                             INSERT INTO messages (session_id, role, content, timestamp)
                             VALUES (?, ?, ?, ?)
+                            RETURNING id
                             """,
                             (
                                 session.session_id,
@@ -205,7 +206,7 @@ class SessionStore:
                                 msg.timestamp.isoformat(),
                             ),
                         )
-                        msg.id = cursor.lastrowid
+                        msg.id = cursor.fetchone()["id"]
         except Exception:
             import logging
             logging.getLogger(__name__).exception(

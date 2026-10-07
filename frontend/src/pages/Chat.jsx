@@ -241,6 +241,8 @@ export default function Chat({ onOpenLogin }) {
                   message={msg}
                   isLast={index === messages.length - 1}
                   onRegenerate={handleRegenerate}
+                  question={messages[index - 1]?.role === 'user' ? messages[index - 1].text : ''}
+                  sessionId={sessionId}
                 />
               ))}
 

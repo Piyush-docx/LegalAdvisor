@@ -6,6 +6,7 @@ import responses
 
 from src.pipeline import answer_question
 from src.session import SessionStore
+from tests.helpers import llm_result
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -23,8 +24,8 @@ def make_fake_llm_response(text="The security deposit must be refunded upon vaca
 
 @responses.activate
 @patch("src.pipeline.rewrite_query", side_effect=lambda q, **kwargs: q)
-@patch("src.generation.generate._get_client")
-def test_answer_question_end_to_end(mock_get_client, mock_rewrite, monkeypatch):
+@patch("src.generation.generate.complete")
+def test_answer_question_end_to_end(mock_complete, mock_rewrite, monkeypatch):
     monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
 
     search_fixture = json.loads((FIXTURES / "search_response.json").read_text())
@@ -44,9 +45,7 @@ def test_answer_question_end_to_end(mock_get_client, mock_rewrite, monkeypatch):
             status=200,
         )
 
-    mock_client = MagicMock()
-    mock_client.models.generate_content.return_value = make_fake_llm_response()
-    mock_get_client.return_value = mock_client
+    mock_complete.return_value = llm_result("The security deposit must be refunded upon vacating.", tokens_in=2000, tokens_out=200)
 
     result = answer_question("security deposit refund tenant landlord")
 
@@ -70,19 +69,15 @@ def test_answer_question_chitchat_makes_no_ikanoon_calls(mock_classify):
 @responses.activate
 @patch("src.pipeline.can_context_answer_followup", return_value=True)
 @patch("src.pipeline.classify_intent")
-@patch("src.generation.generate._get_client")
+@patch("src.generation.generate.complete")
 def test_answer_question_followup_reuses_context(
-    mock_get_client, mock_classify, mock_can_answer, monkeypatch
+    mock_complete, mock_classify, mock_can_answer, monkeypatch
 ):
     monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
     from src.router import RouteIntent
 
     mock_classify.return_value = RouteIntent.FOLLOW_UP
-    mock_client = MagicMock()
-    mock_client.models.generate_content.return_value = make_fake_llm_response(
-        "Follow-up answer based on existing context."
-    )
-    mock_get_client.return_value = mock_client
+    mock_complete.return_value = llm_result("Follow-up answer based on existing context.")
 
     store = SessionStore()
     sess = store.create()
