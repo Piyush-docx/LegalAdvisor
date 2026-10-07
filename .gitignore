@@ -6,6 +6,7 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+*.db
 
 # local editor/agent settings
 .claude/settings.local.json

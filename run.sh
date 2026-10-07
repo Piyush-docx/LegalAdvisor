@@ -12,7 +12,15 @@ kill_tree() {
   kill "$pid" 2>/dev/null || true
 }
 
-python3 -m uvicorn src.api:app --reload --port 8000 --env-file .env &
+PYTHON_BIN="python3"
+for py in "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3" "/usr/local/bin/python3" "$(command -v python3 2>/dev/null)"; do
+  if [ -n "$py" ] && [ -x "$py" ] && "$py" -c "import fastapi" 2>/dev/null; then
+    PYTHON_BIN="$py"
+    break
+  fi
+done
+
+"$PYTHON_BIN" -m uvicorn src.api:app --reload --port 8000 --env-file .env &
 BACKEND_PID=$!
 
 (cd frontend && npm run dev) &

@@ -1,29 +1,95 @@
+import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Chat from './pages/Chat'
 import About from './pages/About'
+import Chat from './pages/Chat'
+import Admin from './pages/Admin'
+import LoginModal from './components/LoginModal'
+import { useAuth } from './context/useAuth'
+import { useTheme } from './context/useTheme'
 import './App.css'
 
 function App() {
-  return (
-    <div className="app">
-      <nav className="nav">
-        <Link to="/" className="nav-brand">
-          Legal Help
-        </Link>
-        <div className="nav-links">
-          <Link to="/chat">Ask a question</Link>
-          <Link to="/about">About</Link>
-        </div>
-      </nav>
+  const { user, isLoggedIn, logout } = useAuth()
+  const { isDark, toggleTheme } = useTheme()
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
-      <main>
+  return (
+    <div className="app-root">
+      <header className="site-navbar">
+        <div className="navbar-left">
+          <Link to="/" className="navbar-brand">
+            <span className="brand-badge">⚖️</span>
+            <span className="brand-title">Legal Help India</span>
+          </Link>
+          <nav className="navbar-nav-links">
+            <Link to="/chat" className="nav-link">
+              Assistant
+            </Link>
+            <Link to="/about" className="nav-link">
+              About & Data Sources
+            </Link>
+            {isLoggedIn && (
+              <Link to="/admin" className="nav-link">
+                Admin
+              </Link>
+            )}
+          </nav>
+        </div>
+
+        <div className="navbar-right">
+          <button
+            type="button"
+            className="navbar-theme-btn"
+            onClick={toggleTheme}
+            title={`Switch to ${isDark ? 'Light' : 'Dark'} mode`}
+          >
+            {isDark ? '☀️ Light' : '🌙 Dark'}
+          </button>
+
+          {isLoggedIn ? (
+            <div className="navbar-user-chip">
+              <span className="navbar-user-email" title={user.email}>
+                {user.email}
+              </span>
+              <button
+                type="button"
+                className="navbar-auth-btn logout"
+                onClick={logout}
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="navbar-auth-btn login"
+              onClick={() => setIsLoginModalOpen(true)}
+            >
+              Sign In
+            </button>
+          )}
+        </div>
+      </header>
+
+      <div className="site-content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route
+            path="/"
+            element={<Chat onOpenLogin={() => setIsLoginModalOpen(true)} />}
+          />
+          <Route
+            path="/chat"
+            element={<Chat onOpenLogin={() => setIsLoginModalOpen(true)} />}
+          />
           <Route path="/about" element={<About />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
-      </main>
+      </div>
+
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
     </div>
   )
 }

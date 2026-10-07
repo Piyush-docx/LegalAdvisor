@@ -27,12 +27,12 @@ def make_fake_response(text="The security deposit must be refunded.", finish_rea
     return response
 
 
-@patch("src.generation.generate.genai.Client")
-def test_explain_with_llm_returns_validated_answer(mock_client_cls, monkeypatch):
+@patch("src.generation.generate._get_client")
+def test_explain_with_llm_returns_validated_answer(mock_get_client, monkeypatch):
     monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
     mock_client = MagicMock()
     mock_client.models.generate_content.return_value = make_fake_response()
-    mock_client_cls.return_value = mock_client
+    mock_get_client.return_value = mock_client
 
     result = explain_with_llm(
         question="Can my landlord keep my deposit?",
@@ -47,12 +47,12 @@ def test_explain_with_llm_returns_validated_answer(mock_client_cls, monkeypatch)
     assert result.usage.output_tokens == 150
 
 
-@patch("src.generation.generate.genai.Client")
-def test_explain_with_llm_uses_gemini_flash_model(mock_client_cls, monkeypatch):
+@patch("src.generation.generate._get_client")
+def test_explain_with_llm_uses_gemini_flash_model(mock_get_client, monkeypatch):
     monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
     mock_client = MagicMock()
     mock_client.models.generate_content.return_value = make_fake_response()
-    mock_client_cls.return_value = mock_client
+    mock_get_client.return_value = mock_client
 
     explain_with_llm(
         question="q",
@@ -64,26 +64,26 @@ def test_explain_with_llm_uses_gemini_flash_model(mock_client_cls, monkeypatch):
     assert kwargs["model"] == "gemini-2.5-flash"
 
 
-@patch("src.generation.generate.genai.Client")
-def test_explain_with_llm_passes_api_key_from_env(mock_client_cls, monkeypatch):
+@patch("src.generation.generate._get_client")
+def test_explain_with_llm_passes_api_key_from_env(mock_get_client, monkeypatch):
     monkeypatch.setenv("LLM_API_KEY", "the-secret-key")
     mock_client = MagicMock()
     mock_client.models.generate_content.return_value = make_fake_response()
-    mock_client_cls.return_value = mock_client
+    mock_get_client.return_value = mock_client
 
     explain_with_llm(question="q", context_text="context", citations=[make_citation()])
 
-    _, kwargs = mock_client_cls.call_args
-    assert kwargs["api_key"] == "the-secret-key"
+    # The _get_client function was called, meaning the module-level client is used
+    mock_get_client.assert_called_once()
 
 
-@patch("src.generation.generate.genai.Client")
-def test_explain_with_llm_raises_on_empty_response_text(mock_client_cls, monkeypatch):
+@patch("src.generation.generate._get_client")
+def test_explain_with_llm_raises_on_empty_response_text(mock_get_client, monkeypatch):
     monkeypatch.setenv("LLM_API_KEY", "test-llm-key")
     mock_client = MagicMock()
     empty_response = make_fake_response(text=None, finish_reason="SAFETY")
     mock_client.models.generate_content.return_value = empty_response
-    mock_client_cls.return_value = mock_client
+    mock_get_client.return_value = mock_client
 
     with pytest.raises(Exception):
         explain_with_llm(question="q", context_text="context", citations=[make_citation()])

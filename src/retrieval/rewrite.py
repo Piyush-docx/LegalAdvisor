@@ -5,10 +5,21 @@ from google.genai import types
 
 MODEL = "gemini-2.5-flash"
 
+_client = None
+
+
+def _get_client():
+    global _client
+    if _client is None:
+        api_key = os.environ["LLM_API_KEY"]
+        _client = genai.Client(api_key=api_key)
+    return _client
+
+
 REWRITE_PROMPT = """\
 You convert a citizen's everyday legal question into a search query for \
 Indian Kanoon, a keyword search engine over Indian statutes and case law.
-
+{context_section}
 Rules:
 - Output ONLY the search query, nothing else.
 - Format: one quoted legal phrase, then ANDD, then one or two single-word \
@@ -29,15 +40,20 @@ Question: {question}
 """
 
 
-def rewrite_query(question: str) -> str:
-    api_key = os.environ["LLM_API_KEY"]
-    client = genai.Client(api_key=api_key)
+def rewrite_query(question: str, conversation_context: str | None = None) -> str:
+    client = _get_client()
+
+    context_section = ""
+    if conversation_context and conversation_context.strip():
+        context_section = f"\nPrevious conversation context:\n{conversation_context.strip()}\n"
 
     response = client.models.generate_content(
         model=MODEL,
-        contents=REWRITE_PROMPT.format(question=question),
+        contents=REWRITE_PROMPT.format(
+            question=question, context_section=context_section
+        ),
         config=types.GenerateContentConfig(
-            max_output_tokens=1024,
+            max_output_tokens=64,
             thinking_config=types.ThinkingConfig(thinking_budget=0),
         ),
     )

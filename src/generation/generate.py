@@ -9,12 +9,26 @@ from src.retrieval.context import Citation
 
 MODEL = "gemini-2.5-flash"
 
+_client = None
 
-def explain_with_llm(question: str, context_text: str, citations: list[Citation]) -> LLMAnswer:
-    api_key = os.environ["LLM_API_KEY"]
-    client = genai.Client(api_key=api_key)
 
-    prompt = build_prompt(question, context_text, citations)
+def _get_client():
+    global _client
+    if _client is None:
+        api_key = os.environ["LLM_API_KEY"]
+        _client = genai.Client(api_key=api_key)
+    return _client
+
+
+def explain_with_llm(
+    question: str,
+    context_text: str,
+    citations: list[Citation],
+    history: list | None = None,
+) -> LLMAnswer:
+    client = _get_client()
+
+    prompt = build_prompt(question, context_text, citations, history=history)
 
     response = client.models.generate_content(
         model=MODEL,

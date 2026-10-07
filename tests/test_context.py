@@ -10,8 +10,7 @@ FIXTURES = Path(__file__).parent / "fixtures"
 
 
 @responses.activate
-@patch("src.retrieval.context.rewrite_query", side_effect=lambda q: q)
-def test_build_context_returns_cleaned_text_and_citations(mock_rewrite):
+def test_build_context_returns_cleaned_text_and_citations():
     search_fixture = json.loads((FIXTURES / "search_response.json").read_text())
     doc_fixture = json.loads((FIXTURES / "document_response.json").read_text())
 
@@ -51,8 +50,7 @@ def test_build_context_returns_cleaned_text_and_citations(mock_rewrite):
 
 
 @responses.activate
-@patch("src.retrieval.context.rewrite_query", side_effect=lambda q: q)
-def test_build_context_joins_multiple_docs_with_separator(mock_rewrite):
+def test_build_context_joins_multiple_docs_with_separator():
     search_fixture = json.loads((FIXTURES / "search_response.json").read_text())
     doc_fixture = json.loads((FIXTURES / "document_response.json").read_text())
 
@@ -76,8 +74,7 @@ def test_build_context_joins_multiple_docs_with_separator(mock_rewrite):
 
 
 @responses.activate
-@patch("src.retrieval.context.rewrite_query", side_effect=lambda q: q)
-def test_build_context_stays_within_token_budget_for_five_docs(mock_rewrite):
+def test_build_context_stays_within_token_budget_for_five_docs():
     # Guards the cost-control decision: extract_substantive_text (not the
     # full cleaned doc) must be what feeds the LLM, so 5 docs stays cheap.
     # ~4 chars/token; budget generously at 15K tokens (~60K chars) for 5 docs
