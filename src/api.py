@@ -22,6 +22,8 @@ from src.pipeline import answer_question
 from src.session import default_session_store
 
 logger = logging.getLogger(__name__)
+if not logging.getLogger().handlers:  # uvicorn only configures its own loggers; without this INFO lines are dropped
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
 app = FastAPI(title="Legal Help API")
 logger.info("storage backend: %s", "PostgreSQL" if using_postgres() else "SQLite (data is lost on redeploy!)")
