@@ -1,82 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
 
 :root {
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Light Theme (Default) */
-  --bg-app: #ffffff;
-  --bg-sidebar: #f8fafc;
+  /* Shape: squared-off, closer to printed paper than to a chat app */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* Light Theme (Default): paper, ink and oxblood */
+  --bg-app: #f6f5f1;
+  --bg-sidebar: #efece4;
   --bg-card: #ffffff;
   --bg-input: #ffffff;
-  --bg-hover: #f1f5f9;
-  --bg-active: #e2e8f0;
+  --bg-hover: #ebe8df;
+  --bg-active: #e1ddd1;
 
-  --user-bubble-bg: #1e293b;
+  --user-bubble-bg: #17203a;
   --user-bubble-text: #ffffff;
-  --ai-bubble-bg: #f8fafc;
-  --ai-bubble-border: #e2e8f0;
-  --ai-bubble-text: #0f172a;
+  --ai-bubble-bg: #ffffff;
+  --ai-bubble-border: #dcd9d0;
+  --ai-bubble-text: #17203a;
 
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-subtle: #64748b;
-  --text-placeholder: #94a3b8;
+  --text-main: #17203a;
+  --text-muted: #4f566a;
+  --text-subtle: #646a7c;
+  --text-placeholder: #858a98;
 
-  --border-light: #e2e8f0;
-  --border-medium: #cbd5e1;
-  --border-focus: #2563eb;
+  --border-light: #dcd9d0;
+  --border-medium: #c4c0b4;
+  --border-focus: #7b1e2e;
 
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
+  --primary: #7b1e2e;
+  --primary-hover: #611523;
   --primary-text: #ffffff;
-  --primary-subtle: #eff6ff;
+  --primary-subtle: #f1e4e4;
 
-  --danger: #dc2626;
-  --danger-bg: #fef2f2;
-  --danger-border: #fecaca;
+  --success: #1f6b3a;
 
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --danger: #b42318;
+  --danger-bg: #fdf0ee;
+  --danger-border: #f3c4be;
+
+  --shadow-sm: 0 1px 2px 0 rgb(23 32 58 / 0.06);
+  --shadow-md: 0 4px 10px -2px rgb(23 32 58 / 0.1);
+  --shadow-lg: 0 14px 28px -8px rgb(23 32 58 / 0.18);
 }
 
 [data-theme='dark'] {
-  --bg-app: #090a0f;
-  --bg-sidebar: #11131a;
-  --bg-card: #161822;
-  --bg-input: #161822;
-  --bg-hover: #1f2230;
-  --bg-active: #272b3c;
+  --bg-app: #14161b;
+  --bg-sidebar: #1a1d24;
+  --bg-card: #1b1e25;
+  --bg-input: #1b1e25;
+  --bg-hover: #232730;
+  --bg-active: #2c313c;
 
-  --user-bubble-bg: #272b3c;
-  --user-bubble-text: #f8fafc;
-  --ai-bubble-bg: #141620;
-  --ai-bubble-border: #232738;
-  --ai-bubble-text: #f1f5f9;
+  --user-bubble-bg: #2c313c;
+  --user-bubble-text: #ece8df;
+  --ai-bubble-bg: #1b1e25;
+  --ai-bubble-border: #2c3039;
+  --ai-bubble-text: #ece8df;
 
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-subtle: #94a3b8;
-  --text-placeholder: #64748b;
+  --text-main: #ece8df;
+  --text-muted: #c4c1ba;
+  --text-subtle: #9ea1ab;
+  --text-placeholder: #747886;
 
-  --border-light: #232738;
-  --border-medium: #33384c;
-  --border-focus: #3b82f6;
+  --border-light: #2c3039;
+  --border-medium: #3a3f4b;
+  --border-focus: #d1ab6c;
 
-  --primary: #3b82f6;
-  --primary-hover: #60a5fa;
-  --primary-text: #ffffff;
-  --primary-subtle: #1e293b;
+  --primary: #d1ab6c;
+  --primary-hover: #e0bf86;
+  --primary-text: #1a1405;
+  --primary-subtle: #2a2417;
 
-  --danger: #ef4444;
-  --danger-bg: #451a1a;
-  --danger-border: #7f1d1d;
+  --success: #5ed39b;
 
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --danger: #f1857a;
+  --danger-bg: #3a1c19;
+  --danger-border: #6e2f29;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+  --shadow-md: 0 4px 10px -2px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 14px 28px -8px rgb(0 0 0 / 0.6);
 }
 
 * {
@@ -92,6 +101,11 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
 }
 
 /* Custom Scrollbar */

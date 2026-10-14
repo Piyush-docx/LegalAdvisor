@@ -62,7 +62,7 @@ export default function Admin() {
         <div className="metric-card">
           <div className="metric-label">Feedback</div>
           <div className="metric-value">
-            👍 {metrics.feedback?.up ?? 0} · 👎 {metrics.feedback?.down ?? 0}
+            {metrics.feedback?.up ?? 0} helpful · {metrics.feedback?.down ?? 0} not helpful
           </div>
         </div>
       </div>

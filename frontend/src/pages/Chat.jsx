@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import {
   askQuestion,
   deleteSession,
@@ -6,32 +7,11 @@ import {
   fetchUserSessions,
   renameSession,
 } from '../api/client'
+import { AlertIcon, ArrowRightIcon, MenuIcon, PlusIcon } from '../components/Icons'
 import MessageItem from '../components/MessageItem'
 import Sidebar from '../components/Sidebar'
 import { useAuth } from '../context/useAuth'
-
-const SAMPLE_PROMPTS = [
-  {
-    category: 'Tenancy & Rent',
-    icon: '🏠',
-    text: "My landlord won't refund my security deposit after moving out.",
-  },
-  {
-    category: 'Employment Rights',
-    icon: '💼',
-    text: 'Can an employer terminate me without notice period or severance pay?',
-  },
-  {
-    category: 'Consumer Protection',
-    icon: '🛒',
-    text: 'A defective phone was delivered and the seller is refusing refund or replacement.',
-  },
-  {
-    category: 'Property & Family',
-    icon: '📜',
-    text: "What are daughters' legal rights in ancestral property in India?",
-  },
-]
+import { SAMPLE_PROMPTS } from '../components/samplePrompts'
 
 export default function Chat({ onOpenLogin }) {
   const { isLoggedIn, user } = useAuth()
@@ -44,6 +24,19 @@ export default function Chat({ onOpenLogin }) {
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const messagesEndRef = useRef(null)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const initialQuestionSent = useRef(false)
+
+  // A question typed on the landing page arrives through router state; send it once.
+  useEffect(() => {
+    const initial = location.state?.question
+    if (!initial || initialQuestionSent.current) return
+    initialQuestionSent.current = true
+    navigate(location.pathname, { replace: true, state: null })
+    handleSend(initial)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -187,7 +180,8 @@ export default function Chat({ onOpenLogin }) {
               onClick={() => setSidebarOpen(true)}
               title="Open sidebar"
             >
-              ☰ History
+              <MenuIcon size={16} />
+              <span>History</span>
             </button>
           )}
           <div className="chat-current-title">
@@ -203,7 +197,8 @@ export default function Chat({ onOpenLogin }) {
             disabled={isLoading}
             title="Start new conversation"
           >
-            + New
+            <PlusIcon size={14} />
+            <span>New</span>
           </button>
         </div>
 
@@ -211,27 +206,30 @@ export default function Chat({ onOpenLogin }) {
         <div className="chat-feed">
           {messages.length === 0 ? (
             <div className="chat-empty-hero">
-              <div className="hero-badge">Citizen Legal Assistant</div>
+              <div className="eyebrow">Citizen legal assistant</div>
               <h1 className="hero-title">How can I help with Indian law today?</h1>
               <p className="hero-subtitle">
-                Ask your everyday legal questions in plain words. All answers are grounded
-                in current Indian statutes and High Court / Supreme Court judgments.
+                Ask your everyday legal questions in plain words. Answers are grounded in
+                current Indian statutes and High Court and Supreme Court judgments.
               </p>
 
-              <div className="sample-prompts-grid">
-                {SAMPLE_PROMPTS.map((sample, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className="prompt-card"
-                    onClick={() => handleSend(sample.text)}
-                  >
-                    <span className="prompt-icon">{sample.icon}</span>
-                    <span className="prompt-category">{sample.category}</span>
-                    <span className="prompt-text">"{sample.text}"</span>
-                  </button>
+              <ul className="topic-list">
+                {SAMPLE_PROMPTS.map((sample) => (
+                  <li key={sample.category}>
+                    <button
+                      type="button"
+                      className="topic-row"
+                      onClick={() => handleSend(sample.text)}
+                    >
+                      <span className="topic-cat">{sample.category}</span>
+                      <span className="topic-q">{sample.text}</span>
+                      <span className="topic-go">
+                        <ArrowRightIcon size={16} />
+                      </span>
+                    </button>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ) : (
             <div className="chat-messages-container">
@@ -247,29 +245,23 @@ export default function Chat({ onOpenLogin }) {
               ))}
 
               {isLoading && (
-                <div className="chat-row chat-row-assistant chat-loading-row">
-                  <div className="chat-avatar">
-                    <div className="avatar-circle ai-avatar-badge">⚖️</div>
-                  </div>
-                  <div className="chat-bubble-container">
-                    <div className="chat-bubble-author">Legal AI Advisor</div>
-                    <div className="chat-typing-indicator">
-                      <div className="typing-dots">
-                        <span className="dot" />
-                        <span className="dot" />
-                        <span className="dot" />
-                      </div>
-                      <span className="typing-label">
-                        Retrieving relevant statutes & Indian Kanoon judgments...
-                      </span>
+                <div className="chat-turn chat-turn-assistant" role="status" aria-live="polite">
+                  <div className="memo memo-loading">
+                    <div className="typing-dots" aria-hidden="true">
+                      <span className="dot" />
+                      <span className="dot" />
+                      <span className="dot" />
                     </div>
+                    <span className="typing-label">
+                      Retrieving relevant statutes and Indian Kanoon judgments…
+                    </span>
                   </div>
                 </div>
               )}
 
               {error && (
                 <div className="chat-error-banner">
-                  <span className="error-icon">⚠️</span>
+                  <AlertIcon size={18} />
                   <span className="error-text">{error}</span>
                 </div>
               )}
@@ -297,7 +289,7 @@ export default function Chat({ onOpenLogin }) {
                   handleSend()
                 }
               }}
-              placeholder="Ask a legal question (e.g. Can my landlord deduct my deposit?)..."
+              placeholder="Ask a legal question, for example: can my landlord deduct my deposit?"
               rows={1}
               disabled={isLoading}
             />
@@ -307,7 +299,7 @@ export default function Chat({ onOpenLogin }) {
               disabled={isLoading || !question.trim()}
               title="Send question (Enter)"
             >
-              <span>▲</span>
+              <ArrowRightIcon size={18} />
             </button>
           </form>
           <div className="chat-input-disclaimer">

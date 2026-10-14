@@ -1,12 +1,16 @@
 import { useState } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, NavLink, Route, Routes } from 'react-router-dom'
 import About from './pages/About'
-import Chat from './pages/Chat'
 import Admin from './pages/Admin'
+import Chat from './pages/Chat'
+import Home from './pages/Home'
 import LoginModal from './components/LoginModal'
+import { MoonIcon, ScaleIcon, SunIcon } from './components/Icons'
 import { useAuth } from './context/useAuth'
 import { useTheme } from './context/useTheme'
 import './App.css'
+
+const navLinkClass = ({ isActive }) => `nav-link${isActive ? ' active' : ''}`
 
 function App() {
   const { user, isLoggedIn, logout } = useAuth()
@@ -18,20 +22,22 @@ function App() {
       <header className="site-navbar">
         <div className="navbar-left">
           <Link to="/" className="navbar-brand">
-            <span className="brand-badge">⚖️</span>
+            <span className="brand-badge">
+              <ScaleIcon size={20} />
+            </span>
             <span className="brand-title">Legal Help India</span>
           </Link>
           <nav className="navbar-nav-links">
-            <Link to="/chat" className="nav-link">
+            <NavLink to="/chat" className={navLinkClass}>
               Assistant
-            </Link>
-            <Link to="/about" className="nav-link">
+            </NavLink>
+            <NavLink to="/about" className={navLinkClass}>
               About & Data Sources
-            </Link>
+            </NavLink>
             {isLoggedIn && (
-              <Link to="/admin" className="nav-link">
+              <NavLink to="/admin" className={navLinkClass}>
                 Admin
-              </Link>
+              </NavLink>
             )}
           </nav>
         </div>
@@ -41,9 +47,10 @@ function App() {
             type="button"
             className="navbar-theme-btn"
             onClick={toggleTheme}
-            title={`Switch to ${isDark ? 'Light' : 'Dark'} mode`}
+            title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+            aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
           >
-            {isDark ? '☀️ Light' : '🌙 Dark'}
+            {isDark ? <SunIcon size={16} /> : <MoonIcon size={16} />}
           </button>
 
           {isLoggedIn ? (
@@ -73,10 +80,7 @@ function App() {
 
       <div className="site-content">
         <Routes>
-          <Route
-            path="/"
-            element={<Chat onOpenLogin={() => setIsLoginModalOpen(true)} />}
-          />
+          <Route path="/" element={<Home />} />
           <Route
             path="/chat"
             element={<Chat onOpenLogin={() => setIsLoginModalOpen(true)} />}

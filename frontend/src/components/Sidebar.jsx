@@ -1,4 +1,16 @@
 import { useState } from 'react'
+import {
+  CheckIcon,
+  CloseIcon,
+  LockIcon,
+  MoonIcon,
+  PencilIcon,
+  PlusIcon,
+  ScaleIcon,
+  SidebarIcon,
+  SunIcon,
+  TrashIcon,
+} from './Icons'
 import { useAuth } from '../context/useAuth'
 import { useTheme } from '../context/useTheme'
 
@@ -74,7 +86,9 @@ export default function Sidebar({
         <div className="sidebar-top">
           <div className="sidebar-header-row">
             <div className="sidebar-brand">
-              <span className="brand-icon">⚖️</span>
+              <span className="brand-icon">
+                <ScaleIcon size={18} />
+              </span>
               <span className="brand-text">Legal Help</span>
             </div>
             <button
@@ -84,7 +98,7 @@ export default function Sidebar({
               title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
               aria-label="Toggle sidebar"
             >
-              {isOpen ? '◀' : '▶'}
+              <SidebarIcon size={17} />
             </button>
           </div>
 
@@ -94,7 +108,7 @@ export default function Sidebar({
             onClick={onNewChat}
             disabled={isLoading}
           >
-            <span className="plus-icon">+</span>
+            <PlusIcon size={16} />
             <span>New conversation</span>
           </button>
 
@@ -112,7 +126,7 @@ export default function Sidebar({
                   className="clear-search-btn"
                   onClick={() => setSearchQuery('')}
                 >
-                  ✕
+                  <CloseIcon size={12} />
                 </button>
               )}
             </div>
@@ -153,22 +167,22 @@ export default function Sidebar({
                             onChange={(e) => setEditTitle(e.target.value)}
                             autoFocus
                           />
-                          <button type="submit" className="rename-save-btn" title="Save">
-                            ✓
+                          <button type="submit" className="rename-save-btn" title="Save" aria-label="Save">
+                            <CheckIcon size={14} />
                           </button>
                           <button
                             type="button"
                             className="rename-cancel-btn"
                             onClick={handleCancelRename}
                             title="Cancel"
+                            aria-label="Cancel"
                           >
-                            ✕
+                            <CloseIcon size={14} />
                           </button>
                         </form>
                       ) : (
                         <>
                           <div className="history-item-content">
-                            <span className="history-item-icon">💬</span>
                             <span className="history-item-title" title={sess.title}>
                               {sess.title}
                             </span>
@@ -180,8 +194,9 @@ export default function Sidebar({
                               className="action-icon-btn"
                               onClick={(e) => startEditing(e, sess)}
                               title="Rename"
+                              aria-label="Rename"
                             >
-                              ✏️
+                              <PencilIcon size={14} />
                             </button>
                             <button
                               type="button"
@@ -189,8 +204,9 @@ export default function Sidebar({
                               onClick={(e) => handleDelete(e, sess.session_id)}
                               disabled={isDeletingId === sess.session_id}
                               title="Delete"
+                              aria-label="Delete"
                             >
-                              🗑️
+                              <TrashIcon size={14} />
                             </button>
                           </div>
                         </>
@@ -202,7 +218,9 @@ export default function Sidebar({
             </div>
           ) : (
             <div className="sidebar-guest-card">
-              <div className="guest-icon">🔒</div>
+              <div className="guest-icon">
+                <LockIcon size={22} />
+              </div>
               <h4>Sign in for History</h4>
               <p>Sign in with your email to access and search all your previous legal discussions.</p>
               <button
@@ -226,7 +244,8 @@ export default function Sidebar({
               onClick={toggleTheme}
               title={`Switch to ${isDark ? 'Light' : 'Dark'} mode`}
             >
-              {isDark ? '☀️ Light' : '🌙 Dark'}
+              {isDark ? <SunIcon size={14} /> : <MoonIcon size={14} />}
+              <span>{isDark ? 'Light' : 'Dark'}</span>
             </button>
           </div>
 
