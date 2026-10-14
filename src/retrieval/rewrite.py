@@ -16,15 +16,18 @@ Line 1 - the Act. The full official name, with year, of the main central Act or 
 governs the question, as a quoted phrase followed by doctypes:laws.
   Example: "Motor Vehicles Act, 1988" doctypes:laws
   Write NONE instead if no single central Act governs it or you are not sure of its exact name.
-Line 2 - the topic. One quoted legal phrase an Indian lawyer would use, followed by doctypes:laws.
-  Example: "right to information" doctypes:laws
+Line 2 - the topic. The specific legal issue in the question, as 2 to 4 plain keywords of the kind \
+that appear in statutes (no quotation marks, no filler words), followed by doctypes:laws. Name the \
+specific issue, not the whole area of law.
+  Example: security deposit tenant landlord doctypes:laws
 
 Rules:
 - Name the law people actually rely on today. Consumer disputes: "Consumer Protection Act, 2019" \
 (not the 1986 Act). Offences and criminal procedure for events from 1 July 2024: "Bharatiya Nyaya \
-Sanhita, 2023" and "Bharatiya Nagarik Suraksha Sanhita, 2023". Landlord and tenant notice and eviction: \
-"Transfer of Property Act, 1882". Family and succession: the personal-law Act that applies, such as \
-"Hindu Succession Act, 1956" or "Hindu Marriage Act, 1955".
+Sanhita, 2023" and "Bharatiya Nagarik Suraksha Sanhita, 2023". Family and succession: the personal-law \
+Act that applies, such as "Hindu Succession Act, 1956" or "Hindu Marriage Act, 1955".
+- Write NONE on Line 1 when the question is about an area that is mostly governed by state laws or \
+by more than one Act; the topic line will find them.
 - Use the exact title as Indian Kanoon would print it, including the year.
 - Drop all personal details, amounts and numbers.
 - Do not add labels, explanations or any other text.
@@ -61,7 +64,9 @@ def normalize_search_queries(text: str, max_queries: int = 3) -> list[str]:
     queries: list[str] = []
     for raw in text.strip().strip("`").splitlines():
         line = _LABEL.sub("", raw.strip().strip("`")).strip()
-        if not line or line.upper().rstrip(".") == "NONE":
+        # "NONE" may come with the filter appended ("NONE doctypes:laws"): still a NONE, not a search.
+        bare = re.sub(r"doctypes\s*:\s*\w+", "", line, flags=re.IGNORECASE).strip().strip("\"'`").upper().rstrip(".")
+        if not line or bare in ("", "NONE"):
             continue
         if not ('"' in line or "doctypes:" in line.lower() or "ANDD" in line):
             continue  # chatter such as "Sure! Here you go", not a query

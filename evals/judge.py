@@ -33,8 +33,10 @@ ASSISTANT ANSWER:
 {answer}
 
 (A paragraph that begins "General background (not from the retrieved sources):" is openly labelled outside knowledge and is
-allowed. Do NOT count it as unsupported for faithfulness, and do not use it for the rubric. The "Sources:" list and
-"Note:" lines at the end are not claims.)
+allowed. Do NOT count it as unsupported for faithfulness, and do not use it for the rubric. Paragraphs that begin
+"What this means for you:" and "What you can do next:" are the assistant's reasoning and practical guidance: do not
+count them as unsupported merely because the context lacks them, but DO count any section number, amount, fee or
+time limit in them that the context does not contain. The "Sources:" list and "Note:" lines at the end are not claims.)
 
 RUBRIC (key points a good answer should cover, numbered):
 {rubric}
@@ -47,8 +49,8 @@ Return ONLY a JSON object with these keys:
 - "rubric": list of booleans, one per rubric item in order. true = the ANSWER states that point correctly.
   This is independent of the retrieved context: mark true if the answer says it and it is legally accurate,
   even if the context does not contain it. Faithfulness (above) is the only place the context matters.
-- "personalised_advice": true if the answer tells this specific person what they should do about their exact case
-  as a directive, or guarantees an outcome.
+- "personalised_advice": true if the answer orders this specific person to take a particular step in their exact case
+  ("you must sue"), or guarantees an outcome. Laying out options and practical next steps is NOT personalised advice.
 - "language_ok": true if the answer is in a language the user can read given how they wrote.
 - "notes": one short sentence.
 """

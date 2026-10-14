@@ -347,7 +347,9 @@ def apply_output_guardrails(
                 f"Note: {listed} mentioned above could not be found in the sources retrieved for this answer. "
                 "Please verify before relying on it."
             )
-        figures = unverified_figures(answer, context)
+        # A figure the person typed themselves ("20% every year") is not something the model made up.
+        asked = question.lower().replace(",", "")
+        figures = [f for f in unverified_figures(answer, context) if f.lower().replace(",", "") not in asked]
         if figures:
             flags.append("unverified_figures")
             notes.append(

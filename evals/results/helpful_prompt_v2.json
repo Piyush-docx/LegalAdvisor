@@ -1,0 +1,465 @@
+{
+  "label": "helpful_prompt_v2",
+  "partial": false,
+  "timestamp": "2026-10-14T16:26:53.993377+00:00",
+  "git": {
+    "commit": "589797f",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash,groq:openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": false,
+    "fresh_rewrite": false,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 0,
+      "doc": 0
+    },
+    "ikanoon_logical": {
+      "search": 5,
+      "doc": 25
+    }
+  },
+  "summary": {
+    "cases": 5,
+    "ok": 5,
+    "skipped_not_recorded": 0,
+    "errors": 0,
+    "pass_rate": 0.8,
+    "per_check": {
+      "citations_valid": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "disclaimer_present": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "ends_cleanly": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "expected_source_in_answer": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "expected_source_retrieved": {
+        "passed": 4,
+        "applicable": 5
+      },
+      "no_error": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "not_truncated": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "route_ok": {
+        "passed": 5,
+        "applicable": 5
+      },
+      "sections_grounded": {
+        "passed": 5,
+        "applicable": 5
+      }
+    },
+    "pass_rate_by_category": {
+      "consumer": 1.0,
+      "criminal": 0.0,
+      "employment": 1.0,
+      "tenancy": 1.0
+    },
+    "latency_ms_p50": 4169,
+    "latency_ms_p95": 4624,
+    "ikanoon_calls_per_answer_case": 6.0,
+    "gen_tokens_in_mean": 3184.0,
+    "gen_tokens_out_mean": 341.2,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 0.8,
+    "retrieval_mrr": 0.8,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 3.8,
+    "judge_rubric_coverage_mean": 0.4,
+    "judge_personalised_advice_count": 0,
+    "judge_scored": 5,
+    "tiers": {},
+    "answer_models": {
+      "google_genai:gemini-2.5-flash": 5
+    },
+    "halted_on_daily_quota": false
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord refuses to return my security deposit after I vacated the flat. What can I do?",
+          "answer": "Bottom line: The sources provided do not directly address the return of security deposits. However, you may have options based on general contract principles and property law.\n\nWhat the law says: The retrieved sources discuss aspects of property transfer and leases, but do not specifically mention security deposits or their return. Section 106 of The Transfer of Property Act, 1882, deals with the duration and termination of leases in the absence of a written contract or local usage, requiring six months' notice for agricultural/manufacturing leases and fifteen days' notice for other leases [1]. Section 54 of The Transfer of Property Act, 1882, defines a \"sale\" as a transfer of ownership for a price and states that for tangible immovable property of value Rs. 100 or more, it must be made by a registered instrument [3].\n\nWhat this means for you: Since the sources do not directly cover security deposits, your situation would likely be governed by the terms of your rental agreement. If you had a written agreement, it should specify the conditions for the return of your security deposit. If there was no written agreement, or if the agreement is silent on this, general principles of contract law would apply, meaning the landlord is expected to return the deposit unless there are valid deductions for damages beyond normal wear and tear or unpaid rent. It would help to know if you had a written rental agreement and what it states about the security deposit.\n\nWhat you can do next:\n- Review your rental agreement for clauses related to the security deposit and its return.\n- Send a written notice to your landlord demanding the return of your security deposit, clearly stating the amount and the date you vacated.\n- Keep copies of all communication with your landlord, including the notice and any replies.\n- If the landlord still refuses, you may consider approaching the District Legal Services Authority for free legal aid or consulting a lawyer to understand your options, which may include filing a civil suit.\n\nNote: the figure(s) Rs. 100 mentioned above could not be found in the sources retrieved for this answer. Please verify them before relying on them.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [3] Section 54 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/613871/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 4464,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3025,
+          "tokens_out": 404
+        }
+      ],
+      "final_answer": "Bottom line: The sources provided do not directly address the return of security deposits. However, you may have options based on general contract principles and property law.\n\nWhat the law says: The retrieved sources discuss aspects of property transfer and leases, but do not specifically mention security deposits or their return. Section 106 of The Transfer of Property Act, 1882, deals with the duration and termination of leases in the absence of a written contract or local usage, requiring six months' notice for agricultural/manufacturing leases and fifteen days' notice for other leases [1]. Section 54 of The Transfer of Property Act, 1882, defines a \"sale\" as a transfer of ownership for a price and states that for tangible immovable property of value Rs. 100 or more, it must be made by a registered instrument [3].\n\nWhat this means for you: Since the sources do not directly cover security deposits, your situation would likely be governed by the terms of your rental agreement. If you had a written agreement, it should specify the conditions for the return of your security deposit. If there was no written agreement, or if the agreement is silent on this, general principles of contract law would apply, meaning the landlord is expected to return the deposit unless there are valid deductions for damages beyond normal wear and tear or unpaid rent. It would help to know if you had a written rental agreement and what it states about the security deposit.\n\nWhat you can do next:\n- Review your rental agreement for clauses related to the security deposit and its return.\n- Send a written notice to your landlord demanding the return of your security deposit, clearly stating the amount and the date you vacated.\n- Keep copies of all communication with your landlord, including the notice and any replies.\n- If the landlord still refuses, you may consider approaching the District Legal Services Authority for free legal aid or consulting a lawyer to understand your options, which may include filing a civil suit.\n\nNote: the figure(s) Rs. 100 mentioned above could not be found in the sources retrieved for this answer. Please verify them before relying on them.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n- [3] Section 54 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/613871/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7206,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3025,
+      "tokens_out": 404,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 2,
+        "unsupported_claims": [
+          "landlord must return deposit unless damages",
+          "general contract law governs security deposit",
+          "approach District Legal Services Authority",
+          "file a civil suit",
+          "written notice required before claim"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "rubric_coverage": 0.8,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mixes supported lease provisions with many unsupported statements about deposits."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Can a landlord evict a tenant without giving any notice in India?",
+          "answer": "Bottom line: No, a landlord generally cannot evict a tenant without giving proper notice in India. The law requires a specific notice period depending on the purpose of the tenancy.\n\nWhat the law says: In the absence of a contract, local law, or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes is considered a year-to-year lease, terminable by six months' notice from either the lessor or lessee [1]. For any other purpose, a lease of immovable property is considered a month-to-month lease, terminable by fifteen days' notice from either the lessor or lessee [1]. This notice must be in writing, signed by or on behalf of the person giving it, and sent by post, delivered personally, or affixed to a conspicuous part of the property if delivery is not practicable [1]. The notice period begins from the date the notice is received [1].\n\nWhat this means for you: Based on the law, your landlord must provide you with a written notice before they can evict you. The length of this notice depends on the purpose for which you are renting the property. If you are renting for agricultural or manufacturing purposes, you should receive six months' notice. For any other purpose, such as residential use, you should receive fifteen days' notice. The notice must be properly delivered to you.\n\nWhat you can do next:\n- Check if you have a written rental agreement and review its terms regarding notice periods.\n- If you receive an eviction notice, note the date you received it.\n- If you believe the notice period is incorrect or you have not received proper notice, you can seek legal advice.\n- Contact your local District Legal Services Authority for free legal aid and to understand your rights.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 4169,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3079,
+          "tokens_out": 360
+        }
+      ],
+      "final_answer": "Bottom line: No, a landlord generally cannot evict a tenant without giving proper notice in India. The law requires a specific notice period depending on the purpose of the tenancy.\n\nWhat the law says: In the absence of a contract, local law, or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes is considered a year-to-year lease, terminable by six months' notice from either the lessor or lessee [1]. For any other purpose, a lease of immovable property is considered a month-to-month lease, terminable by fifteen days' notice from either the lessor or lessee [1]. This notice must be in writing, signed by or on behalf of the person giving it, and sent by post, delivered personally, or affixed to a conspicuous part of the property if delivery is not practicable [1]. The notice period begins from the date the notice is received [1].\n\nWhat this means for you: Based on the law, your landlord must provide you with a written notice before they can evict you. The length of this notice depends on the purpose for which you are renting the property. If you are renting for agricultural or manufacturing purposes, you should receive six months' notice. For any other purpose, such as residential use, you should receive fifteen days' notice. The notice must be properly delivered to you.\n\nWhat you can do next:\n- Check if you have a written rental agreement and review its terms regarding notice periods.\n- If you receive an eviction notice, note the date you received it.\n- If you believe the notice period is incorrect or you have not received proper notice, you can seek legal advice.\n- Contact your local District Legal Services Authority for free legal aid and to understand your rights.\n\nSources:\n- [1] Section 106 in The Transfer Of Property Act, 1882: https://indiankanoon.org/doc/80042/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7474,
+      "citation_titles": [
+        "Section 106 in The Transfer Of Property Act, 1882",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 52 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3079,
+      "tokens_out": 360,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.25,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer is faithful and mostly aligns with the provided legal text, but misses several rubric points."
+      }
+    },
+    {
+      "id": "q09",
+      "category": "employment",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Is an employee entitled to gratuity if they resign before completing 5 years?",
+          "answer": "Bottom line: Generally, an employee is entitled to gratuity only if they have completed at least five years of continuous service, unless the termination of employment is due to death or disablement.\n\nWhat the law says: Gratuity is payable to an employee upon termination of employment after they have rendered continuous service for not less than five years, including on resignation [1]. However, the completion of five years of continuous service is not necessary if the employment is terminated due to death or disablement [1].\n\nWhat this means for you: Based on the law, if you resigned before completing five years of continuous service, you would generally not be entitled to gratuity. The five-year continuous service requirement is specifically mentioned for resignation. The only exceptions to this five-year rule are in cases of death or disablement. To confirm your exact eligibility, it would be helpful to know the exact duration of your continuous service.\n\nWhat you can do next:\n- Review your employment contract and any company policies regarding gratuity.\n- If you believe there's a dispute regarding your gratuity, you can make an application to the controlling authority for a decision [2].\n- You can seek advice from the District Legal Services Authority for free legal aid.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n- [2] Section 7 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1974722/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 3545,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3933,
+          "tokens_out": 254
+        }
+      ],
+      "final_answer": "Bottom line: Generally, an employee is entitled to gratuity only if they have completed at least five years of continuous service, unless the termination of employment is due to death or disablement.\n\nWhat the law says: Gratuity is payable to an employee upon termination of employment after they have rendered continuous service for not less than five years, including on resignation [1]. However, the completion of five years of continuous service is not necessary if the employment is terminated due to death or disablement [1].\n\nWhat this means for you: Based on the law, if you resigned before completing five years of continuous service, you would generally not be entitled to gratuity. The five-year continuous service requirement is specifically mentioned for resignation. The only exceptions to this five-year rule are in cases of death or disablement. To confirm your exact eligibility, it would be helpful to know the exact duration of your continuous service.\n\nWhat you can do next:\n- Review your employment contract and any company policies regarding gratuity.\n- If you believe there's a dispute regarding your gratuity, you can make an application to the controlling authority for a decision [2].\n- You can seek advice from the District Legal Services Authority for free legal aid.\n\nNote: several central labour laws, including the Payment of Wages Act, the Minimum Wages Act, the Payment of Gratuity Act and the Industrial Disputes Act, have been consolidated into the Code on Wages, the Code on Social Security, the Industrial Relations Code and the Occupational Safety, Health and Working Conditions Code. Please check which provisions are in force today and the Code's equivalent section.\n\nSources:\n- [1] Section 4 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1934248/\n- [2] Section 7 in THE PAYMENT OF GRATUITY ACT, 1972: https://indiankanoon.org/doc/1974722/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 9950,
+      "citation_titles": [
+        "Section 4 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 7 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 8 in THE PAYMENT OF GRATUITY ACT, 1972",
+        "Section 2 in THE PAYMENT OF GRATUITY ACT, 1972"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3933,
+      "tokens_out": 254,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "You can seek advice from the District Legal Services Authority for free legal aid",
+          "Several central labour laws have been consolidated into the Code and you should check which provisions apply"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "rubric_coverage": 0.75,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mixes supported and unsupported statements."
+      }
+    },
+    {
+      "id": "q11",
+      "category": "consumer",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "I bought a defective product online and the company refuses to replace it. What should I do?",
+          "answer": "Bottom line: You can file a complaint as a consumer if the product you bought online is defective and the company refuses to replace it.\n\nWhat the law says: A \"complainant\" can be a consumer, a voluntary consumer association, the Central or State Government, or the Central Authority [2]. A \"complaint\" can be made in writing if the goods bought suffer from one or more defects [2]. A \"consumer dispute\" arises when the person against whom a complaint is made denies or disputes the allegations in the complaint [2]. Consumer rights include the right to be protected against unfair trade practices and to be informed about the quality, quantity, potency, purity, standard, and price of goods [2]. An unfair trade practice includes refusing to take back or withdraw defective goods and refund the consideration within the stipulated period, or within thirty days if no period is stipulated [2].\n\nWhat this means for you: Since you bought a defective product online and the company is refusing to replace it, you have grounds to file a complaint as a consumer. The company's refusal to replace the defective product could be considered an unfair trade practice under the law.\n\nWhat you can do next:\n- Collect all documents related to your purchase, such as bills, receipts, and communication with the company.\n- Draft a written complaint clearly stating the defect in the product and the company's refusal to replace it.\n- File your complaint with the appropriate consumer forum. A lawyer or legal aid centre can confirm the correct forum.\n- You can seek assistance from the District Legal Services Authority for free legal aid.\n\nSources:\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 3313,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3029,
+          "tokens_out": 327
+        }
+      ],
+      "final_answer": "Bottom line: You can file a complaint as a consumer if the product you bought online is defective and the company refuses to replace it.\n\nWhat the law says: A \"complainant\" can be a consumer, a voluntary consumer association, the Central or State Government, or the Central Authority [2]. A \"complaint\" can be made in writing if the goods bought suffer from one or more defects [2]. A \"consumer dispute\" arises when the person against whom a complaint is made denies or disputes the allegations in the complaint [2]. Consumer rights include the right to be protected against unfair trade practices and to be informed about the quality, quantity, potency, purity, standard, and price of goods [2]. An unfair trade practice includes refusing to take back or withdraw defective goods and refund the consideration within the stipulated period, or within thirty days if no period is stipulated [2].\n\nWhat this means for you: Since you bought a defective product online and the company is refusing to replace it, you have grounds to file a complaint as a consumer. The company's refusal to replace the defective product could be considered an unfair trade practice under the law.\n\nWhat you can do next:\n- Collect all documents related to your purchase, such as bills, receipts, and communication with the company.\n- Draft a written complaint clearly stating the defect in the product and the company's refusal to replace it.\n- File your complaint with the appropriate consumer forum. A lawyer or legal aid centre can confirm the correct forum.\n- You can seek assistance from the District Legal Services Authority for free legal aid.\n\nSources:\n- [2] Section 2 in Consumer Protection Act, 2019: https://indiankanoon.org/doc/47873513/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 7697,
+      "citation_titles": [
+        "Section 15 in Consumer Protection Act, 2019",
+        "Section 2 in Consumer Protection Act, 2019",
+        "Section 12 in Consumer Protection Act, 2019",
+        "Section 13 in Consumer Protection Act, 2019",
+        "Section 3 in Consumer Protection Act, 2019"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3029,
+      "tokens_out": 327,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 4,
+        "unsupported_claims": [
+          "Seek assistance from District Legal Services Authority for free legal aid"
+        ],
+        "rubric_flags": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.2,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mostly aligns with the retrieved law but omits several rubric points."
+      }
+    },
+    {
+      "id": "q26",
+      "category": "criminal",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "What is the punishment for cheque bounce under Section 138 of the Negotiable Instruments Act?",
+          "answer": "Bottom line: The retrieved sources do not specify the exact punishment for cheque bounce under Section 138 of the Negotiable Instruments Act. However, they indicate that the law aims to encourage the use of cheques and that the compensatory aspect of the remedy is prioritized.\n\nWhat the law says: The Negotiable Instruments Act, 1881, was amended to include Chapter XVII, which deals with penalties for dishonour of cheques due to insufficient funds [1]. Sections 138 to 142 of this Act address dishonour of cheques [1]. The provisions were incorporated to encourage the use of cheques and enhance their credibility [1]. The law aims for early disposal of cheque dishonour cases and enhancing punishment for offenders [4]. The compensatory aspect of the remedy for dishonour of cheques should be given priority over the punitive aspect [1], [5].\n\nWhat this means for you: While the specific punishment amount or duration is not detailed in the provided sources, it is clear that the law considers dishonour of cheques a serious matter, with a focus on compensating the person who received the bounced cheque. The legal framework is designed to make sure that people can trust cheques as a method of payment.\n\nWhat you can do next:\n- If you are involved in a cheque bounce case, gather all relevant documents, such as the cheque itself, bank statements, and any communication related to the payment.\n- Consider seeking legal advice from a lawyer or your nearest District Legal Services Authority to understand the specific penalties and your options.\n- Be aware that compounding (settling the dispute) is an option in cheque bounce cases, and it is often encouraged [1], [5].\n- Act promptly, as there may be time limits for taking legal action in such cases.\n\nSources:\n- [1] Damodar S.Prabhu vs Sayed Babalal H on 3 May, 2010: https://indiankanoon.org/doc/1594211/\n- [4] Mr. Rajesh Bhalchandra Chalke vs State Of Maharashtra on 7 December, 2010: https://indiankanoon.org/doc/57018/\n- [5] Yasir Amin Khan vs Abdul Rashid Ganie on 22 November, 2021: https://indiankanoon.org/doc/112024483/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 4665,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 2854,
+          "tokens_out": 361
+        }
+      ],
+      "final_answer": "Bottom line: The retrieved sources do not specify the exact punishment for cheque bounce under Section 138 of the Negotiable Instruments Act. However, they indicate that the law aims to encourage the use of cheques and that the compensatory aspect of the remedy is prioritized.\n\nWhat the law says: The Negotiable Instruments Act, 1881, was amended to include Chapter XVII, which deals with penalties for dishonour of cheques due to insufficient funds [1]. Sections 138 to 142 of this Act address dishonour of cheques [1]. The provisions were incorporated to encourage the use of cheques and enhance their credibility [1]. The law aims for early disposal of cheque dishonour cases and enhancing punishment for offenders [4]. The compensatory aspect of the remedy for dishonour of cheques should be given priority over the punitive aspect [1], [5].\n\nWhat this means for you: While the specific punishment amount or duration is not detailed in the provided sources, it is clear that the law considers dishonour of cheques a serious matter, with a focus on compensating the person who received the bounced cheque. The legal framework is designed to make sure that people can trust cheques as a method of payment.\n\nWhat you can do next:\n- If you are involved in a cheque bounce case, gather all relevant documents, such as the cheque itself, bank statements, and any communication related to the payment.\n- Consider seeking legal advice from a lawyer or your nearest District Legal Services Authority to understand the specific penalties and your options.\n- Be aware that compounding (settling the dispute) is an option in cheque bounce cases, and it is often encouraged [1], [5].\n- Act promptly, as there may be time limits for taking legal action in such cases.\n\nSources:\n- [1] Damodar S.Prabhu vs Sayed Babalal H on 3 May, 2010: https://indiankanoon.org/doc/1594211/\n- [4] Mr. Rajesh Bhalchandra Chalke vs State Of Maharashtra on 7 December, 2010: https://indiankanoon.org/doc/57018/\n- [5] Yasir Amin Khan vs Abdul Rashid Ganie on 22 November, 2021: https://indiankanoon.org/doc/112024483/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 6425,
+      "citation_titles": [
+        "Damodar S.Prabhu vs Sayed Babalal H on 3 May, 2010",
+        "G Varadaraju vs Union Of India on 12 August, 2022",
+        "Dashrath Rupsingh Rathod vs State Of Maharashtra & Anr on 1 August, 2014",
+        "Mr. Rajesh Bhalchandra Chalke vs State Of Maharashtra on 7 December, 2010",
+        "Yasir Amin Khan vs Abdul Rashid Ganie on 22 November, 2021"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": false,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": null,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 2854,
+      "tokens_out": 361,
+      "any_truncated": false,
+      "passed": false,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.0,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer omits the specific punishment details asked for"
+      }
+    }
+  ]
+}

@@ -256,3 +256,13 @@ def test_feedback_saved_redacted_and_shown_to_admin(monkeypatch):
     data = get_admin_logs()
     assert data["metrics"]["feedback"] == {"up": 0, "down": 1}
     assert "9876543210" not in json.dumps(data["recent_downvotes"])
+
+
+def test_figure_the_person_typed_is_not_flagged_as_unverified():
+    from src.guardrails import apply_output_guardrails
+
+    answer = "A 20% rise every year is not allowed everywhere. The law caps the increase at 9% [1]."
+    out, flags = apply_output_guardrails(answer, "The rent may rise by 5 percent.", "My landlord raises rent by 20% every year")
+    note = out.split("Note:")[-1]
+    assert "unverified_figures" in flags
+    assert "9%" in note and "20%" not in note  # the model's own figure is flagged, the person's is not

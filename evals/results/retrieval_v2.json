@@ -1,0 +1,389 @@
+{
+  "label": "retrieval_v2",
+  "partial": false,
+  "timestamp": "2026-10-14T16:36:44.593830+00:00",
+  "git": {
+    "commit": "589797f",
+    "dirty": true
+  },
+  "config": {
+    "router": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "context_check": "groq:openai/gpt-oss-20b,google_genai:gemini-2.5-flash",
+    "rewrite": "groq:openai/gpt-oss-120b,google_genai:gemini-2.5-flash",
+    "answer": "google_genai:gemini-2.5-flash,groq:openai/gpt-oss-120b",
+    "judge": "openai/gpt-oss-120b"
+  },
+  "mode": {
+    "live": true,
+    "fresh_rewrite": true,
+    "judge": true
+  },
+  "network_calls_made": {
+    "ikanoon_live": {
+      "search": 5,
+      "doc": 10
+    },
+    "ikanoon_logical": {
+      "search": 8,
+      "doc": 34
+    }
+  },
+  "summary": {
+    "cases": 4,
+    "ok": 4,
+    "skipped_not_recorded": 0,
+    "errors": 0,
+    "pass_rate": 1.0,
+    "per_check": {
+      "citations_valid": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "disclaimer_present": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "ends_cleanly": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "expected_source_in_answer": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "expected_source_retrieved": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "no_error": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "not_truncated": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "route_ok": {
+        "passed": 4,
+        "applicable": 4
+      },
+      "sections_grounded": {
+        "passed": 4,
+        "applicable": 4
+      }
+    },
+    "pass_rate_by_category": {
+      "tenancy": 1.0
+    },
+    "latency_ms_p50": 6255,
+    "latency_ms_p95": 7568,
+    "ikanoon_calls_per_answer_case": 8.0,
+    "gen_tokens_in_mean": 3318.5,
+    "gen_tokens_out_mean": 430.5,
+    "truncation_rate": 0.0,
+    "retrieval_hit_rate": 1.0,
+    "retrieval_mrr": 0.521,
+    "cache_hit_rate": 0.0,
+    "judge_faithfulness_mean": 3.5,
+    "judge_rubric_coverage_mean": 0.688,
+    "judge_personalised_advice_count": 1,
+    "judge_scored": 4,
+    "tiers": {},
+    "answer_models": {
+      "google_genai:gemini-2.5-flash": 4
+    },
+    "halted_on_daily_quota": true
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord refuses to return my security deposit after I vacated the flat. What can I do?",
+          "answer": "Bottom line: It is unlawful for your landlord to refuse to return your security deposit after you have vacated the flat. You can take steps to recover it.\n\nWhat the law says: In Tamil Nadu, the security deposit must be refunded to the tenant within one month after vacating the premises, after deducting any tenant liabilities [1]. In Rajasthan, the security deposit must be refunded within one month after vacation of the premises, after making due deduction of any liability of the tenant [2]. If the security deposit is not refunded within this period, the tenant may file an application before the Rent Authority to direct the landlord to refund it [2].\n\nWhat this means for you: Since you have already vacated the flat, your landlord is legally obligated to return your security deposit within one month, after deducting any legitimate liabilities. If more than a month has passed since you vacated, your landlord is in violation of the law. The specific process for recovery may depend on whether your tenancy is governed by the Tamil Nadu or Rajasthan Act, or another state's law.\n\nWhat you can do next:\n- Send a written notice to your landlord demanding the return of your security deposit, clearly stating the amount and the date you vacated.\n- Gather all relevant documents, including your tenancy agreement, rent receipts, and any communication with your landlord regarding the security deposit.\n- If you are in Rajasthan and the deposit is not returned within one month, you can file an application with the Rent Authority to direct the landlord to refund the security deposit [2].\n- Contact the District Legal Services Authority for free legal aid and advice on the specific steps to take in your state.\n\nSources:\n- [1] Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017: https://indiankanoon.org/doc/134441806/\n- [2] Rajasthan Rent Control Act, 2001: https://indiankanoon.org/doc/18783076/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 5312,
+          "ikanoon_calls": 10,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3294,
+          "tokens_out": 334
+        }
+      ],
+      "final_answer": "Bottom line: It is unlawful for your landlord to refuse to return your security deposit after you have vacated the flat. You can take steps to recover it.\n\nWhat the law says: In Tamil Nadu, the security deposit must be refunded to the tenant within one month after vacating the premises, after deducting any tenant liabilities [1]. In Rajasthan, the security deposit must be refunded within one month after vacation of the premises, after making due deduction of any liability of the tenant [2]. If the security deposit is not refunded within this period, the tenant may file an application before the Rent Authority to direct the landlord to refund it [2].\n\nWhat this means for you: Since you have already vacated the flat, your landlord is legally obligated to return your security deposit within one month, after deducting any legitimate liabilities. If more than a month has passed since you vacated, your landlord is in violation of the law. The specific process for recovery may depend on whether your tenancy is governed by the Tamil Nadu or Rajasthan Act, or another state's law.\n\nWhat you can do next:\n- Send a written notice to your landlord demanding the return of your security deposit, clearly stating the amount and the date you vacated.\n- Gather all relevant documents, including your tenancy agreement, rent receipts, and any communication with your landlord regarding the security deposit.\n- If you are in Rajasthan and the deposit is not returned within one month, you can file an application with the Rent Authority to direct the landlord to refund the security deposit [2].\n- Contact the District Legal Services Authority for free legal aid and advice on the specific steps to take in your state.\n\nSources:\n- [1] Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017: https://indiankanoon.org/doc/134441806/\n- [2] Rajasthan Rent Control Act, 2001: https://indiankanoon.org/doc/18783076/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 8271,
+      "citation_titles": [
+        "Tamil Nadu Regulation of Rights and Responsibilities of Landlords and Tenants Act, 2017",
+        "Rajasthan Rent Control Act, 2001",
+        "Section 49 in The Registration Act, 1908",
+        "Chhattisgarh Rent Control Act, 2011"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 2,
+      "ikanoon_calls_total": 10,
+      "tokens_in": 3294,
+      "tokens_out": 334,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 5,
+        "unsupported_claims": [],
+        "rubric_flags": [
+          false,
+          false,
+          false,
+          true,
+          true
+        ],
+        "rubric_coverage": 0.4,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer is faithful but misses several rubric points."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Can a landlord evict a tenant without giving any notice in India?",
+          "answer": "Bottom line: No, a landlord generally cannot evict a tenant without giving proper notice in India. The law provides protections for tenants, and landlords must follow specific procedures for eviction.\n\nWhat the law says: The Delhi Rent Control Act, 1958, states that a tenant is protected against eviction, except under specific conditions [1]. One ground for eviction is if the premises were let for residence and the tenant or their family has not resided there for six months immediately before the application for recovery of possession [1]. The Act also mentions that a landlord cannot cut off or withhold essential supplies or services without just and sufficient cause [1]. If a landlord does so, the tenant can complain to the Controller, who may order the restoration of services [1].\n\nWhat this means for you: The sources provided primarily refer to the Delhi Rent Control Act, 1958, and other state-specific rent control acts for Maharashtra and Bombay. These laws indicate that there are specific grounds and procedures for eviction, implying that a landlord cannot simply evict a tenant without notice. The fact that a tenant can complain if essential services are cut off to compel them to vacate further suggests that landlords cannot use such tactics for eviction without following legal processes. To give you more specific advice, it would be helpful to know in which state or union territory the property is located, as rent control laws can vary significantly by state.\n\nWhat you can do next:\n- Keep all rent receipts and any communication with your landlord.\n- If your landlord attempts to evict you without proper notice or cuts off essential services, you can make an application to the Controller (as per the Delhi Rent Control Act) [1].\n- Seek advice from a lawyer or your local District Legal Services Authority to understand the specific rent control laws applicable in your state and your rights.\n- Do not vacate the premises without a proper court order or a mutual agreement in writing.\n\nGeneral background (not from the retrieved sources): In India, tenancy laws are designed to protect tenants from arbitrary eviction. While the specific grounds and procedures for eviction vary by state, landlords are generally required to issue a legal notice to the tenant, stating the reason for eviction and giving a reasonable period to vacate or respond. If the tenant does not comply, the landlord must then approach a court to obtain an eviction order.\n\nSources:\n- [1] The Delhi Rent Control Act, 1958: https://indiankanoon.org/doc/152548910/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 6846,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3353,
+          "tokens_out": 476
+        }
+      ],
+      "final_answer": "Bottom line: No, a landlord generally cannot evict a tenant without giving proper notice in India. The law provides protections for tenants, and landlords must follow specific procedures for eviction.\n\nWhat the law says: The Delhi Rent Control Act, 1958, states that a tenant is protected against eviction, except under specific conditions [1]. One ground for eviction is if the premises were let for residence and the tenant or their family has not resided there for six months immediately before the application for recovery of possession [1]. The Act also mentions that a landlord cannot cut off or withhold essential supplies or services without just and sufficient cause [1]. If a landlord does so, the tenant can complain to the Controller, who may order the restoration of services [1].\n\nWhat this means for you: The sources provided primarily refer to the Delhi Rent Control Act, 1958, and other state-specific rent control acts for Maharashtra and Bombay. These laws indicate that there are specific grounds and procedures for eviction, implying that a landlord cannot simply evict a tenant without notice. The fact that a tenant can complain if essential services are cut off to compel them to vacate further suggests that landlords cannot use such tactics for eviction without following legal processes. To give you more specific advice, it would be helpful to know in which state or union territory the property is located, as rent control laws can vary significantly by state.\n\nWhat you can do next:\n- Keep all rent receipts and any communication with your landlord.\n- If your landlord attempts to evict you without proper notice or cuts off essential services, you can make an application to the Controller (as per the Delhi Rent Control Act) [1].\n- Seek advice from a lawyer or your local District Legal Services Authority to understand the specific rent control laws applicable in your state and your rights.\n- Do not vacate the premises without a proper court order or a mutual agreement in writing.\n\nGeneral background (not from the retrieved sources): In India, tenancy laws are designed to protect tenants from arbitrary eviction. While the specific grounds and procedures for eviction vary by state, landlords are generally required to issue a legal notice to the tenant, stating the reason for eviction and giving a reasonable period to vacate or respond. If the tenant does not comply, the landlord must then approach a court to obtain an eviction order.\n\nSources:\n- [1] The Delhi Rent Control Act, 1958: https://indiankanoon.org/doc/152548910/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 9322,
+      "citation_titles": [
+        "The Delhi Rent Control Act, 1958",
+        "The Maharashtra Rent Control Act, 1999",
+        "The Bombay Tenancy and Agricultural Lands Act, 1948",
+        "The Bombay Rents, Hotel and Lodging House Rates Control Act, 1947"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 1,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3353,
+      "tokens_out": 476,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Reference to Transfer of Property Act s.106",
+          "Statement that self‑help eviction (locking out) is not allowed",
+          "Mention of grounds like non‑payment or bona‑fide need being state‑law specific"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "rubric_coverage": 0.75,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mixes supported and unsupported legal references."
+      }
+    },
+    {
+      "id": "q03",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "Is a rental agreement valid if it is not registered but only notarized?",
+          "answer": "Bottom line: A rental agreement for a period exceeding one year needs to be registered to be fully valid. If it's only notarized, it may not be fully enforceable in court for certain purposes.\n\nWhat the law says: A lease of waqf property for any period exceeding one year and up to thirty years must be registered at the office of the Registrar or Sub-registrar under whose jurisdiction the property is situated [1]. The expenses for this registration are to be borne by the lessee [1]. If a document that is required to be registered by law, such as under the Transfer of Property Act, 1882, is not registered, it generally cannot affect any immovable property or be used as evidence of a transaction affecting such property [4]. However, an unregistered document affecting immovable property and required to be registered may be received as evidence of a contract in a suit for specific performance [4].\n\nWhat this means for you: If your rental agreement is for a period of more than one year, it should have been registered. Since it was only notarized, it might not be considered fully valid in a court of law for all purposes related to the property itself. This could complicate things if there's a dispute about your rights to the property under the agreement. However, the agreement could still be used as evidence of a contract if you need to enforce its terms in a specific performance case.\n\nWhat you can do next:\n- Review your rental agreement to confirm the exact duration of the lease.\n- If the lease is for more than one year, consider discussing with the landlord the possibility of getting the agreement registered.\n- Keep all copies of the notarized rental agreement and any payment receipts.\n- If you face any issues, consult with a lawyer or your nearest District Legal Services Authority to understand the specific implications for your situation and what legal steps you can take.\n\nSources:\n- [1] Section 9 in The Waqf Properties Lease Rules, 2014: https://indiankanoon.org/doc/84250331/\n- [4] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 7696,
+          "ikanoon_calls": 10,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3623,
+          "tokens_out": 384
+        }
+      ],
+      "final_answer": "Bottom line: A rental agreement for a period exceeding one year needs to be registered to be fully valid. If it's only notarized, it may not be fully enforceable in court for certain purposes.\n\nWhat the law says: A lease of waqf property for any period exceeding one year and up to thirty years must be registered at the office of the Registrar or Sub-registrar under whose jurisdiction the property is situated [1]. The expenses for this registration are to be borne by the lessee [1]. If a document that is required to be registered by law, such as under the Transfer of Property Act, 1882, is not registered, it generally cannot affect any immovable property or be used as evidence of a transaction affecting such property [4]. However, an unregistered document affecting immovable property and required to be registered may be received as evidence of a contract in a suit for specific performance [4].\n\nWhat this means for you: If your rental agreement is for a period of more than one year, it should have been registered. Since it was only notarized, it might not be considered fully valid in a court of law for all purposes related to the property itself. This could complicate things if there's a dispute about your rights to the property under the agreement. However, the agreement could still be used as evidence of a contract if you need to enforce its terms in a specific performance case.\n\nWhat you can do next:\n- Review your rental agreement to confirm the exact duration of the lease.\n- If the lease is for more than one year, consider discussing with the landlord the possibility of getting the agreement registered.\n- Keep all copies of the notarized rental agreement and any payment receipts.\n- If you face any issues, consult with a lawyer or your nearest District Legal Services Authority to understand the specific implications for your situation and what legal steps you can take.\n\nSources:\n- [1] Section 9 in The Waqf Properties Lease Rules, 2014: https://indiankanoon.org/doc/84250331/\n- [4] Section 49 in The Registration Act, 1908: https://indiankanoon.org/doc/1768154/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 9603,
+      "citation_titles": [
+        "Section 9 in The Waqf Properties Lease Rules, 2014",
+        "Section 53A in The Transfer Of Property Act, 1882",
+        "Section 54 in The Transfer Of Property Act, 1882",
+        "Section 49 in The Registration Act, 1908",
+        "The Rajasthan Minor Mineral Concession Rules, 1986",
+        "Section 3 in The Transfer Of Property Act, 1882"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 4,
+      "ikanoon_calls_total": 10,
+      "tokens_in": 3623,
+      "tokens_out": 384,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "General claim that all leases over 1 year must be registered (not in context)",
+          "Statement that notarisation is not registration (not directly in context)"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "rubric_coverage": 0.6,
+        "personalised_advice": false,
+        "language_ok": true,
+        "notes": "Answer mixes supported points with some general claims not covered by the provided sources."
+      }
+    },
+    {
+      "id": "q04",
+      "category": "tenancy",
+      "behavior": "answer",
+      "status": "ok",
+      "turns": [
+        {
+          "user": "My landlord increases the rent by 20% every year. Is this legal?",
+          "answer": "Bottom line: The legality of your landlord increasing the rent by 20% every year depends on the specific rent control laws applicable in your state and the details of your tenancy. In some states, there are limits on how much rent can be increased.\n\nWhat the law says:\nIn the Bombay Presidency (now parts of Maharashtra and Gujarat), for premises let on or before September 1, 1940, landlords may be entitled to increase rent by a certain percentage of the standard rent, depending on the type of premises and the existing rent. For residential premises, this increase can be up to 5%, 7.5%, or 10% of the standard rent, and for non-residential premises, it can be up to 7.5% or 12.5% [1], [2]. Any amount paid as rent that is not in accordance with the provisions of the Act can be recovered by the tenant from the landlord within six months of payment, or deducted from future rent [1], [2]. In Delhi, a landlord wishing to increase rent must give the tenant written notice, and the increase is only due after 30 days from the notice date, provided it is lawful under the Act [3]. The Maharashtra Rent Control Act, 1999, states that provisions relating to standard rent and permitted increases do not apply to certain premises, such as those not let for a continuous period of one year, with some exceptions [4].\n\nWhat this means for you:\nThe sources provided suggest that annual rent increases are not unlimited in some states. A 20% annual increase seems higher than the percentages mentioned in the Bombay and Gujarat Acts for older tenancies. The Delhi Act requires notice for any increase and states it must be lawful. The Maharashtra Act has specific conditions where standard rent provisions might not apply. To determine if your landlord's 20% increase is legal, it is crucial to know which state's rent control act applies to your tenancy, when your premises were first let, and the current rent amount.\n\nWhat you can do next:\n- Identify which state's rent control act applies to your tenancy.\n- Review your rental agreement for any clauses about rent increases.\n- Send a written notice to your landlord asking for clarification on the legal basis for the 20% annual increase.\n- Keep records of all rent payments and any notices from your landlord.\n- Consult with a lawyer or your local District Legal Services Authority to understand your rights and options based on the specific laws applicable in your area.\n\nNote: the figure(s) 20%, 7.5%, 12.5% mentioned above could not be found in the sources retrieved for this answer. Please verify them before relying on them.\n\nSources:\n- [1] The Bombay Rents, Hotel and Lodging House Rates Control Act, 1947: https://indiankanoon.org/doc/163138661/\n- [2] The Gujarat Rents, Hotel and Lodging House Rates Control Act, 1947: https://indiankanoon.org/doc/145688774/\n- [3] The Delhi Rent Control Act, 1958: https://indiankanoon.org/doc/152548910/\n- [4] The Maharashtra Rent Control Act, 1999: https://indiankanoon.org/doc/196692406/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+          "error": null,
+          "missing": false,
+          "attempts": 1,
+          "retry_errors": [],
+          "latency_ms": 5665,
+          "ikanoon_calls": 6,
+          "intent": "NEW_QUERY",
+          "answer_model": "google_genai:gemini-2.5-flash",
+          "stop_reason": "STOP",
+          "tokens_in": 3004,
+          "tokens_out": 528
+        }
+      ],
+      "final_answer": "Bottom line: The legality of your landlord increasing the rent by 20% every year depends on the specific rent control laws applicable in your state and the details of your tenancy. In some states, there are limits on how much rent can be increased.\n\nWhat the law says:\nIn the Bombay Presidency (now parts of Maharashtra and Gujarat), for premises let on or before September 1, 1940, landlords may be entitled to increase rent by a certain percentage of the standard rent, depending on the type of premises and the existing rent. For residential premises, this increase can be up to 5%, 7.5%, or 10% of the standard rent, and for non-residential premises, it can be up to 7.5% or 12.5% [1], [2]. Any amount paid as rent that is not in accordance with the provisions of the Act can be recovered by the tenant from the landlord within six months of payment, or deducted from future rent [1], [2]. In Delhi, a landlord wishing to increase rent must give the tenant written notice, and the increase is only due after 30 days from the notice date, provided it is lawful under the Act [3]. The Maharashtra Rent Control Act, 1999, states that provisions relating to standard rent and permitted increases do not apply to certain premises, such as those not let for a continuous period of one year, with some exceptions [4].\n\nWhat this means for you:\nThe sources provided suggest that annual rent increases are not unlimited in some states. A 20% annual increase seems higher than the percentages mentioned in the Bombay and Gujarat Acts for older tenancies. The Delhi Act requires notice for any increase and states it must be lawful. The Maharashtra Act has specific conditions where standard rent provisions might not apply. To determine if your landlord's 20% increase is legal, it is crucial to know which state's rent control act applies to your tenancy, when your premises were first let, and the current rent amount.\n\nWhat you can do next:\n- Identify which state's rent control act applies to your tenancy.\n- Review your rental agreement for any clauses about rent increases.\n- Send a written notice to your landlord asking for clarification on the legal basis for the 20% annual increase.\n- Keep records of all rent payments and any notices from your landlord.\n- Consult with a lawyer or your local District Legal Services Authority to understand your rights and options based on the specific laws applicable in your area.\n\nNote: the figure(s) 20%, 7.5%, 12.5% mentioned above could not be found in the sources retrieved for this answer. Please verify them before relying on them.\n\nSources:\n- [1] The Bombay Rents, Hotel and Lodging House Rates Control Act, 1947: https://indiankanoon.org/doc/163138661/\n- [2] The Gujarat Rents, Hotel and Lodging House Rates Control Act, 1947: https://indiankanoon.org/doc/145688774/\n- [3] The Delhi Rent Control Act, 1958: https://indiankanoon.org/doc/152548910/\n- [4] The Maharashtra Rent Control Act, 1999: https://indiankanoon.org/doc/196692406/\n\nThis is general legal information, not personalised legal advice. For anything specific to your situation, please consult a lawyer.\n\nPowered by Indian Kanoon (indiankanoon.org).",
+      "context_chars": 6598,
+      "citation_titles": [
+        "The Bombay Rents, Hotel and Lodging House Rates Control Act, 1947",
+        "The Gujarat Rents, Hotel and Lodging House Rates Control Act, 1947",
+        "The Delhi Rent Control Act, 1958",
+        "The Maharashtra Rent Control Act, 1999",
+        "The M.P. Accommodation Control Act, 1961"
+      ],
+      "checks": {
+        "no_error": true,
+        "not_truncated": true,
+        "ends_cleanly": true,
+        "disclaimer_present": true,
+        "citations_valid": true,
+        "sections_grounded": true,
+        "expected_source_in_answer": true,
+        "expected_source_retrieved": true,
+        "must_not_ok": null,
+        "route_ok": true,
+        "no_retrieval": null
+      },
+      "ungrounded_sections": [],
+      "first_source_rank": 3,
+      "ikanoon_calls_total": 6,
+      "tokens_in": 3004,
+      "tokens_out": 528,
+      "any_truncated": false,
+      "passed": true,
+      "cache_hits": 0,
+      "logged_queries": 1,
+      "tiers": [],
+      "judge": {
+        "judge_model": "openai/gpt-oss-120b",
+        "faithfulness": 3,
+        "unsupported_claims": [
+          "Model Tenancy Act requires written notice (3 months) for rent revision"
+        ],
+        "rubric_flags": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "rubric_coverage": 1.0,
+        "personalised_advice": true,
+        "language_ok": true,
+        "notes": "Contains one unsupported claim about the Model Tenancy Act."
+      }
+    }
+  ]
+}

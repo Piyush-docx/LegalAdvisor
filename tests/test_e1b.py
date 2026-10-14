@@ -61,6 +61,7 @@ def test_rewrite_prompt_asks_for_the_act_by_full_name_with_year(mock_complete):
     rewrite_query("q")
     prompt = mock_complete.call_args.args[1]
     assert "Line 1 - the Act" in prompt and "with year" in prompt and "NONE" in prompt
+    assert "Transfer of Property Act" not in prompt  # no area is hard-wired to one Act
     assert "Consumer Protection Act, 2019" in prompt  # steers away from the repealed 1986 Act
 
 
@@ -86,11 +87,30 @@ def run_context(search_results, search_query, question="my salary is unpaid", **
 
 def test_act_query_is_used_when_its_title_matches():
     act_docs = sresult(sdoc(1, "Section 15 in The Payment Of Wages Act, 1936"), sdoc(2, "Section 2 in The Payment Of Wages Act, 1936"))
-    (text, cits), info, search = run_context([act_docs], f"{ACT_Q}\n{TOPIC_Q}")
+    topic_docs = sresult(sdoc(3, "Section 7 in Some Wages Provision"))
+    (text, cits), info, search = run_context([act_docs, topic_docs], f"{ACT_Q}\n{TOPIC_Q}")
 
-    assert search.call_count == 1 and search.call_args.args[0] == ACT_Q
     assert info["act_requested"] and info["act_matched"] and info["relaxed"] is False
-    assert info["query_used"] == ACT_Q and len(cits) == 2
+    assert info["query_used"] == ACT_Q
+
+
+def test_topic_query_hits_are_merged_with_the_accepted_act_query_hits():
+    """Every question about one area used to get the same sections of the one Act that matched."""
+    act_docs = sresult(sdoc(1, "Section 15 in The Payment Of Wages Act, 1936"), sdoc(2, "Section 2 in The Payment Of Wages Act, 1936"))
+    topic_docs = sresult(sdoc(3, "Section 7 in Some Wages Provision"), sdoc(1, "Section 15 in The Payment Of Wages Act, 1936"))
+    (text, cits), info, search = run_context([act_docs, topic_docs], f"{ACT_Q}\n{TOPIC_Q}")
+
+    assert [c.args[0] for c in search.call_args_list] == [ACT_Q, TOPIC_Q]
+    assert len(cits) == 3  # three distinct documents; the repeated one is not listed twice
+    assert info["topic_query_used"] == TOPIC_Q and info["searches"] == 2
+
+
+def test_empty_topic_query_does_not_hurt_an_accepted_act_query():
+    act_docs = sresult(sdoc(1, "Section 15 in The Payment Of Wages Act, 1936"))
+    nothing = SearchResult(docs=[], found="none")
+    (text, cits), info, search = run_context([act_docs, nothing, nothing, nothing], f"{ACT_Q}\n{TOPIC_Q}")
+
+    assert len(cits) == 1 and info["act_matched"] is True and "topic_query_used" not in info
 
 
 def test_wrong_act_guess_falls_through_to_the_topic_query_and_is_marked_unmatched():

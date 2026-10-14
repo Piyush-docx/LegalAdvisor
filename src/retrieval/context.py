@@ -9,6 +9,7 @@ Source numbers are document numbers: "[2]" in an answer refers to the second Cit
 
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
+from itertools import zip_longest
 import logging
 import re
 
@@ -187,6 +188,33 @@ def _render(label: str | None, text: str) -> str:
     return f"- {_LABELS.get(label, label)}: {text}"
 
 
+TOPIC_EXTRA_DOCS = 3
+
+
+def _topic_docs(topic_query: str, consume, info: dict) -> list:
+    """Hits for the topic query, loosened step by step until something comes back."""
+    for query in [topic_query] + relaxation_ladder(topic_query):
+        if consume and not consume(1):
+            raise BudgetExceeded("daily IKanoon budget exhausted")
+        info["searches"] += 1
+        found = search_ikanoon(query)
+        if found.docs:
+            info["topic_query_used"] = query
+            return found.docs
+    return []
+
+
+def _interleave(first: list, second: list) -> list:
+    """Alternate the two result lists (first one leading), dropping repeated documents."""
+    out, seen = [], set()
+    for pair in zip_longest(first, second):
+        for doc in pair:
+            if doc is not None and doc.tid not in seen:
+                seen.add(doc.tid)
+                out.append(doc)
+    return out
+
+
 # --------------------------------------------------------------------------- main entry point
 def build_context(
     search_query: str,
@@ -232,6 +260,17 @@ def build_context(
         return "", []
     attempt, used_query, result = chosen
     info.update(relaxed=attempt > 0, query_used=used_query)
+
+    # An accepted Act query used to end the search, so every question about one area got the same
+    # sections of that Act. The topic query says what this question is about: merge its hits in.
+    topic_query = next((q for q in queries if q != used_query and not names_an_act(q)), None)
+    if matched and topic_query:
+        extra = _topic_docs(topic_query, consume, info)
+        if extra:
+            # The topic hits are specific to this question, so they lead; a few more documents are
+            # considered, and chunk ranking below still decides what the model is shown.
+            result = result.model_copy(update={"docs": _interleave(extra, result.docs)})
+            max_docs += TOPIC_EXTRA_DOCS
 
     top_docs = select_top_docs(result, n=max_docs, query=search_query, prefer_central=not mentions_state(question))
     stored = _stored_documents([d.tid for d in top_docs])

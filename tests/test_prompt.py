@@ -31,7 +31,20 @@ def test_build_prompt_instructs_grounded_answer_only():
     assert "only" in lowered and "retrieved" in lowered
 
 
-def test_build_prompt_instructs_no_personalized_advice():
+def test_build_prompt_asks_for_reasoning_and_next_steps():
+    prompt = build_prompt(
+        question="q",
+        context_text="context",
+        citations=[make_citation()],
+    )
+
+    flat = " ".join(prompt.split())
+    for label in ("Bottom line:", "What the law says:", "What this means for you:", "What you can do next:"):
+        assert f'"{label}"' in flat
+    assert "legal aid" in flat.lower()
+
+
+def test_build_prompt_is_supportive_not_judgmental_and_does_not_predict_outcomes():
     prompt = build_prompt(
         question="q",
         context_text="context",
@@ -39,7 +52,9 @@ def test_build_prompt_instructs_no_personalized_advice():
     )
 
     lowered = " ".join(prompt.lower().split())
-    assert "never give personalised legal advice" in lowered or "never give personalized legal advice" in lowered
+    assert "never decide or comment on whether they are guilty" in lowered
+    assert "never promise or predict the outcome" in lowered
+    assert "never invent section numbers" in lowered
 
 
 def test_build_prompt_lists_multiple_citations():
